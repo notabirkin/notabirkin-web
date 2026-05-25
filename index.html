@@ -172,7 +172,7 @@ footer{background:#1C1510;padding:48px 28px 28px}
 </nav>
 
 <!-- ORDER MODAL -->
-<div class="modal-overlay" id="orderModal" style="display:none">
+<div class="modal-overlay" id="orderModal" style="display:none;position:fixed;inset:0;background:rgba(28,21,16,0.7);z-index:300;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)">
   <div class="modal">
     <div class="modal-header">
       <button class="modal-close" onclick="closeModal()">✕</button>
@@ -453,18 +453,19 @@ footer{background:#1C1510;padding:48px 28px 28px}
 function openMenu(){document.getElementById('mobMenu').classList.add('open');document.getElementById('mobOverlay').classList.add('open')}
 function closeMenu(){document.getElementById('mobMenu').classList.remove('open');document.getElementById('mobOverlay').classList.remove('open')}
 
-var currentItem='';
 function openOrder(item){
   currentItem=item;
   var price=lang==='es'?'$599 MXN':'$25 USD';
-  document.getElementById('modal-charm-name').textContent='Charm: '+item+' — '+price;
+  document.getElementById('modal-charm-name').textContent=item+' — '+price;
   document.getElementById('form-charm').value=item;
   document.getElementById('form-price').value=price;
-  document.getElementById('orderModal').classList.add('open');
+  var modal=document.getElementById('orderModal');
+  modal.style.display='flex';
   document.body.style.overflow='hidden';
 }
 function closeModal(){
-  document.getElementById('orderModal').classList.remove('open');
+  var modal=document.getElementById('orderModal');
+  modal.style.display='none';
   document.body.style.overflow='';
 }
 
