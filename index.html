@@ -4,586 +4,475 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>I'm Not a Birkin – I'm a Charm</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:#F7F2EC;color:#1C1510;font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;-webkit-text-size-adjust:none;text-size-adjust:none}
+body{background:#F7F2EC;color:#1C1510;font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
 
 /* ANNOUNCE */
-.ann{background:#1C1510;color:#F7F2EC;text-align:center;padding:10px;font-size:8px;letter-spacing:5px;text-transform:uppercase}
-.ann span{color:#C9A882;margin:0 8px}
+.ann{background:#1C1510;color:#F7F2EC;text-align:center;padding:12px;font-size:15px;letter-spacing:3px;text-transform:uppercase}
+.ann span{color:#C9A882;margin:0 10px}
 
 /* NAV */
-nav{background:#F7F2EC;border-bottom:1px solid #E5DDD3;padding:0 26px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99}
-.nlinks{display:flex;gap:0}
-.nlinks a{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#A89880;text-decoration:none;margin-right:20px}
-.nlinks a:hover{color:#1C1510}
-.nlogo{text-align:center;flex:1}
-.nlogo-m{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;letter-spacing:2px;color:#1C1510}
-.nlogo-s{font-size:6px;letter-spacing:6px;text-transform:uppercase;color:#C9A882;margin-top:2px}
-.nicons{display:flex;gap:16px;color:#A89880;font-size:13px;cursor:pointer}
+nav{background:#F7F2EC;border-bottom:1px solid #E0D4C4;padding:0 32px;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-links a{font-size:16px;letter-spacing:2px;text-transform:uppercase;color:#5a4030;text-decoration:none;margin-right:28px}
+.nav-links a:hover{color:#1C1510}
+.nav-logo{text-align:center;flex:1}
+.logo-main{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:#1C1510;letter-spacing:2px}
+.logo-sub{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#C9A882;margin-top:2px}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-right a{font-size:15px;letter-spacing:2px;color:#5a4030;text-decoration:none}
+.lang-btn{background:none;border:1px solid #C9A882;color:#5a4030;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:2px;padding:6px 12px;cursor:pointer}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:26px;height:2px;background:#1C1510;display:block}
+
+/* MOBILE MENU */
+.mob-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:198}
+.mob-overlay.open{display:block}
+.mob-menu{position:fixed;top:0;right:-100%;width:72%;max-width:280px;height:100vh;background:#F7F2EC;z-index:199;padding:70px 36px 40px;transition:right 0.3s ease;display:flex;flex-direction:column;gap:28px;box-shadow:-4px 0 24px rgba(0,0,0,0.12)}
+.mob-menu.open{right:0}
+.mob-menu a{font-size:20px;letter-spacing:3px;text-transform:uppercase;color:#1C1510;text-decoration:none}
+.mob-close{position:absolute;top:20px;right:20px;font-size:22px;cursor:pointer;background:none;border:none;color:#1C1510}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+}
 
 /* HERO */
-.hero{background:linear-gradient(170deg,#F7F2EC 0%,#F0E8DC 50%,#E8DDD0 100%);min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 26px 60px;position:relative;overflow:hidden;border-bottom:1px solid #E5DDD3}
-.hero-dec{position:absolute;border-radius:50%;border:1px solid rgba(201,168,130,0.2);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
-.d1{width:520px;height:520px}
-.d2{width:370px;height:370px}
-.heye{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#C9A882;margin-bottom:26px}
-.htitle{font-family:'Cormorant Garamond',serif;font-size:58px;font-style:italic;font-weight:300;color:#1C1510;line-height:0.95;margin-bottom:10px}
-.htitle span{display:block;font-size:42px;color:#C9A882}
-.hsub{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#C0AD98;margin-bottom:52px}
-.btn-dark{background:#1C1510;color:#F7F2EC;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:16px 46px;border:none;cursor:pointer;display:block;margin:0 auto 12px;transition:opacity 0.2s}
-.btn-dark:hover{opacity:0.85}
-.btn-outline{background:transparent;color:#1C1510;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:15px 46px;border:1px solid #D5C9B8;cursor:pointer;display:block;margin:0 auto;transition:all 0.2s}
-.btn-outline:hover{background:#1C1510;color:#F7F2EC}
-.hnote{margin-top:50px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#D5C9B8}
+.hero{background:linear-gradient(170deg,#F7F2EC 0%,#F0E8DC 50%,#E8DDD0 100%);min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 28px 60px;position:relative;overflow:hidden;border-bottom:1px solid #E0D4C4}
+.hero-ring{position:absolute;border-radius:50%;border:1px solid rgba(201,168,130,0.25);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.r1{width:520px;height:520px}
+.r2{width:360px;height:360px}
+.hero-eye{font-size:15px;letter-spacing:5px;text-transform:uppercase;color:#8a6a40;margin-bottom:24px}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:64px;font-style:italic;font-weight:300;color:#1C1510;line-height:0.95;margin-bottom:10px}
+.hero-title span{display:block;font-size:48px;color:#C9A882}
+.hero-sub{font-size:18px;letter-spacing:4px;text-transform:uppercase;color:#3a2010;margin-bottom:48px}
+.btn-dark{background:#1C1510;color:#F7F2EC;font-family:'Jost',sans-serif;font-size:15px;letter-spacing:4px;text-transform:uppercase;padding:18px 48px;border:none;cursor:pointer;display:block;margin:0 auto 14px;transition:opacity 0.2s}
+.btn-dark:hover{opacity:0.8}
+.btn-ghost{background:transparent;color:#1C1510;font-family:'Jost',sans-serif;font-size:15px;letter-spacing:4px;text-transform:uppercase;padding:17px 48px;border:1px solid #8a7060;cursor:pointer;display:block;margin:0 auto;transition:all 0.2s}
+.btn-ghost:hover{background:#1C1510;color:#F7F2EC}
+.hero-note{margin-top:48px;font-size:18px;letter-spacing:3px;text-transform:uppercase;color:#3a2010}
 
 /* STRIP */
-.strip{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid #E5DDD3}
-.strip-item{height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid #E5DDD3;padding:20px;gap:10px}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #E0D4C4}
+.strip-item{padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:8px;border-right:1px solid #E0D4C4}
 .strip-item:last-child{border-right:none}
-.strip-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;color:#C9A882}
-.strip-text{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#A89880;text-align:center}
+.strip-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-style:italic;color:#C9A882}
+.strip-text{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:#3a2010;text-align:center;font-weight:400}
 
 /* MARQUEE */
-.mq{border-top:1px solid #E5DDD3;border-bottom:1px solid #E5DDD3;padding:12px 0;overflow:hidden;white-space:nowrap;background:#F0E8DC}
-.mq-in{display:inline-block;animation:mq 30s linear infinite;font-size:7px;letter-spacing:5px;text-transform:uppercase;color:#C0AD98}
+.mq{background:#F0E8DC;border-bottom:1px solid #E0D4C4;padding:13px 0;overflow:hidden;white-space:nowrap}
+.mq-in{display:inline-block;animation:mq 28s linear infinite;font-size:15px;letter-spacing:4px;text-transform:uppercase;color:#5a4030}
 .mq-in em{color:#1C1510;font-style:normal;margin:0 18px}
 @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* SECTION HEADER */
-.sh{text-align:center;padding:56px 26px 34px;background:#F7F2EC}
-.sh-eye{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C9A882;margin-bottom:14px}
-.sh-title{font-family:'Cormorant Garamond',serif;font-size:38px;font-style:italic;font-weight:300;color:#1C1510}
-.sh-sub{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#C0AD98;margin-top:10px}
-.strip-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-style:italic;color:#C9A882}
-.strip-text{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#A89880;text-align:center}
-.mq-in{display:inline-block;animation:mq 30s linear infinite;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#C0AD98}
-.mq-in em{color:#1C1510;font-style:normal;margin:0 18px}
-.pname{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:#1C1510;margin-bottom:4px}
-.ptagline{font-size:13px;color:#C0AD98;margin-bottom:8px;font-style:italic}
-.pprice{font-size:15px;letter-spacing:2px;color:#C9A882;margin-bottom:12px;font-weight:400}
-.pbtn{width:100%;background:transparent;border:1px solid #DDD5C8;color:#1C1510;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:12px;cursor:pointer;transition:all 0.2s}
-.pbtn:hover{background:#1C1510;color:#F7F2EC;border-color:#1C1510}
-.seye{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C9A882;margin-bottom:12px}
-.stitle{font-family:'Cormorant Garamond',serif;font-size:34px;font-style:italic;font-weight:300;color:#1C1510;margin-bottom:16px;line-height:1.2}
-.sp{font-size:13px;color:#9A8878;line-height:1.9;margin-bottom:12px}
-.ssig{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C9A882;margin-top:8px}
-.ft{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#1C1510;margin-bottom:6px}
-.fd{font-size:12px;color:#A89880;line-height:1.6}
-.rstars{color:#C9A882;letter-spacing:3px;font-size:12px;margin-bottom:8px}
-.rq{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;font-weight:300;color:#1C1510;line-height:1.7;margin-bottom:8px}
-.rby{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#C0AD98}
-.ig-cta{text-align:center;padding:6px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C9A882}
-.contact-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-style:italic;font-weight:300;color:#1C1510;margin-bottom:10px}
-.contact-sub{font-size:13px;color:#9A8878;margin-bottom:24px;line-height:1.8}
-.contact-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#1C1510;color:#F7F2EC;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:opacity 0.2s;width:100%;max-width:320px}
-.contact-btn:hover{opacity:0.85}
-.contact-btn.wa{background:#C9A882}
-.flogo{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#F7F2EC;text-align:center;margin-bottom:4px}
-.ftag{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:#C9A882;text-align:center;margin-bottom:30px}
-.flinks a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4A3828;text-decoration:none}
-.flinks a:hover{color:#C9A882}
-.fcopy{text-align:center;font-size:10px;letter-spacing:1px;color:#3A2818}
-.nicons a{color:#A89880;text-decoration:none;font-size:11px;letter-spacing:2px}
-.nicons button{background:none;border:1px solid #D5C9B8;color:#A89880;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;padding:5px 10px;cursor:pointer}
+.sec-head{text-align:center;padding:52px 28px 32px}
+.sec-eye{font-size:14px;letter-spacing:5px;text-transform:uppercase;color:#8a6a40;margin-bottom:12px}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:44px;font-style:italic;font-weight:300;color:#1C1510}
+.sec-sub{font-size:16px;letter-spacing:2px;text-transform:uppercase;color:#3a2010;margin-top:10px}
 
 /* PRODUCTS */
-.pgrid{display:grid;grid-template-columns:1fr 1fr;margin:0 14px 60px;border:1px solid #E5DDD3;border-right:none;border-bottom:none}
-.pcard{border-right:1px solid #E5DDD3;border-bottom:1px solid #E5DDD3;background:#FAF6F1;cursor:pointer;transition:background 0.2s}
-.pcard:hover{background:#F3EDE4}
-.pimg{height:180px;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #E5DDD3;overflow:hidden}
-.pimg-placeholder{width:80px;height:72px;border-radius:6px 6px 12px 12px;position:relative;display:flex;align-items:center;justify-content:center}
-.pimg-handle{width:36px;height:22px;border-width:5px;border-style:solid;border-bottom:none;border-radius:12px 12px 0 0;position:absolute;top:-18px;left:50%;transform:translateX(-50%)}
-.pimg-clasp{width:14px;height:10px;background:rgba(255,255,255,0.4);border-radius:2px}
-.pbadge{position:absolute;top:0;left:0;background:#1C1510;color:#F7F2EC;font-size:6px;letter-spacing:3px;text-transform:uppercase;padding:4px 9px}
-.pbody{padding:14px}
-.pname{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#1C1510;margin-bottom:2px}
-.ptagline{font-size:8px;color:#C0AD98;margin-bottom:6px;font-style:italic}
-.pprice{font-size:10px;letter-spacing:2px;color:#C9A882;margin-bottom:10px;font-weight:400}
-.pbtn{width:100%;background:transparent;border:1px solid #DDD5C8;color:#1C1510;font-family:'Jost',sans-serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;padding:9px;cursor:pointer;transition:all 0.2s}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;margin:0 14px 56px;border:1px solid #E0D4C4;border-right:none;border-bottom:none}
+.pcard{border-right:1px solid #E0D4C4;border-bottom:1px solid #E0D4C4;background:#FAF6F1;cursor:pointer}
+.pcard:hover{background:#F5EFE6}
+.pimg{height:190px;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #E0D4C4;overflow:hidden}
+.pbadge{position:absolute;top:0;left:0;background:#1C1510;color:#F7F2EC;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:5px 10px}
+.charm{width:80px;height:72px;border-radius:6px 6px 12px 12px;position:relative;display:flex;align-items:center;justify-content:center}
+.charm-h{width:36px;height:22px;border-width:5px;border-style:solid;border-bottom:none;border-radius:12px 12px 0 0;position:absolute;top:-18px;left:50%;transform:translateX(-50%)}
+.charm-c{width:14px;height:10px;background:rgba(255,255,255,0.35);border-radius:2px}
+.pbody{padding:16px 18px 20px}
+.pname{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:#1C1510;margin-bottom:6px}
+.pdesc{font-size:17px;color:#3a2010;margin-bottom:10px;font-style:italic;line-height:1.4}
+.pprice{font-size:20px;letter-spacing:1px;color:#8a5a20;font-weight:600;margin-bottom:14px}
+.pbtn{width:100%;background:transparent;border:1px solid #8a7060;color:#1C1510;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;padding:13px;cursor:pointer;transition:all 0.2s}
 .pbtn:hover{background:#1C1510;color:#F7F2EC;border-color:#1C1510}
 
+/* TAPE */
+.tape{background:#1C1510;padding:12px 0;overflow:hidden;white-space:nowrap}
+.tape-in{display:inline-block;animation:mq 24s linear infinite;font-size:14px;letter-spacing:4px;text-transform:uppercase;color:#F7F2EC}
+.tape-in em{color:#C9A882;font-style:normal;margin:0 16px}
+
 /* STORY */
-.story{background:#EDE4D8;border-top:1px solid #E5DDD3;border-bottom:1px solid #E5DDD3}
-.simg{height:260px;background:linear-gradient(160deg,#E8DECE,#DDD0BC,#D0C0A8);display:flex;align-items:center;justify-content:center;border-bottom:1px solid #D8CEBB}
-.simg-inner{text-align:center}
-.simg-title{font-family:'Cormorant Garamond',serif;font-size:48px;font-style:italic;color:#1C1510;opacity:0.3}
-.sbody{padding:46px 26px}
-.seye{font-size:7px;letter-spacing:5px;text-transform:uppercase;color:#C9A882;margin-bottom:12px}
-.stitle{font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;font-weight:300;color:#1C1510;margin-bottom:16px;line-height:1.2}
-.sp{font-size:11px;color:#9A8878;line-height:1.9;margin-bottom:12px}
-.ssig{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:#C9A882;margin-top:8px}
+.story{background:#EDE4D8;border-top:1px solid #E0D4C4;border-bottom:1px solid #E0D4C4}
+.story-img{height:260px;background:linear-gradient(160deg,#DDD0BC,#C8B8A0);display:flex;align-items:center;justify-content:center;border-bottom:1px solid #D8CEBB}
+.story-img-text{font-family:'Cormorant Garamond',serif;font-size:52px;font-style:italic;color:#1C1510;opacity:0.2}
+.story-body{padding:48px 28px}
+.story-eye{font-size:14px;letter-spacing:5px;text-transform:uppercase;color:#8a6a40;margin-bottom:14px}
+.story-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-style:italic;font-weight:300;color:#1C1510;margin-bottom:20px;line-height:1.15}
+.story-p{font-size:18px;color:#3a2010;line-height:1.9;margin-bottom:16px}
+.story-punch{font-family:'Cormorant Garamond',serif;font-size:30px;font-style:italic;color:#1C1510;line-height:1.3;margin:28px 0;padding:28px 0;border-top:1px solid #C9A882;border-bottom:1px solid #C9A882}
+.story-sig{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:#8a5a20;margin-top:20px}
 
 /* FEATURES */
-.feats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #E5DDD3;background:#F7F2EC}
-.feat{padding:28px 16px;text-align:center;border-right:1px solid #E5DDD3;border-bottom:1px solid #E5DDD3}
+.feats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #E0D4C4}
+.feat{padding:30px 18px;text-align:center;border-right:1px solid #E0D4C4;border-bottom:1px solid #E0D4C4;background:#F7F2EC}
 .feat:nth-child(even){border-right:none}
-.fsym{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C9A882;margin-bottom:8px}
-.ft{font-size:7px;letter-spacing:4px;text-transform:uppercase;color:#1C1510;margin-bottom:6px}
-.fd{font-size:10px;color:#A89880;line-height:1.6}
+.feat-sym{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:#C9A882;margin-bottom:10px}
+.feat-t{font-size:14px;letter-spacing:3px;text-transform:uppercase;color:#1C1510;margin-bottom:8px;font-weight:500}
+.feat-d{font-size:15px;color:#3a2010;line-height:1.6}
 
 /* REVIEWS */
-.revs{padding:58px 26px;background:#FAF6F1;border-top:1px solid #E5DDD3}
-.rcard{border-top:1px solid #EEE6DC;padding:22px 0}
-.rcard:first-child{border-top:none;padding-top:0}
-.rstars{color:#C9A882;letter-spacing:3px;font-size:10px;margin-bottom:8px}
-.rq{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;font-weight:300;color:#1C1510;line-height:1.7;margin-bottom:8px}
-.rby{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#C0AD98}
+.reviews{padding:52px 28px;background:#FAF6F1;border-top:1px solid #E0D4C4}
+.rev-card{border-top:1px solid #E8DECE;padding:22px 0}
+.rev-card:first-child{border-top:none;padding-top:0}
+.rev-stars{color:#8a5a20;letter-spacing:3px;font-size:16px;margin-bottom:10px}
+.rev-q{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#1C1510;line-height:1.7;margin-bottom:10px}
+.rev-by{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:#5a4030}
 
 /* INSTAGRAM */
-.ig-sec{border-top:1px solid #E5DDD3;padding-bottom:56px;background:#F7F2EC}
-.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E5DDD3;margin-bottom:14px}
-.ig-cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#A89880;background:#FAF6F1}
-.ig-cta{text-align:center;padding:6px;font-size:7px;letter-spacing:5px;text-transform:uppercase;color:#C9A882}
+.ig-sec{border-top:1px solid #E0D4C4;padding-bottom:52px;background:#F7F2EC}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E0D4C4;margin-bottom:14px}
+.ig-cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#5a4030;background:#FAF6F1}
+.ig-cta{text-align:center;font-size:15px;letter-spacing:4px;text-transform:uppercase;color:#8a6a40;padding:6px}
 
 /* CONTACT */
-.contact{background:#EDE4D8;border-top:1px solid #E5DDD3;padding:48px 26px;text-align:center}
-.contact-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;font-weight:300;color:#1C1510;margin-bottom:10px}
-.contact-sub{font-size:10px;color:#9A8878;margin-bottom:24px;line-height:1.8}
-.contact-links{display:flex;flex-direction:column;align-items:center;gap:12px}
-.contact-btn{display:flex;align-items:center;gap:10px;background:#1C1510;color:#F7F2EC;font-family:'Jost',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;padding:13px 28px;text-decoration:none;transition:opacity 0.2s}
-.contact-btn:hover{opacity:0.85}
-.contact-btn.wa{background:#C9A882}
+.contact{background:#EDE4D8;border-top:1px solid #E0D4C4;padding:52px 28px;text-align:center}
+.contact-eye{font-size:14px;letter-spacing:5px;text-transform:uppercase;color:#8a6a40;margin-bottom:12px}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-style:italic;font-weight:300;color:#1C1510;margin-bottom:12px}
+.contact-sub{font-size:17px;color:#3a2010;margin-bottom:28px;line-height:1.9}
+.contact-links{display:flex;flex-direction:column;align-items:center;gap:10px}
+.cbtn{display:flex;align-items:center;justify-content:center;background:#1C1510;color:#F7F2EC;font-family:'Jost',sans-serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;padding:17px 28px;text-decoration:none;width:100%;max-width:360px;transition:opacity 0.2s}
+.cbtn:hover{opacity:0.85}
+.cbtn.gold{background:#C9A882;color:#1C1510}
 
 /* FOOTER */
-footer{background:#1C1510;padding:46px 26px 24px}
-.flogo{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#F7F2EC;text-align:center;margin-bottom:4px}
-.ftag{font-size:6px;letter-spacing:6px;text-transform:uppercase;color:#C9A882;text-align:center;margin-bottom:30px}
-.flinks{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:22px}
-.flinks a{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#4A3828;text-decoration:none}
-.flinks a:hover{color:#C9A882}
-.fline{height:1px;background:#2A1E14;margin-bottom:16px}
-.fcopy{text-align:center;font-size:7px;letter-spacing:2px;color:#3A2818}
+footer{background:#1C1510;padding:48px 28px 28px}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;color:#F7F2EC;text-align:center;margin-bottom:4px}
+.f-tag{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:#C9A882;text-align:center;margin-bottom:30px}
+.f-links{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:20px}
+.f-links a{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:#8a7060;text-decoration:none}
+.f-links a:hover{color:#C9A882}
+.f-line{height:1px;background:#2a2018;margin-bottom:16px}
+.f-copy{text-align:center;font-size:13px;letter-spacing:1px;color:#6a5040}
 </style>
 </head>
 <body>
 
-<!-- ANNOUNCE -->
-<div class="ann" id="ann">Free worldwide shipping on orders over $60 USD <span>·</span> Limited edition <span>·</span> Handpicked</div>
+<div class="ann">Free worldwide shipping on orders over $60 USD <span>·</span> Limited edition</div>
 
-<!-- NAV -->
 <nav>
-  <div class="nlinks">
-    <a href="#shop" data-en="Shop" data-es="Tienda">Shop</a>
-    <a href="#story" data-en="Story" data-es="Historia">Story</a>
-    <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+  <div class="nav-links">
+    <a href="#shop" id="nl1">Shop</a>
+    <a href="#story" id="nl2">Story</a>
+    <a href="#contact" id="nl3">Contact</a>
   </div>
-  <div class="nlogo">
-    <div class="nlogo-m">I'm not a Birkin</div>
-    <div class="nlogo-s">I'm a charm</div>
+  <div class="nav-logo">
+    <div class="logo-main">I'm not a Birkin</div>
+    <div class="logo-sub">I'm a charm</div>
   </div>
-  <div class="nicons">
-    <a href="https://instagram.com/imnotabirkin" target="_blank" style="color:#A89880;text-decoration:none;font-size:8px;letter-spacing:2px">IG</a>
-    <a href="https://wa.me/525527031153" target="_blank" style="color:#A89880;text-decoration:none;font-size:8px;letter-spacing:2px">WA</a>
-    <button onclick="toggleLang()" style="background:none;border:1px solid #D5C9B8;color:#A89880;font-family:'Jost',sans-serif;font-size:7px;letter-spacing:2px;padding:4px 8px;cursor:pointer" id="langBtn">ES</button>
+  <div class="nav-right">
+    <a href="https://instagram.com/imnotabirkin" target="_blank">IG</a>
+    <a href="https://wa.me/525527031153" target="_blank">WA</a>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">ES</button>
+    <button class="hamburger" onclick="openMenu()"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
+<div class="mob-overlay" id="mobOverlay" onclick="closeMenu()"></div>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="closeMenu()">✕</button>
+  <a href="#shop" onclick="closeMenu()">Shop</a>
+  <a href="#story" onclick="closeMenu()">Story</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="https://instagram.com/imnotabirkin" target="_blank">Instagram</a>
+  <a href="https://wa.me/525527031153" target="_blank">WhatsApp</a>
+</div>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-dec d1"></div>
-  <div class="hero-dec d2"></div>
-  <div class="heye">Collection 2025 · Limited Edition</div>
-  <h1 class="htitle">Not a Birkin.<br><span>A charm.</span></h1>
-  <p class="hsub">Mini bag charms · Handpicked · Worldwide shipping</p>
-  <button class="btn-dark" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop the collection</button>
-  <button class="btn-outline" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Our story</button>
-  <p class="hnote">✦ &nbsp; 12 colors available &nbsp; ✦ &nbsp; Limited pieces &nbsp; ✦</p>
+  <div class="hero-ring r1"></div>
+  <div class="hero-ring r2"></div>
+  <div class="hero-eye" id="h-eye">Collection 2025 · Limited Edition</div>
+  <h1 class="hero-title" id="h-title">Not a Birkin.<br><span>A charm.</span></h1>
+  <p class="hero-sub" id="h-sub">Mini bag charms · Worldwide shipping</p>
+  <button class="btn-dark" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" id="h-btn1">Shop the collection</button>
+  <button class="btn-ghost" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})" id="h-btn2">Our story</button>
+  <p class="hero-note" id="h-note">✦ &nbsp; 12 colors available &nbsp; ✦ &nbsp; Limited pieces &nbsp; ✦</p>
 </section>
 
 <!-- STRIP -->
 <div class="strip">
-  <div class="strip-item" style="background:#F0E8DC">
-    <div class="strip-num">12</div>
-    <div class="strip-text">Colors available</div>
-  </div>
-  <div class="strip-item" style="background:#EDE4D8">
-    <div class="strip-num">∞</div>
-    <div class="strip-text">Worldwide shipping</div>
-  </div>
-  <div class="strip-item" style="background:#E8DDD0">
-    <div class="strip-num">✦</div>
-    <div class="strip-text">Limited edition only</div>
-  </div>
+  <div class="strip-item" style="background:#F0E8DC"><div class="strip-num">12</div><div class="strip-text" id="s1">Colors available</div></div>
+  <div class="strip-item" style="background:#EDE4D8"><div class="strip-num">∞</div><div class="strip-text" id="s2">Worldwide shipping</div></div>
+  <div class="strip-item" style="background:#E8DDD0"><div class="strip-num">✦</div><div class="strip-text" id="s3">Limited edition only</div></div>
 </div>
 
 <!-- MARQUEE -->
-<div class="mq">
-  <div class="mq-in">Not a Birkin <em>·</em> I'm a Charm <em>·</em> Limited Edition <em>·</em> Handpicked <em>·</em> Worldwide Shipping <em>·</em> 12 Colors <em>·</em> Not a Birkin <em>·</em> I'm a Charm <em>·</em> Limited Edition <em>·</em> Handpicked <em>·</em> Worldwide Shipping <em>·</em> 12 Colors <em>·</em></div>
-</div>
+<div class="mq"><div class="mq-in">Not a Birkin <em>·</em> I'm a Charm <em>·</em> Limited Edition <em>·</em> Worldwide Shipping <em>·</em> 12 Colors <em>·</em> Not a Birkin <em>·</em> I'm a Charm <em>·</em> Limited Edition <em>·</em> Worldwide Shipping <em>·</em> 12 Colors <em>·</em></div></div>
 
 <!-- PRODUCTS -->
 <div id="shop">
-  <div class="sh">
-    <div class="sh-eye">The Collection</div>
-    <div class="sh-title">Find your charm</div>
-    <div class="sh-sub">Limited edition · $29.99 USD each · Worldwide shipping</div>
+  <div class="sec-head">
+    <div class="sec-eye" id="p-eye">The Collection</div>
+    <div class="sec-title" id="p-title">Find your charm</div>
+    <div class="sec-sub" id="p-sub">Limited edition · $29.99 USD each · Worldwide shipping</div>
   </div>
-
   <div class="pgrid">
 
     <div class="pcard">
-      <div class="pimg" style="background:linear-gradient(160deg,#1a1a1a,#2d2d2d)">
-        <div class="pbadge">New</div>
-        <div class="pimg-placeholder" style="background:#111">
-          <div class="pimg-handle" style="border-color:#333"></div>
-          <div class="pimg-clasp"></div>
-        </div>
+      <div class="pimg" style="background:linear-gradient(160deg,#111,#2a2a2a)">
+        <div class="pbadge" id="b1">New</div>
+        <div class="charm" style="background:#1a1a1a"><div class="charm-h" style="border-color:#333"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">No Explanations</div>
-        <div class="ptagline">Elegant, secure, needs no validation.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('No Explanations')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">No Explanations</div><div class="pdesc">Elegant, secure, needs no validation.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('No Explanations')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#1a3d2a,#2d6644)">
-        <div class="pbadge"><span class="t-new">New</span></div>
-        <div class="pimg-placeholder" style="background:#2d6644"><div class="pimg-handle" style="border-color:#1a3d2a"></div><div class="pimg-clasp"></div></div>
+        <div class="pbadge" id="b2">New</div>
+        <div class="charm" style="background:#2d6644"><div class="charm-h" style="border-color:#1a3d2a"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Money Energy</div>
-        <div class="ptagline t-tag-money">Wealth, abundance, statement.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Money Energy')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Money Energy</div><div class="pdesc">Wealth, abundance, statement.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Money Energy')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#5c3317,#8B4513)">
-        <div class="pimg-placeholder" style="background:#8B4513"><div class="pimg-handle" style="border-color:#5c3317"></div><div class="pimg-clasp"></div></div>
+        <div class="charm" style="background:#8B4513"><div class="charm-h" style="border-color:#5c3317"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Rich Taste</div>
-        <div class="ptagline t-tag-rich">Classic, sophisticated, timeless.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Rich Taste')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Rich Taste</div><div class="pdesc">Classic, sophisticated, timeless.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Rich Taste')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#b8960a,#D4A830)">
-        <div class="pimg-placeholder" style="background:#D4A830"><div class="pimg-handle" style="border-color:#b8960a"></div><div class="pimg-clasp"></div></div>
+        <div class="charm" style="background:#D4A830"><div class="charm-h" style="border-color:#b8960a"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Sun Status</div>
-        <div class="ptagline t-tag-sun">Shine, attention, happiness.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Sun Status')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Sun Status</div><div class="pdesc">Shine, attention, happiness.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Sun Status')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#6a5a9a,#9870C0)">
-        <div class="pimg-placeholder" style="background:#9870C0"><div class="pimg-handle" style="border-color:#6a5a9a"></div><div class="pimg-clasp"></div></div>
+        <div class="charm" style="background:#9870C0"><div class="charm-h" style="border-color:#6a5a9a"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Soft Power</div>
-        <div class="ptagline t-tag-soft">Feminine but powerful.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Soft Power')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Soft Power</div><div class="pdesc">Feminine but powerful.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Soft Power')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
-      <div class="pimg" style="background:linear-gradient(160deg,#C9A882,#E8D0A8)">
-        <div class="pimg-placeholder" style="background:#C9A882"><div class="pimg-handle" style="border-color:#a8885a"></div><div class="pimg-clasp"></div></div>
+      <div class="pimg" style="background:linear-gradient(160deg,#a87840,#C9A882)">
+        <div class="charm" style="background:#C9A882"><div class="charm-h" style="border-color:#a87840"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Fresh Money</div>
-        <div class="ptagline t-tag-fresh">New luxury, cool, modern.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Fresh Money')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Fresh Money</div><div class="pdesc">New luxury, cool, modern.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Fresh Money')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#c04010,#E8602A)">
-        <div class="pbadge"><span class="t-new">New</span></div>
-        <div class="pimg-placeholder" style="background:#E8602A"><div class="pimg-handle" style="border-color:#c04010"></div><div class="pimg-clasp"></div></div>
+        <div class="pbadge" id="b3">New</div>
+        <div class="charm" style="background:#E8602A"><div class="charm-h" style="border-color:#c04010"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Signature Heat</div>
-        <div class="ptagline t-tag-sig">Not a color. A signature.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Signature Heat')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Signature Heat</div><div class="pdesc">Not a color. A signature.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Signature Heat')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
-      <div class="pimg" style="background:linear-gradient(160deg,#e8e4dc,#f5f2ec)">
-        <div class="pimg-placeholder" style="background:#f0ede8;border:1px solid #ddd"><div class="pimg-handle" style="border-color:#ccc"></div><div class="pimg-clasp" style="background:rgba(0,0,0,0.1)"></div></div>
+      <div class="pimg" style="background:linear-gradient(160deg,#d8d0c8,#f0ede8)">
+        <div class="charm" style="background:#e8e4de;border:1px solid #ccc"><div class="charm-h" style="border-color:#bbb"></div><div class="charm-c" style="background:rgba(0,0,0,0.08)"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Clean Luxury</div>
-        <div class="ptagline t-tag-clean">Minimalist, expensive, effortless.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Clean Luxury')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Clean Luxury</div><div class="pdesc">Minimalist, expensive, effortless.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Clean Luxury')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#d87090,#F0A0B8)">
-        <div class="pimg-placeholder" style="background:#F0A0B8"><div class="pimg-handle" style="border-color:#d87090"></div><div class="pimg-clasp"></div></div>
+        <div class="charm" style="background:#F0A0B8"><div class="charm-h" style="border-color:#d87090"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Soft Statement</div>
-        <div class="ptagline t-tag-softst">Delicate but with presence.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Soft Statement')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Soft Statement</div><div class="pdesc">Delicate but with presence.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Soft Statement')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#8a0a18,#C01830)">
-        <div class="pimg-placeholder" style="background:#C01830"><div class="pimg-handle" style="border-color:#8a0a18"></div><div class="pimg-clasp"></div></div>
+        <div class="charm" style="background:#C01830"><div class="charm-h" style="border-color:#8a0a18"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Red Affair</div>
-        <div class="ptagline t-tag-red">Intense, bold, seductive.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Red Affair')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Red Affair</div><div class="pdesc">Intense, bold, seductive.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Red Affair')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#c0306a,#E8508A)">
-        <div class="pbadge"><span class="t-new">New</span></div>
-        <div class="pimg-placeholder" style="background:#E8508A"><div class="pimg-handle" style="border-color:#c0306a"></div><div class="pimg-clasp"></div></div>
+        <div class="pbadge" id="b4">New</div>
+        <div class="charm" style="background:#E8508A"><div class="charm-h" style="border-color:#c0306a"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Main Character</div>
-        <div class="ptagline t-tag-main">Total protagonist, never goes unnoticed.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Main Character')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Main Character</div><div class="pdesc">Total protagonist, never goes unnoticed.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Main Character')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#5a7a60,#88A888)">
-        <div class="pimg-placeholder" style="background:#88A888"><div class="pimg-handle" style="border-color:#5a7a60"></div><div class="pimg-clasp"></div></div>
+        <div class="charm" style="background:#88A888"><div class="charm-h" style="border-color:#5a7a60"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody">
-        <div class="pname">Quiet Power</div>
-        <div class="ptagline t-tag-quiet">Discreet luxury, old money vibe.</div>
-        <div class="pprice">$29.99 USD</div>
-        <button class="pbtn" onclick="paypal('Quiet Power')"><span class="t-buy">Buy Now</span> — PayPal</button>
-      </div>
+      <div class="pbody"><div class="pname">Quiet Power</div><div class="pdesc">Discreet luxury, old money vibe.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Quiet Power')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
   </div>
 </div>
 
-<!-- MARQUEE 2 -->
-<div class="mq">
-  <div class="mq-in">No Explanations <em>·</em> Money Energy <em>·</em> Rich Taste <em>·</em> Sun Status <em>·</em> Soft Power <em>·</em> Fresh Money <em>·</em> Signature Heat <em>·</em> Clean Luxury <em>·</em> Soft Statement <em>·</em> Red Affair <em>·</em> Main Character <em>·</em> Quiet Power <em>·</em> No Explanations <em>·</em> Money Energy <em>·</em> Rich Taste <em>·</em> Sun Status <em>·</em> Soft Power <em>·</em> Fresh Money <em>·</em></div>
-</div>
+<!-- TAPE -->
+<div class="tape"><div class="tape-in">No Explanations <em>·</em> Money Energy <em>·</em> Rich Taste <em>·</em> Sun Status <em>·</em> Soft Power <em>·</em> Fresh Money <em>·</em> Signature Heat <em>·</em> Clean Luxury <em>·</em> Soft Statement <em>·</em> Red Affair <em>·</em> Main Character <em>·</em> Quiet Power <em>·</em> No Explanations <em>·</em> Money Energy <em>·</em> Rich Taste <em>·</em> Sun Status <em>·</em></div></div>
 
 <!-- STORY -->
 <div id="story" class="story">
-  <div class="simg">
-    <div class="simg-inner">
-      <div class="simg-title">I'm a charm.</div>
-    </div>
-  </div>
-  <div class="sbody">
-    <div class="seye" id="storyEyeEl">Our Story</div>
-    <div class="stitle" id="storyTitleEl">Four women.<br>One obsession.<br>Zero waitlists.</div>
-    <p class="sp" id="storyP1El">We are Katherine, Alexia, Jissela, and our mother — a family of four women who share one great love: Hermès. Our mother and Jissela are designers. Katherine and Alexia? Completely obsessed with bags.</p>
-    <p class="sp" id="storyP2El">Over the years, we patiently built our own Birkin collection, waiting up to two years on a waitlist for a single bag. If you know, you know.</p>
-    <p class="sp" id="storyP3El">When we discovered the mini Birkin charm, we fell in love instantly. The perfect detail to hang from any bag — not just a Birkin or a Kelly, but any bag you already own and love.</p>
-    <div class="story-punch" id="storyPunchEl">"You don't need a Birkin to wear one. And you definitely shouldn't have to wait two years to feel that kind of joy."</div>
-    <div class="ssig">— Katherine, Alexia, Jissela & Mom ✦</div>
+  <div class="story-img"><div class="story-img-text">I'm a charm.</div></div>
+  <div class="story-body">
+    <div class="story-eye" id="st-eye">Our Story</div>
+    <div class="story-title" id="st-title">Four women.<br>One obsession.<br>Zero waitlists.</div>
+    <p class="story-p" id="st-p1">We are Katherine, Alexia, Jissela, and our mother — a family of four women who share one great love: Hermès. Our mother and Jissela are designers. Katherine and Alexia? Completely obsessed with bags.</p>
+    <p class="story-p" id="st-p2">Over the years, we patiently built our own Birkin collection, waiting up to two years on a waitlist for a single bag. If you know, you know.</p>
+    <p class="story-p" id="st-p3">When we discovered the mini Birkin charm, we fell in love instantly. The perfect detail to hang from any bag — not just a Birkin or a Kelly, but any bag you already own and love.</p>
+    <div class="story-punch" id="st-punch">"You don't need a Birkin to wear one. And you definitely shouldn't have to wait two years to feel that kind of joy."</div>
+    <div class="story-sig">— Katherine, Alexia, Jissela & Mom ✦</div>
   </div>
 </div>
 
 <!-- FEATURES -->
 <div class="feats">
-  <div class="feat"><div class="fsym">i</div><div class="ft">Limited Edition</div><div class="fd">When it's gone, it's gone. Every piece is unique.</div></div>
-  <div class="feat"><div class="fsym">ii</div><div class="ft">Handpicked</div><div class="fd">Selected by hand with the finest materials.</div></div>
-  <div class="feat"><div class="fsym">iii</div><div class="ft">Worldwide</div><div class="fd">We ship everywhere. Your charm travels with you.</div></div>
-  <div class="feat"><div class="fsym">iv</div><div class="ft">Gift Ready</div><div class="fd">Luxury packaging included. Perfect gift for her.</div></div>
+  <div class="feat"><div class="feat-sym">i</div><div class="feat-t" id="f1t">Limited Edition</div><div class="feat-d" id="f1d">When it's gone, it's gone. Every piece is unique.</div></div>
+  <div class="feat"><div class="feat-sym">ii</div><div class="feat-t" id="f2t">Quality</div><div class="feat-d" id="f2d">Made with the finest materials available.</div></div>
+  <div class="feat"><div class="feat-sym">iii</div><div class="feat-t" id="f3t">Worldwide</div><div class="feat-d" id="f3d">We ship everywhere. Your charm travels with you.</div></div>
+  <div class="feat"><div class="feat-sym">iv</div><div class="feat-t" id="f4t">Gift Ready</div><div class="feat-d" id="f4d">Luxury packaging included. Perfect gift for her.</div></div>
 </div>
 
 <!-- REVIEWS -->
-<div class="sh"><div class="sh-eye">Reviews</div><div class="sh-title">Loved by you</div></div>
-<div class="revs">
-  <div class="rcard">
-    <div class="rstars">★ ★ ★ ★ ★</div>
-    <div class="rq">"I put it on my orange Birkin and it looks perfect. Everyone asks me where I got it."</div>
-    <div class="rby">Sofia R. · Mexico City</div>
-  </div>
-  <div class="rcard">
-    <div class="rstars">★ ★ ★ ★ ★</div>
-    <div class="rq">"The quality is incredible. It looks like fine jewelry and goes with absolutely everything."</div>
-    <div class="rby">Valentina M. · Guadalajara</div>
-  </div>
-  <div class="rcard">
-    <div class="rstars">★ ★ ★ ★ ★</div>
-    <div class="rq">"It arrived in beautiful packaging. My Kelly has never looked so good."</div>
-    <div class="rby">Isabella C. · Miami</div>
-  </div>
+<div class="sec-head" style="background:#FAF6F1"><div class="sec-eye" id="r-eye">Reviews</div><div class="sec-title" id="r-title">Loved by you</div></div>
+<div class="reviews">
+  <div class="rev-card"><div class="rev-stars">★ ★ ★ ★ ★</div><div class="rev-q">"I put it on my orange Birkin and it looks perfect. Everyone asks me where I got it."</div><div class="rev-by">Sofia R. · Mexico City</div></div>
+  <div class="rev-card"><div class="rev-stars">★ ★ ★ ★ ★</div><div class="rev-q">"The quality is incredible. It looks like fine jewelry and goes with absolutely everything."</div><div class="rev-by">Valentina M. · Guadalajara</div></div>
+  <div class="rev-card"><div class="rev-stars">★ ★ ★ ★ ★</div><div class="rev-q">"It arrived in beautiful packaging. My Kelly has never looked so good."</div><div class="rev-by">Isabella C. · Miami</div></div>
 </div>
 
 <!-- INSTAGRAM -->
 <div class="ig-sec">
-  <div class="sh"><div class="sh-eye">Instagram</div><div class="sh-title">@imnotabirkin</div></div>
+  <div class="sec-head"><div class="sec-eye" id="ig-eye">Instagram</div><div class="sec-title">@imnotabirkin</div></div>
   <div class="ig-grid">
     <div class="ig-cell" style="background:#1a3d2a;color:#4a9a6a">Money Energy</div>
     <div class="ig-cell" style="background:#FADADD;color:#c06080">Soft Statement</div>
-    <div class="ig-cell" style="background:#F8EAB0;color:#a07820">Sun Status</div>
+    <div class="ig-cell" style="background:#F8EAB0;color:#8a6010">Sun Status</div>
     <div class="ig-cell" style="background:#E8D8F8;color:#6040a0">Soft Power</div>
-    <div class="ig-cell" style="background:#1a1a1a;color:#888">No Explanations</div>
-    <div class="ig-cell" style="background:#F0C0D0;color:#c05070">Main Character</div>
+    <div class="ig-cell" style="background:#111;color:#666">No Explanations</div>
+    <div class="ig-cell" style="background:#F0C0D0;color:#a03060">Main Character</div>
   </div>
-  <div class="ig-cta"><a href="https://instagram.com/imnotabirkin" target="_blank" style="color:#C9A882;text-decoration:none;font-size:7px;letter-spacing:5px;text-transform:uppercase">Follow us · @imnotabirkin</a></div>
+  <div class="ig-cta"><a href="https://instagram.com/imnotabirkin" target="_blank" style="color:#8a6a40;text-decoration:none;font-size:15px;letter-spacing:4px;text-transform:uppercase" id="ig-cta">Follow us · @imnotabirkin</a></div>
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="contact">
-  <div class="sh-eye">Get in touch</div>
-  <div class="contact-title">Ready to order?</div>
-  <p class="contact-sub">Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.</p>
+  <div class="contact-eye" id="c-eye">Get in touch</div>
+  <div class="contact-title" id="c-title">Ready to order?</div>
+  <p class="contact-sub" id="c-sub">Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.</p>
   <div class="contact-links">
-    <a href="https://wa.me/525527031153?text=Hi! I want to place an order" target="_blank" class="contact-btn wa">WhatsApp +52 55 2703 1153</a>
-    <a href="https://instagram.com/imnotabirkin" target="_blank" class="contact-btn">Instagram @imnotabirkin</a>
-    <a href="mailto:imnotabirkin@hotmail.com" class="contact-btn">imnotabirkin@hotmail.com</a>
+    <a href="https://wa.me/525527031153?text=Hi! I want to place an order" target="_blank" class="cbtn gold" id="c-wa">WhatsApp +52 55 2703 1153</a>
+    <a href="https://instagram.com/imnotabirkin" target="_blank" class="cbtn" id="c-ig">Instagram @imnotabirkin</a>
+    <a href="mailto:imnotabirkin@hotmail.com" class="cbtn" id="c-email">imnotabirkin@hotmail.com</a>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="flogo">I'm not a Birkin</div>
-  <div class="ftag">I'm a charm · notabirkin.com</div>
-  <div class="flinks">
+  <div class="f-logo">I'm not a Birkin</div>
+  <div class="f-tag">I'm a charm · notabirkin.com</div>
+  <div class="f-links">
     <a href="#shop">Shop</a>
     <a href="#story">Our Story</a>
     <a href="https://instagram.com/imnotabirkin" target="_blank">Instagram</a>
     <a href="https://wa.me/525527031153" target="_blank">WhatsApp</a>
     <a href="#contact">Contact</a>
   </div>
-  <div class="fline"></div>
-  <div class="fcopy">© 2025 I'm not a Birkin · notabirkin.com · All rights reserved</div>
+  <div class="f-line"></div>
+  <div class="f-copy">© 2025 I'm not a Birkin · notabirkin.com · All rights reserved</div>
 </footer>
 
 <script>
-var lang = 'en';
-var translations = {
-  en: {
-    ann: 'Free worldwide shipping on orders over $60 USD · Limited edition · Handpicked',
-    heroEye: 'Collection 2025 · Limited Edition',
-    heroTitle: 'Not a Birkin.',
-    heroSpan: 'A charm.',
-    heroSub: 'Mini bag charms · Handpicked · Worldwide shipping',
-    btnShop: 'Shop the collection',
-    btnStory: 'Our story',
-    heroNote: '✦   12 colors available   ✦   Limited pieces   ✦',
-    colEye: 'The Collection',
-    colTitle: 'Find your charm',
-    colSub: 'Limited edition · $29.99 USD each · Worldwide shipping',
-    storyEye: 'Our Story',
-    storyTitle: 'Four women.<br>One obsession.<br>Zero waitlists.',
-    storyP1: 'We are Katherine, Alexia, Jissela, and our mother — a family of four women who share one great love: Hermès. Our mother and Jissela are designers. Katherine and Alexia? Completely obsessed with bags.',
-    storyP2: 'Over the years, we patiently built our own Birkin collection, waiting up to two years on a waitlist for a single bag. If you know, you know.',
-    storyP3: 'When we discovered the mini Birkin charm, we fell in love instantly. The perfect detail to hang from any bag — not just a Birkin or a Kelly, but any bag you already own and love.',
-    storyPunch: '"You don\'t need a Birkin to wear one. And you definitely shouldn\'t have to wait two years to feel that kind of joy."',
-    storyP4: '',
-    f1t:'Limited Edition', f1d:'When it\'s gone, it\'s gone. Every piece is unique.',
-    f2t:'Handpicked', f2d:'Selected by hand with the finest materials.',
-    f3t:'Worldwide', f3d:'We ship everywhere. Your charm travels with you.',
-    f4t:'Gift Ready', f4d:'Luxury packaging included. Perfect gift for her.',
-    revEye:'Reviews', revTitle:'Loved by you',
-    igEye:'Instagram',
-    ctaEye:'Get in touch', ctaTitle:'Ready to order?',
-    ctaSub:'Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.',
-    ctaWa:'WhatsApp +52 55 2703 1153',
-    ctaIg:'Instagram @imnotabirkin',
-    buy:'Buy Now',
-    newBadge:'New',
-    tags: ['Elegant, secure, needs no validation.','Wealth, abundance, statement.','Classic, sophisticated, timeless.','Shine, attention, happiness.','Feminine but powerful.','New luxury, cool, modern.','Not a color. A signature.','Minimalist, expensive, effortless.','Delicate but with presence.','Intense, bold, seductive.','Total protagonist, never goes unnoticed.','Discreet luxury, old money vibe.']
+function openMenu(){document.getElementById('mobMenu').classList.add('open');document.getElementById('mobOverlay').classList.add('open')}
+function closeMenu(){document.getElementById('mobMenu').classList.remove('open');document.getElementById('mobOverlay').classList.remove('open')}
+
+function paypal(item){
+  var url='https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=alexiarivera%40gmail.com&item_name='+encodeURIComponent("I'm Not a Birkin – "+item+" Charm")+'&amount=29.99&currency_code=USD';
+  window.open(url,'_blank');
+}
+
+var lang='en';
+var T={
+  en:{
+    ann:'Free worldwide shipping on orders over $60 USD · Limited edition',
+    hEye:'Collection 2025 · Limited Edition',hTitle:'Not a Birkin.<br><span>A charm.</span>',
+    hSub:'Mini bag charms · Worldwide shipping',hBtn1:'Shop the collection',hBtn2:'Our story',
+    hNote:'✦   12 colors available   ✦   Limited pieces   ✦',
+    s1:'Colors available',s2:'Worldwide shipping',s3:'Limited edition only',
+    pEye:'The Collection',pTitle:'Find your charm',pSub:'Limited edition · $29.99 USD each · Worldwide shipping',
+    stEye:'Our Story',stTitle:'Four women.<br>One obsession.<br>Zero waitlists.',
+    stP1:'We are Katherine, Alexia, Jissela, and our mother — a family of four women who share one great love: Hermès. Our mother and Jissela are designers. Katherine and Alexia? Completely obsessed with bags.',
+    stP2:'Over the years, we patiently built our own Birkin collection, waiting up to two years on a waitlist for a single bag. If you know, you know.',
+    stP3:'When we discovered the mini Birkin charm, we fell in love instantly. The perfect detail to hang from any bag — not just a Birkin or a Kelly, but any bag you already own and love.',
+    stPunch:'"You don\'t need a Birkin to wear one. And you definitely shouldn\'t have to wait two years to feel that kind of joy."',
+    f1t:'Limited Edition',f1d:"When it's gone, it's gone. Every piece is unique.",
+    f2t:'Quality',f2d:'Made with the finest materials available.',
+    f3t:'Worldwide',f3d:'We ship everywhere. Your charm travels with you.',
+    f4t:'Gift Ready',f4d:'Luxury packaging included. Perfect gift for her.',
+    rEye:'Reviews',rTitle:'Loved by you',igEye:'Instagram',
+    cEye:'Get in touch',cTitle:'Ready to order?',cSub:'Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.',
+    cWa:'WhatsApp +52 55 2703 1153',cIg:'Instagram @imnotabirkin',cEmail:'imnotabirkin@hotmail.com',
+    buy:'Buy Now',newBadge:'New',nl1:'Shop',nl2:'Story',nl3:'Contact'
   },
-  es: {
-    ann: 'Envio mundial gratis en pedidos mayores a $60 USD · Edicion limitada · Seleccionados a mano',
-    heroEye: 'Coleccion 2025 · Edicion Limitada',
-    heroTitle: 'No soy un Birkin.',
-    heroSpan: 'Soy un charm.',
-    heroSub: 'Mini bag charms · Seleccionados · Envio mundial',
-    btnShop: 'Ver la coleccion',
-    btnStory: 'Nuestra historia',
-    heroNote: '✦   12 colores disponibles   ✦   Piezas limitadas   ✦',
-    colEye: 'La Coleccion',
-    colTitle: 'Encuentra tu charm',
-    colSub: 'Edicion limitada · $29.99 USD c/u · Envio mundial',
-    storyEye: 'Nuestra Historia',
-    storyTitle: 'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.',
-    storyP1: 'Somos Katherine, Alexia, Jissela y nuestra mama — una familia de cuatro mujeres que compartimos un gran amor: Hermes. Nuestra mama y Jissela son disenadoras. Katherine y Alexia? Completamente obsesionadas con las bolsas.',
-    storyP2: 'A lo largo de los anos construimos nuestra propia coleccion de Birkins, esperando hasta dos anos en lista de espera por una sola bolsa. Si lo sabes, lo sabes.',
-    storyP3: 'Cuando descubrimos el mini charm Birkin, nos enamoramos al instante. El detalle perfecto para colgar en cualquier bolsa — no solo una Birkin o una Kelly, sino cualquier bolsa que ya tengas y ames.',
-    storyPunch: '"No necesitas una Birkin para usar uno. Y definitivamente no deberia tomarte dos anos sentir ese tipo de alegria."',
-    storyP4: '',
-    f1t:'Edicion Limitada', f1d:'Cuando se acaba, se acaba. Cada pieza es unica.',
-    f2t:'Seleccionados', f2d:'Elegidos a mano con los mejores materiales.',
-    f3t:'Envio Mundial', f3d:'Enviamos a todo el mundo. Tu charm viaja contigo.',
-    f4t:'Gift Ready', f4d:'Empaque de lujo incluido. El regalo perfecto para ella.',
-    revEye:'Testimonios', revTitle:'Loved by you',
-    igEye:'Instagram',
-    ctaEye:'Contacto', ctaTitle:'Lista para ordenar?',
-    ctaSub:'Ordena directamente por WhatsApp o Instagram.<br>Envio mundial. Respuesta en menos de 24 horas.',
-    ctaWa:'WhatsApp +52 55 2703 1153',
-    ctaIg:'Instagram @imnotabirkin',
-    buy:'Comprar',
-    newBadge:'Nuevo',
-    tags: ['Elegante, seguro, no necesita validacion.','Riqueza, abundancia, statement.','Clasico, sofisticado, atemporal.','Brillo, atencion, felicidad.','Femenino pero poderoso.','Nuevo lujo, cool, moderno.','No es un color. Es una firma.','Minimalista, caro, effortless.','Delicado pero con presencia.','Intenso, atrevido, seductor.','Protagonista total, no pasa desapercibido.','Lujo discreto, old money vibe.']
+  es:{
+    ann:'Envio mundial gratis en pedidos mayores a $60 USD · Edicion limitada',
+    hEye:'Coleccion 2025 · Edicion Limitada',hTitle:'No soy un Birkin.<br><span>Soy un charm.</span>',
+    hSub:'Mini bag charms · Envio mundial',hBtn1:'Ver la coleccion',hBtn2:'Nuestra historia',
+    hNote:'✦   12 colores disponibles   ✦   Piezas limitadas   ✦',
+    s1:'Colores disponibles',s2:'Envio mundial',s3:'Solo edicion limitada',
+    pEye:'La Coleccion',pTitle:'Encuentra tu charm',pSub:'Edicion limitada · $29.99 USD c/u · Envio mundial',
+    stEye:'Nuestra Historia',stTitle:'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.',
+    stP1:'Somos Katherine, Alexia, Jissela y nuestra mama — una familia de cuatro mujeres que compartimos un gran amor: Hermes. Nuestra mama y Jissela son disenadoras. Katherine y Alexia? Completamente obsesionadas con las bolsas.',
+    stP2:'A lo largo de los anos construimos nuestra propia coleccion de Birkins, esperando hasta dos anos en lista de espera por una sola bolsa. Si lo sabes, lo sabes.',
+    stP3:'Cuando descubrimos el mini charm Birkin, nos enamoramos al instante. El detalle perfecto para colgar en cualquier bolsa — no solo una Birkin o una Kelly, sino cualquier bolsa que ya tengas y ames.',
+    stPunch:'"No necesitas una Birkin para usar uno. Y definitivamente no deberia tomarte dos anos sentir ese tipo de alegria."',
+    f1t:'Edicion Limitada',f1d:'Cuando se acaba, se acaba. Cada pieza es unica.',
+    f2t:'Calidad',f2d:'Fabricados con los mejores materiales disponibles.',
+    f3t:'Envio Mundial',f3d:'Enviamos a todo el mundo. Tu charm viaja contigo.',
+    f4t:'Gift Ready',f4d:'Empaque de lujo incluido. El regalo perfecto para ella.',
+    rEye:'Testimonios',rTitle:'Loved by you',igEye:'Instagram',
+    cEye:'Contacto',cTitle:'Lista para ordenar?',cSub:'Ordena por WhatsApp o Instagram.<br>Envio mundial. Respuesta en menos de 24 horas.',
+    cWa:'WhatsApp +52 55 2703 1153',cIg:'Instagram @imnotabirkin',cEmail:'imnotabirkin@hotmail.com',
+    buy:'Comprar',newBadge:'Nuevo',nl1:'Tienda',nl2:'Historia',nl3:'Contacto'
   }
 };
 
-function toggleLang() {
-  lang = lang === 'en' ? 'es' : 'en';
-  var t = translations[lang];
-  document.getElementById('langBtn').textContent = lang === 'en' ? 'ES' : 'EN';
-  document.getElementById('ann').innerHTML = t.ann;
-  document.querySelector('.heye').textContent = t.heroEye;
-  document.querySelector('.htitle').innerHTML = t.heroTitle + '<span>' + t.heroSpan + '</span>';
-  document.querySelector('.hsub').textContent = t.heroSub;
-  document.querySelector('.btn-dark').textContent = t.btnShop;
-  document.querySelector('.btn-outline').textContent = t.btnStory;
-  document.querySelector('.hnote').textContent = t.heroNote;
-  document.querySelectorAll('.sh-eye')[0].textContent = t.colEye;
-  document.querySelectorAll('.sh-title')[0].textContent = t.colTitle;
-  document.querySelectorAll('.sh-sub')[0].textContent = t.colSub;
-  document.querySelector('.seye').textContent = t.storyEye;
-  document.querySelector('.stitle').innerHTML = t.storyTitle;
-  document.querySelectorAll('.sp')[0].textContent = t.storyP1;
-  document.querySelectorAll('.sp')[1].textContent = t.storyP2;
-  document.querySelectorAll('.sp')[2].textContent = t.storyP3;
-  document.getElementById('storyPunchEl').textContent = t.storyPunch;
-  document.querySelectorAll('.ft')[0].textContent = t.f1t;
-  document.querySelectorAll('.fd')[0].textContent = t.f1d;
-  document.querySelectorAll('.ft')[1].textContent = t.f2t;
-  document.querySelectorAll('.fd')[1].textContent = t.f2d;
-  document.querySelectorAll('.ft')[2].textContent = t.f3t;
-  document.querySelectorAll('.fd')[2].textContent = t.f3d;
-  document.querySelectorAll('.ft')[3].textContent = t.f4t;
-  document.querySelectorAll('.fd')[3].textContent = t.f4d;
-  document.querySelectorAll('.sh-eye')[1].textContent = t.revEye;
-  document.querySelectorAll('.sh-title')[1].textContent = t.revTitle;
-  document.querySelector('.sh-eye.ig').textContent = t.igEye;
-  document.querySelector('.ctaEye').textContent = t.ctaEye;
-  document.querySelector('.ctaTitle').textContent = t.ctaTitle;
-  document.querySelector('.ctaSub').innerHTML = t.ctaSub;
-  document.querySelectorAll('.t-buy').forEach(function(el){el.textContent = t.buy});
-  document.querySelectorAll('.t-new').forEach(function(el){el.textContent = t.newBadge});
-  var tagEls = document.querySelectorAll('.ptagline');
-  tagEls.forEach(function(el, i){ el.textContent = t.tags[i]; });
-}
-
-function paypal(item) {
-  var url = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=alexiarivera%40gmail.com&item_name=' + encodeURIComponent('I\'m Not a Birkin – ' + item + ' Charm') + '&amount=29.99&currency_code=USD&button_subtype=services&no_note=0&bn=PP-BuyNowBF';
-  window.open(url, '_blank');
+function toggleLang(){
+  lang=lang==='en'?'es':'en';
+  var t=T[lang];
+  document.getElementById('langBtn').textContent=lang==='en'?'ES':'EN';
+  document.querySelector('.ann').textContent=t.ann;
+  document.getElementById('h-eye').textContent=t.hEye;
+  document.getElementById('h-title').innerHTML=t.hTitle;
+  document.getElementById('h-sub').textContent=t.hSub;
+  document.getElementById('h-btn1').textContent=t.hBtn1;
+  document.getElementById('h-btn2').textContent=t.hBtn2;
+  document.getElementById('h-note').textContent=t.hNote;
+  document.getElementById('s1').textContent=t.s1;
+  document.getElementById('s2').textContent=t.s2;
+  document.getElementById('s3').textContent=t.s3;
+  document.getElementById('p-eye').textContent=t.pEye;
+  document.getElementById('p-title').textContent=t.pTitle;
+  document.getElementById('p-sub').textContent=t.pSub;
+  document.getElementById('st-eye').textContent=t.stEye;
+  document.getElementById('st-title').innerHTML=t.stTitle;
+  document.getElementById('st-p1').textContent=t.stP1;
+  document.getElementById('st-p2').textContent=t.stP2;
+  document.getElementById('st-p3').textContent=t.stP3;
+  document.getElementById('st-punch').textContent=t.stPunch;
+  document.getElementById('f1t').textContent=t.f1t;document.getElementById('f1d').textContent=t.f1d;
+  document.getElementById('f2t').textContent=t.f2t;document.getElementById('f2d').textContent=t.f2d;
+  document.getElementById('f3t').textContent=t.f3t;document.getElementById('f3d').textContent=t.f3d;
+  document.getElementById('f4t').textContent=t.f4t;document.getElementById('f4d').textContent=t.f4d;
+  document.getElementById('r-eye').textContent=t.rEye;
+  document.getElementById('r-title').textContent=t.rTitle;
+  document.getElementById('ig-eye').textContent=t.igEye;
+  document.getElementById('c-eye').textContent=t.cEye;
+  document.getElementById('c-title').textContent=t.cTitle;
+  document.getElementById('c-sub').innerHTML=t.cSub;
+  document.getElementById('c-wa').textContent=t.cWa;
+  document.getElementById('c-ig').textContent=t.cIg;
+  document.getElementById('c-email').textContent=t.cEmail;
+  document.getElementById('nl1').textContent=t.nl1;
+  document.getElementById('nl2').textContent=t.nl2;
+  document.getElementById('nl3').textContent=t.nl3;
+  document.querySelectorAll('.t-buy').forEach(function(e){e.textContent=t.buy});
+  ['b1','b2','b3','b4'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=t.newBadge});
 }
 </script>
 </body>
