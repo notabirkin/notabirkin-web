@@ -7,8 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#F7F2EC;color:#1C1510;font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:#F7F2EC;color:#1C1510;font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;-webkit-text-size-adjust:100%}
 
 /* ANNOUNCE */
 .ann{background:#1C1510;color:#F7F2EC;text-align:center;padding:10px;font-size:8px;letter-spacing:5px;text-transform:uppercase}
@@ -61,10 +61,10 @@ nav{background:#F7F2EC;border-bottom:1px solid #E5DDD3;padding:0 26px;height:60p
 .strip-text{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#A89880;text-align:center}
 .mq-in{display:inline-block;animation:mq 30s linear infinite;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#C0AD98}
 .mq-in em{color:#1C1510;font-style:normal;margin:0 18px}
-.pname{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:#1C1510;margin-bottom:2px}
-.ptagline{font-size:11px;color:#C0AD98;margin-bottom:6px;font-style:italic}
-.pprice{font-size:13px;letter-spacing:2px;color:#C9A882;margin-bottom:10px;font-weight:400}
-.pbtn{width:100%;background:transparent;border:1px solid #DDD5C8;color:#1C1510;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:10px;cursor:pointer;transition:all 0.2s}
+.pname{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:#1C1510;margin-bottom:4px}
+.ptagline{font-size:13px;color:#C0AD98;margin-bottom:8px;font-style:italic}
+.pprice{font-size:15px;letter-spacing:2px;color:#C9A882;margin-bottom:12px;font-weight:400}
+.pbtn{width:100%;background:transparent;border:1px solid #DDD5C8;color:#1C1510;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:12px;cursor:pointer;transition:all 0.2s}
 .pbtn:hover{background:#1C1510;color:#F7F2EC;border-color:#1C1510}
 .seye{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C9A882;margin-bottom:12px}
 .stitle{font-family:'Cormorant Garamond',serif;font-size:34px;font-style:italic;font-weight:300;color:#1C1510;margin-bottom:16px;line-height:1.2}
@@ -392,12 +392,11 @@ footer{background:#1C1510;padding:46px 26px 24px}
   </div>
   <div class="sbody">
     <div class="seye" id="storyEyeEl">Our Story</div>
-    <div class="stitle" id="storyTitleEl">Born from a family<br>of women who love<br>beautiful things.</div>
-    <p class="sp" id="storyP1El">We are a family of five — four women and one very outnumbered man. Our mother and eldest sister Jissela are designers. The rest of us? Obsessed with bags. Hermès bags, to be exact.</p>
-    <p class="sp" id="storyP2El">Over the years, we built our own Birkin collection — one coveted piece at a time, sometimes waiting up to two years on a waitlist just to walk out of a store with one bag.</p>
-    <p class="sp" id="storyP3El">When we discovered the mini Birkin charm, we fell in love instantly. The perfect detail to hang from any bag — not just a Birkin or a Kelly, but any bag you already own and love.</p>
-    <p class="sp" id="storyP4El">So we decided to share that love. No two-year waitlist. No velvet ropes. Just a beautifully made charm, delivered to you, wherever you are in the world.</p>
-    <div class="ssig">— The I'm Not a Birkin Family ✦</div>
+    <div class="stitle" id="storyTitleEl">Four women.<br>One obsession.<br>Zero waitlists.</div>
+    <p class="sp" id="storyP1El">We are Katherine, Jissela, and our mother — a family of four women who share one great love: Hermès. Over the years, we patiently built our own Birkin collection, waiting up to two years on a waitlist for a single bag.</p>
+    <p class="sp" id="storyP2El">One day, we discovered the mini Birkin charm — and everything changed. It was perfect. The same iconic silhouette, the same instant love, but no waitlist, no barriers, available to anyone who loves a beautiful bag.</p>
+    <p class="sp" id="storyP3El">So we decided to share it with the world. Because you don't need a Birkin to wear one. And you definitely shouldn't have to wait two years to feel that kind of joy.</p>
+    <div class="ssig">— Katherine, Jissela & Mom ✦</div>
   </div>
 </div>
 
@@ -486,11 +485,11 @@ var translations = {
     colTitle: 'Find your charm',
     colSub: 'Limited edition · $29.99 USD each · Worldwide shipping',
     storyEye: 'Our Story',
-    storyTitle: 'Born from a family<br>of women who love<br>beautiful things.',
-    storyP1: 'We are a family of five — four women and one very outnumbered man. Our mother and eldest sister Jissela are designers. The rest of us? Obsessed with bags. Hermès bags, to be exact.',
-    storyP2: 'Over the years, we built our own Birkin collection — one coveted piece at a time, sometimes waiting up to two years on a waitlist just to walk out of a store with one bag.',
-    storyP3: 'When we discovered the mini Birkin charm, we fell in love instantly. The perfect detail to hang from any bag — not just a Birkin or a Kelly, but any bag you already own and love.',
-    storyP4: 'So we decided to share that love. No two-year waitlist. No velvet ropes. Just a beautifully made charm, delivered to you, wherever you are in the world.',
+    storyTitle: 'Four women.<br>One obsession.<br>Zero waitlists.',
+    storyP1: 'We are Katherine, Jissela, and our mother — a family of four women who share one great love: Hermès. Over the years, we patiently built our own Birkin collection, waiting up to two years on a waitlist for a single bag.',
+    storyP2: 'One day, we discovered the mini Birkin charm — and everything changed. It was perfect. The same iconic silhouette, the same instant love, but no waitlist, no barriers, available to anyone who loves a beautiful bag.',
+    storyP3: 'So we decided to share it with the world. Because you don\'t need a Birkin to wear one. And you definitely shouldn\'t have to wait two years to feel that kind of joy.',
+    storyP4: '',
     f1t:'Limited Edition', f1d:'When it\'s gone, it\'s gone. Every piece is unique.',
     f2t:'Handpicked', f2d:'Selected by hand with the finest materials.',
     f3t:'Worldwide', f3d:'We ship everywhere. Your charm travels with you.',
@@ -518,11 +517,11 @@ var translations = {
     colTitle: 'Encuentra tu charm',
     colSub: 'Edicion limitada · $29.99 USD c/u · Envio mundial',
     storyEye: 'Nuestra Historia',
-    storyTitle: 'Nacimos de una familia<br>de mujeres que aman<br>las cosas bonitas.',
-    storyP1: 'Somos una familia de cinco — cuatro mujeres y un hombre muy superado en numero. Nuestra mama y nuestra hermana mayor Jissela son disenadoras. Las demas? Obsesionadas con las bolsas. Las bolsas Hermes, para ser exactas.',
-    storyP2: 'A lo largo de los anos construimos nuestra propia coleccion de Birkins — una pieza a la vez, esperando hasta dos anos en lista de espera solo para poder salir de la tienda con una bolsa.',
-    storyP3: 'Cuando descubrimos el mini charm Birkin, nos enamoramos al instante. El detalle perfecto para colgar en cualquier bolsa — no solo una Birkin o una Kelly, sino cualquier bolsa que ya tengas y ames.',
-    storyP4: 'Decidimos compartir ese amor. Sin dos anos de espera. Sin ropes de terciopelo. Solo un charm bellamente hecho, enviado a ti, donde quiera que estes en el mundo.',
+    storyTitle: 'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.',
+    storyP1: 'Somos Katherine, Jissela y nuestra mama — una familia de cuatro mujeres que compartimos un gran amor: Hermes. A lo largo de los anos construimos nuestra propia coleccion de Birkins, esperando hasta dos anos en lista de espera por una sola bolsa.',
+    storyP2: 'Un dia descubrimos el mini charm Birkin — y todo cambio. Era perfecto. La misma silueta iconica, el mismo amor instantaneo, pero sin lista de espera, sin barreras, disponible para cualquiera que ame una bolsa bonita.',
+    storyP3: 'Decidimos compartirlo con el mundo. Porque no necesitas una Birkin para usar un charm. Y definitivamente no deberia tomarte dos anos sentir ese tipo de alegria.',
+    storyP4: '',
     f1t:'Edicion Limitada', f1d:'Cuando se acaba, se acaba. Cada pieza es unica.',
     f2t:'Seleccionados', f2d:'Elegidos a mano con los mejores materiales.',
     f3t:'Envio Mundial', f3d:'Enviamos a todo el mundo. Tu charm viaja contigo.',
