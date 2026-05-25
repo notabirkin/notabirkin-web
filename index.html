@@ -7,8 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:#F7F2EC;color:#1C1510;font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth}
+body{background:#F7F2EC;color:#1C1510;font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;-webkit-text-size-adjust:none;text-size-adjust:none}
 
 /* ANNOUNCE */
 .ann{background:#1C1510;color:#F7F2EC;text-align:center;padding:10px;font-size:8px;letter-spacing:5px;text-transform:uppercase}
@@ -393,10 +393,11 @@ footer{background:#1C1510;padding:46px 26px 24px}
   <div class="sbody">
     <div class="seye" id="storyEyeEl">Our Story</div>
     <div class="stitle" id="storyTitleEl">Four women.<br>One obsession.<br>Zero waitlists.</div>
-    <p class="sp" id="storyP1El">We are Katherine, Jissela, and our mother — a family of four women who share one great love: Hermès. Over the years, we patiently built our own Birkin collection, waiting up to two years on a waitlist for a single bag.</p>
-    <p class="sp" id="storyP2El">One day, we discovered the mini Birkin charm — and everything changed. It was perfect. The same iconic silhouette, the same instant love, but no waitlist, no barriers, available to anyone who loves a beautiful bag.</p>
-    <p class="sp" id="storyP3El">So we decided to share it with the world. Because you don't need a Birkin to wear one. And you definitely shouldn't have to wait two years to feel that kind of joy.</p>
-    <div class="ssig">— Katherine, Jissela & Mom ✦</div>
+    <p class="sp" id="storyP1El">We are Katherine, Alexia, Jissela, and our mother — a family of four women who share one great love: Hermès. Our mother and Jissela are designers. Katherine and Alexia? Completely obsessed with bags.</p>
+    <p class="sp" id="storyP2El">Over the years, we patiently built our own Birkin collection, waiting up to two years on a waitlist for a single bag. If you know, you know.</p>
+    <p class="sp" id="storyP3El">When we discovered the mini Birkin charm, we fell in love instantly. The perfect detail to hang from any bag — not just a Birkin or a Kelly, but any bag you already own and love.</p>
+    <div class="story-punch" id="storyPunchEl">"You don't need a Birkin to wear one. And you definitely shouldn't have to wait two years to feel that kind of joy."</div>
+    <div class="ssig">— Katherine, Alexia, Jissela & Mom ✦</div>
   </div>
 </div>
 
@@ -486,9 +487,10 @@ var translations = {
     colSub: 'Limited edition · $29.99 USD each · Worldwide shipping',
     storyEye: 'Our Story',
     storyTitle: 'Four women.<br>One obsession.<br>Zero waitlists.',
-    storyP1: 'We are Katherine, Jissela, and our mother — a family of four women who share one great love: Hermès. Over the years, we patiently built our own Birkin collection, waiting up to two years on a waitlist for a single bag.',
-    storyP2: 'One day, we discovered the mini Birkin charm — and everything changed. It was perfect. The same iconic silhouette, the same instant love, but no waitlist, no barriers, available to anyone who loves a beautiful bag.',
-    storyP3: 'So we decided to share it with the world. Because you don\'t need a Birkin to wear one. And you definitely shouldn\'t have to wait two years to feel that kind of joy.',
+    storyP1: 'We are Katherine, Alexia, Jissela, and our mother — a family of four women who share one great love: Hermès. Our mother and Jissela are designers. Katherine and Alexia? Completely obsessed with bags.',
+    storyP2: 'Over the years, we patiently built our own Birkin collection, waiting up to two years on a waitlist for a single bag. If you know, you know.',
+    storyP3: 'When we discovered the mini Birkin charm, we fell in love instantly. The perfect detail to hang from any bag — not just a Birkin or a Kelly, but any bag you already own and love.',
+    storyPunch: '"You don\'t need a Birkin to wear one. And you definitely shouldn\'t have to wait two years to feel that kind of joy."',
     storyP4: '',
     f1t:'Limited Edition', f1d:'When it\'s gone, it\'s gone. Every piece is unique.',
     f2t:'Handpicked', f2d:'Selected by hand with the finest materials.',
@@ -518,9 +520,10 @@ var translations = {
     colSub: 'Edicion limitada · $29.99 USD c/u · Envio mundial',
     storyEye: 'Nuestra Historia',
     storyTitle: 'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.',
-    storyP1: 'Somos Katherine, Jissela y nuestra mama — una familia de cuatro mujeres que compartimos un gran amor: Hermes. A lo largo de los anos construimos nuestra propia coleccion de Birkins, esperando hasta dos anos en lista de espera por una sola bolsa.',
-    storyP2: 'Un dia descubrimos el mini charm Birkin — y todo cambio. Era perfecto. La misma silueta iconica, el mismo amor instantaneo, pero sin lista de espera, sin barreras, disponible para cualquiera que ame una bolsa bonita.',
-    storyP3: 'Decidimos compartirlo con el mundo. Porque no necesitas una Birkin para usar un charm. Y definitivamente no deberia tomarte dos anos sentir ese tipo de alegria.',
+    storyP1: 'Somos Katherine, Alexia, Jissela y nuestra mama — una familia de cuatro mujeres que compartimos un gran amor: Hermes. Nuestra mama y Jissela son disenadoras. Katherine y Alexia? Completamente obsesionadas con las bolsas.',
+    storyP2: 'A lo largo de los anos construimos nuestra propia coleccion de Birkins, esperando hasta dos anos en lista de espera por una sola bolsa. Si lo sabes, lo sabes.',
+    storyP3: 'Cuando descubrimos el mini charm Birkin, nos enamoramos al instante. El detalle perfecto para colgar en cualquier bolsa — no solo una Birkin o una Kelly, sino cualquier bolsa que ya tengas y ames.',
+    storyPunch: '"No necesitas una Birkin para usar uno. Y definitivamente no deberia tomarte dos anos sentir ese tipo de alegria."',
     storyP4: '',
     f1t:'Edicion Limitada', f1d:'Cuando se acaba, se acaba. Cada pieza es unica.',
     f2t:'Seleccionados', f2d:'Elegidos a mano con los mejores materiales.',
@@ -557,7 +560,7 @@ function toggleLang() {
   document.querySelectorAll('.sp')[0].textContent = t.storyP1;
   document.querySelectorAll('.sp')[1].textContent = t.storyP2;
   document.querySelectorAll('.sp')[2].textContent = t.storyP3;
-  document.querySelectorAll('.sp')[3].textContent = t.storyP4;
+  document.getElementById('storyPunchEl').textContent = t.storyPunch;
   document.querySelectorAll('.ft')[0].textContent = t.f1t;
   document.querySelectorAll('.fd')[0].textContent = t.f1d;
   document.querySelectorAll('.ft')[1].textContent = t.f2t;
