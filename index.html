@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Not a Birkin – I'm a Charm</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#F7F2EC;color:#1C1510;font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* ANNOUNCE */
+.ann{background:#1C1510;color:#F7F2EC;text-align:center;padding:10px;font-size:8px;letter-spacing:5px;text-transform:uppercase}
+.ann span{color:#C9A882;margin:0 8px}
+
+/* NAV */
+nav{background:#F7F2EC;border-bottom:1px solid #E5DDD3;padding:0 26px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99}
+.nlinks{display:flex;gap:0}
+.nlinks a{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#A89880;text-decoration:none;margin-right:20px}
+.nlinks a:hover{color:#1C1510}
+.nlogo{text-align:center;flex:1}
+.nlogo-m{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;letter-spacing:2px;color:#1C1510}
+.nlogo-s{font-size:6px;letter-spacing:6px;text-transform:uppercase;color:#C9A882;margin-top:2px}
+.nicons{display:flex;gap:16px;color:#A89880;font-size:13px;cursor:pointer}
+
+/* HERO */
+.hero{background:linear-gradient(170deg,#F7F2EC 0%,#F0E8DC 50%,#E8DDD0 100%);min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 26px 60px;position:relative;overflow:hidden;border-bottom:1px solid #E5DDD3}
+.hero-dec{position:absolute;border-radius:50%;border:1px solid rgba(201,168,130,0.2);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.d1{width:520px;height:520px}
+.d2{width:370px;height:370px}
+.heye{font-size:7px;letter-spacing:7px;text-transform:uppercase;color:#C9A882;margin-bottom:26px}
+.htitle{font-family:'Cormorant Garamond',serif;font-size:58px;font-style:italic;font-weight:300;color:#1C1510;line-height:0.95;margin-bottom:10px}
+.htitle span{display:block;font-size:42px;color:#C9A882}
+.hsub{font-size:7px;letter-spacing:6px;text-transform:uppercase;color:#C0AD98;margin-bottom:52px}
+.btn-dark{background:#1C1510;color:#F7F2EC;font-family:'Jost',sans-serif;font-size:7px;letter-spacing:5px;text-transform:uppercase;padding:15px 46px;border:none;cursor:pointer;display:block;margin:0 auto 12px;transition:opacity 0.2s}
+.btn-dark:hover{opacity:0.85}
+.btn-outline{background:transparent;color:#1C1510;font-family:'Jost',sans-serif;font-size:7px;letter-spacing:5px;text-transform:uppercase;padding:14px 46px;border:1px solid #D5C9B8;cursor:pointer;display:block;margin:0 auto;transition:all 0.2s}
+.btn-outline:hover{background:#1C1510;color:#F7F2EC}
+.hnote{margin-top:50px;font-size:7px;letter-spacing:4px;text-transform:uppercase;color:#D5C9B8}
+
+/* STRIP */
+.strip{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid #E5DDD3}
+.strip-item{height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid #E5DDD3;padding:20px;gap:10px}
+.strip-item:last-child{border-right:none}
+.strip-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;color:#C9A882}
+.strip-text{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#A89880;text-align:center}
+
+/* MARQUEE */
+.mq{border-top:1px solid #E5DDD3;border-bottom:1px solid #E5DDD3;padding:12px 0;overflow:hidden;white-space:nowrap;background:#F0E8DC}
+.mq-in{display:inline-block;animation:mq 30s linear infinite;font-size:7px;letter-spacing:5px;text-transform:uppercase;color:#C0AD98}
+.mq-in em{color:#1C1510;font-style:normal;margin:0 18px}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTION HEADER */
+.sh{text-align:center;padding:56px 26px 34px;background:#F7F2EC}
+.sh-eye{font-size:7px;letter-spacing:5px;text-transform:uppercase;color:#C9A882;margin-bottom:14px}
+.sh-title{font-family:'Cormorant Garamond',serif;font-size:38px;font-style:italic;font-weight:300;color:#1C1510}
+.sh-sub{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#C0AD98;margin-top:10px}
+
+/* PRODUCTS */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;margin:0 14px 60px;border:1px solid #E5DDD3;border-right:none;border-bottom:none}
+.pcard{border-right:1px solid #E5DDD3;border-bottom:1px solid #E5DDD3;background:#FAF6F1;cursor:pointer;transition:background 0.2s}
+.pcard:hover{background:#F3EDE4}
+.pimg{height:180px;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #E5DDD3;overflow:hidden}
+.pimg-placeholder{width:80px;height:72px;border-radius:6px 6px 12px 12px;position:relative;display:flex;align-items:center;justify-content:center}
+.pimg-handle{width:36px;height:22px;border-width:5px;border-style:solid;border-bottom:none;border-radius:12px 12px 0 0;position:absolute;top:-18px;left:50%;transform:translateX(-50%)}
+.pimg-clasp{width:14px;height:10px;background:rgba(255,255,255,0.4);border-radius:2px}
+.pbadge{position:absolute;top:0;left:0;background:#1C1510;color:#F7F2EC;font-size:6px;letter-spacing:3px;text-transform:uppercase;padding:4px 9px}
+.pbody{padding:14px}
+.pname{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#1C1510;margin-bottom:2px}
+.ptagline{font-size:8px;color:#C0AD98;margin-bottom:6px;font-style:italic}
+.pprice{font-size:10px;letter-spacing:2px;color:#C9A882;margin-bottom:10px;font-weight:400}
+.pbtn{width:100%;background:transparent;border:1px solid #DDD5C8;color:#1C1510;font-family:'Jost',sans-serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;padding:9px;cursor:pointer;transition:all 0.2s}
+.pbtn:hover{background:#1C1510;color:#F7F2EC;border-color:#1C1510}
+
+/* STORY */
+.story{background:#EDE4D8;border-top:1px solid #E5DDD3;border-bottom:1px solid #E5DDD3}
+.simg{height:260px;background:linear-gradient(160deg,#E8DECE,#DDD0BC,#D0C0A8);display:flex;align-items:center;justify-content:center;border-bottom:1px solid #D8CEBB}
+.simg-inner{text-align:center}
+.simg-title{font-family:'Cormorant Garamond',serif;font-size:48px;font-style:italic;color:#1C1510;opacity:0.3}
+.sbody{padding:46px 26px}
+.seye{font-size:7px;letter-spacing:5px;text-transform:uppercase;color:#C9A882;margin-bottom:12px}
+.stitle{font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;font-weight:300;color:#1C1510;margin-bottom:16px;line-height:1.2}
+.sp{font-size:11px;color:#9A8878;line-height:1.9;margin-bottom:12px}
+.ssig{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:#C9A882;margin-top:8px}
+
+/* FEATURES */
+.feats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #E5DDD3;background:#F7F2EC}
+.feat{padding:28px 16px;text-align:center;border-right:1px solid #E5DDD3;border-bottom:1px solid #E5DDD3}
+.feat:nth-child(even){border-right:none}
+.fsym{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C9A882;margin-bottom:8px}
+.ft{font-size:7px;letter-spacing:4px;text-transform:uppercase;color:#1C1510;margin-bottom:6px}
+.fd{font-size:10px;color:#A89880;line-height:1.6}
+
+/* REVIEWS */
+.revs{padding:58px 26px;background:#FAF6F1;border-top:1px solid #E5DDD3}
+.rcard{border-top:1px solid #EEE6DC;padding:22px 0}
+.rcard:first-child{border-top:none;padding-top:0}
+.rstars{color:#C9A882;letter-spacing:3px;font-size:10px;margin-bottom:8px}
+.rq{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;font-weight:300;color:#1C1510;line-height:1.7;margin-bottom:8px}
+.rby{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#C0AD98}
+
+/* INSTAGRAM */
+.ig-sec{border-top:1px solid #E5DDD3;padding-bottom:56px;background:#F7F2EC}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E5DDD3;margin-bottom:14px}
+.ig-cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#A89880;background:#FAF6F1}
+.ig-cta{text-align:center;padding:6px;font-size:7px;letter-spacing:5px;text-transform:uppercase;color:#C9A882}
+
+/* CONTACT */
+.contact{background:#EDE4D8;border-top:1px solid #E5DDD3;padding:48px 26px;text-align:center}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;font-weight:300;color:#1C1510;margin-bottom:10px}
+.contact-sub{font-size:10px;color:#9A8878;margin-bottom:24px;line-height:1.8}
+.contact-links{display:flex;flex-direction:column;align-items:center;gap:12px}
+.contact-btn{display:flex;align-items:center;gap:10px;background:#1C1510;color:#F7F2EC;font-family:'Jost',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;padding:13px 28px;text-decoration:none;transition:opacity 0.2s}
+.contact-btn:hover{opacity:0.85}
+.contact-btn.wa{background:#C9A882}
+
+/* FOOTER */
+footer{background:#1C1510;padding:46px 26px 24px}
+.flogo{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#F7F2EC;text-align:center;margin-bottom:4px}
+.ftag{font-size:6px;letter-spacing:6px;text-transform:uppercase;color:#C9A882;text-align:center;margin-bottom:30px}
+.flinks{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.flinks a{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#4A3828;text-decoration:none}
+.flinks a:hover{color:#C9A882}
+.fline{height:1px;background:#2A1E14;margin-bottom:16px}
+.fcopy{text-align:center;font-size:7px;letter-spacing:2px;color:#3A2818}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCE -->
+<div class="ann">Free worldwide shipping on orders over $60 USD <span>·</span> Limited edition <span>·</span> Handpicked</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nlinks">
+    <a href="#shop">Shop</a>
+    <a href="#story">Story</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nlogo">
+    <div class="nlogo-m">I'm not a Birkin</div>
+    <div class="nlogo-s">I'm a charm</div>
+  </div>
+  <div class="nicons">
+    <a href="https://instagram.com/imnotabirkin" target="_blank" style="color:#A89880;text-decoration:none;font-size:8px;letter-spacing:2px">IG</a>
+    <a href="https://wa.me/525527031153" target="_blank" style="color:#A89880;text-decoration:none;font-size:8px;letter-spacing:2px">WA</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-dec d1"></div>
+  <div class="hero-dec d2"></div>
+  <div class="heye">Collection 2025 · Limited Edition</div>
+  <h1 class="htitle">Not a Birkin.<br><span>A charm.</span></h1>
+  <p class="hsub">Mini bag charms · Handpicked · Worldwide shipping</p>
+  <button class="btn-dark" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop the collection</button>
+  <button class="btn-outline" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Our story</button>
+  <p class="hnote">✦ &nbsp; 12 colors available &nbsp; ✦ &nbsp; Limited pieces &nbsp; ✦</p>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item" style="background:#F0E8DC">
+    <div class="strip-num">12</div>
+    <div class="strip-text">Colors available</div>
+  </div>
+  <div class="strip-item" style="background:#EDE4D8">
+    <div class="strip-num">∞</div>
+    <div class="strip-text">Worldwide shipping</div>
+  </div>
+  <div class="strip-item" style="background:#E8DDD0">
+    <div class="strip-num">✦</div>
+    <div class="strip-text">Limited edition only</div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="mq">
+  <div class="mq-in">Not a Birkin <em>·</em> I'm a Charm <em>·</em> Limited Edition <em>·</em> Handpicked <em>·</em> Worldwide Shipping <em>·</em> 12 Colors <em>·</em> Not a Birkin <em>·</em> I'm a Charm <em>·</em> Limited Edition <em>·</em> Handpicked <em>·</em> Worldwide Shipping <em>·</em> 12 Colors <em>·</em></div>
+</div>
+
+<!-- PRODUCTS -->
+<div id="shop">
+  <div class="sh">
+    <div class="sh-eye">The Collection</div>
+    <div class="sh-title">Find your charm</div>
+    <div class="sh-sub">Limited edition · $29.99 USD each · Worldwide shipping</div>
+  </div>
+
+  <div class="pgrid">
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#1a1a1a,#2d2d2d)">
+        <div class="pbadge">New</div>
+        <div class="pimg-placeholder" style="background:#111">
+          <div class="pimg-handle" style="border-color:#333"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">No Explanations</div>
+        <div class="ptagline">Elegant, secure, needs no validation.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the No Explanations charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#1a3d2a,#2d6644)">
+        <div class="pbadge">New</div>
+        <div class="pimg-placeholder" style="background:#2d6644">
+          <div class="pimg-handle" style="border-color:#1a3d2a"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Money Energy</div>
+        <div class="ptagline">Wealth, abundance, statement.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Money Energy charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#5c3317,#8B4513)">
+        <div class="pimg-placeholder" style="background:#8B4513">
+          <div class="pimg-handle" style="border-color:#5c3317"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Rich Taste</div>
+        <div class="ptagline">Classic, sophisticated, timeless.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Rich Taste charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#b8960a,#D4A830)">
+        <div class="pimg-placeholder" style="background:#D4A830">
+          <div class="pimg-handle" style="border-color:#b8960a"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Sun Status</div>
+        <div class="ptagline">Shine, attention, happiness.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Sun Status charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#6a5a9a,#9870C0)">
+        <div class="pimg-placeholder" style="background:#9870C0">
+          <div class="pimg-handle" style="border-color:#6a5a9a"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Soft Power</div>
+        <div class="ptagline">Feminine but powerful.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Soft Power charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#C9A882,#E8D0A8)">
+        <div class="pimg-placeholder" style="background:#C9A882">
+          <div class="pimg-handle" style="border-color:#a8885a"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Fresh Money</div>
+        <div class="ptagline">New luxury, cool, modern.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Fresh Money charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#c04010,#E8602A)">
+        <div class="pbadge">New</div>
+        <div class="pimg-placeholder" style="background:#E8602A">
+          <div class="pimg-handle" style="border-color:#c04010"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Signature Heat</div>
+        <div class="ptagline">Not a color. A signature.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Signature Heat charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#e8e4dc,#f5f2ec)">
+        <div class="pimg-placeholder" style="background:#f0ede8;border:1px solid #ddd">
+          <div class="pimg-handle" style="border-color:#ccc"></div>
+          <div class="pimg-clasp" style="background:rgba(0,0,0,0.1)"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Clean Luxury</div>
+        <div class="ptagline">Minimalist, expensive, effortless.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Clean Luxury charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#d87090,#F0A0B8)">
+        <div class="pimg-placeholder" style="background:#F0A0B8">
+          <div class="pimg-handle" style="border-color:#d87090"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Soft Statement</div>
+        <div class="ptagline">Delicate but with presence.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Soft Statement charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#8a0a18,#C01830)">
+        <div class="pimg-placeholder" style="background:#C01830">
+          <div class="pimg-handle" style="border-color:#8a0a18"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Red Affair</div>
+        <div class="ptagline">Intense, bold, seductive.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Red Affair charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#c0306a,#E8508A)">
+        <div class="pbadge">New</div>
+        <div class="pimg-placeholder" style="background:#E8508A">
+          <div class="pimg-handle" style="border-color:#c0306a"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Main Character</div>
+        <div class="ptagline">Total protagonist, never goes unnoticed.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Main Character charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pimg" style="background:linear-gradient(160deg,#5a7a60,#88A888)">
+        <div class="pimg-placeholder" style="background:#88A888">
+          <div class="pimg-handle" style="border-color:#5a7a60"></div>
+          <div class="pimg-clasp"></div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="pname">Quiet Power</div>
+        <div class="ptagline">Discreet luxury, old money vibe.</div>
+        <div class="pprice">$29.99 USD</div>
+        <button class="pbtn" onclick="window.open('https://wa.me/525527031153?text=Hi! I want to order the Quiet Power charm','_blank')">Order via WhatsApp</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MARQUEE 2 -->
+<div class="mq">
+  <div class="mq-in">No Explanations <em>·</em> Money Energy <em>·</em> Rich Taste <em>·</em> Sun Status <em>·</em> Soft Power <em>·</em> Fresh Money <em>·</em> Signature Heat <em>·</em> Clean Luxury <em>·</em> Soft Statement <em>·</em> Red Affair <em>·</em> Main Character <em>·</em> Quiet Power <em>·</em> No Explanations <em>·</em> Money Energy <em>·</em> Rich Taste <em>·</em> Sun Status <em>·</em> Soft Power <em>·</em> Fresh Money <em>·</em></div>
+</div>
+
+<!-- STORY -->
+<div id="story" class="story">
+  <div class="simg">
+    <div class="simg-inner">
+      <div class="simg-title">I'm a charm.</div>
+    </div>
+  </div>
+  <div class="sbody">
+    <div class="seye">Our Story</div>
+    <div class="stitle">Not a Birkin.<br>The detail that<br>makes it yours.</div>
+    <p class="sp">Every charm was born from the idea that the small details make all the difference. Limited, handpicked, chosen with care for women who love luxury with their own personality.</p>
+    <p class="sp">Your bag is already perfect. We just make it more you.</p>
+    <div class="ssig">— I'm a charm ✦</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="feats">
+  <div class="feat"><div class="fsym">i</div><div class="ft">Limited Edition</div><div class="fd">When it's gone, it's gone. Every piece is unique.</div></div>
+  <div class="feat"><div class="fsym">ii</div><div class="ft">Handpicked</div><div class="fd">Selected by hand with the finest materials.</div></div>
+  <div class="feat"><div class="fsym">iii</div><div class="ft">Worldwide</div><div class="fd">We ship everywhere. Your charm travels with you.</div></div>
+  <div class="feat"><div class="fsym">iv</div><div class="ft">Gift Ready</div><div class="fd">Luxury packaging included. Perfect gift for her.</div></div>
+</div>
+
+<!-- REVIEWS -->
+<div class="sh"><div class="sh-eye">Reviews</div><div class="sh-title">Loved by you</div></div>
+<div class="revs">
+  <div class="rcard">
+    <div class="rstars">★ ★ ★ ★ ★</div>
+    <div class="rq">"I put it on my orange Birkin and it looks perfect. Everyone asks me where I got it."</div>
+    <div class="rby">Sofia R. · Mexico City</div>
+  </div>
+  <div class="rcard">
+    <div class="rstars">★ ★ ★ ★ ★</div>
+    <div class="rq">"The quality is incredible. It looks like fine jewelry and goes with absolutely everything."</div>
+    <div class="rby">Valentina M. · Guadalajara</div>
+  </div>
+  <div class="rcard">
+    <div class="rstars">★ ★ ★ ★ ★</div>
+    <div class="rq">"It arrived in beautiful packaging. My Kelly has never looked so good."</div>
+    <div class="rby">Isabella C. · Miami</div>
+  </div>
+</div>
+
+<!-- INSTAGRAM -->
+<div class="ig-sec">
+  <div class="sh"><div class="sh-eye">Instagram</div><div class="sh-title">@imnotabirkin</div></div>
+  <div class="ig-grid">
+    <div class="ig-cell" style="background:#1a3d2a;color:#4a9a6a">Money Energy</div>
+    <div class="ig-cell" style="background:#FADADD;color:#c06080">Soft Statement</div>
+    <div class="ig-cell" style="background:#F8EAB0;color:#a07820">Sun Status</div>
+    <div class="ig-cell" style="background:#E8D8F8;color:#6040a0">Soft Power</div>
+    <div class="ig-cell" style="background:#1a1a1a;color:#888">No Explanations</div>
+    <div class="ig-cell" style="background:#F0C0D0;color:#c05070">Main Character</div>
+  </div>
+  <div class="ig-cta"><a href="https://instagram.com/imnotabirkin" target="_blank" style="color:#C9A882;text-decoration:none;font-size:7px;letter-spacing:5px;text-transform:uppercase">Follow us · @imnotabirkin</a></div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="contact">
+  <div class="sh-eye">Get in touch</div>
+  <div class="contact-title">Ready to order?</div>
+  <p class="contact-sub">Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.</p>
+  <div class="contact-links">
+    <a href="https://wa.me/525527031153?text=Hi! I want to place an order" target="_blank" class="contact-btn wa">WhatsApp +52 55 2703 1153</a>
+    <a href="https://instagram.com/imnotabirkin" target="_blank" class="contact-btn">Instagram @imnotabirkin</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="flogo">I'm not a Birkin</div>
+  <div class="ftag">I'm a charm · notabirkin.com</div>
+  <div class="flinks">
+    <a href="#shop">Shop</a>
+    <a href="#story">Our Story</a>
+    <a href="https://instagram.com/imnotabirkin" target="_blank">Instagram</a>
+    <a href="https://wa.me/525527031153" target="_blank">WhatsApp</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="fline"></div>
+  <div class="fcopy">© 2025 I'm not a Birkin · notabirkin.com · All rights reserved</div>
+</footer>
+
+</body>
+</html>
