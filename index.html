@@ -391,11 +391,13 @@ footer{background:#1C1510;padding:46px 26px 24px}
     </div>
   </div>
   <div class="sbody">
-    <div class="seye">Our Story</div>
-    <div class="stitle">Not a Birkin.<br>The detail that<br>makes it yours.</div>
-    <p class="sp">Every charm was born from the idea that the small details make all the difference. Limited, handpicked, chosen with care for women who love luxury with their own personality.</p>
-    <p class="sp">Your bag is already perfect. We just make it more you.</p>
-    <div class="ssig">— I'm a charm ✦</div>
+    <div class="seye" id="storyEyeEl">Our Story</div>
+    <div class="stitle" id="storyTitleEl">Born from a family<br>of women who love<br>beautiful things.</div>
+    <p class="sp" id="storyP1El">We are a family of five — four women and one very outnumbered man. Our mother and eldest sister Jissela are designers. The rest of us? Obsessed with bags. Hermès bags, to be exact.</p>
+    <p class="sp" id="storyP2El">Over the years, we built our own Birkin collection — one coveted piece at a time, sometimes waiting up to two years on a waitlist just to walk out of a store with one bag.</p>
+    <p class="sp" id="storyP3El">When we discovered the mini Birkin charm, we fell in love instantly. The perfect detail to hang from any bag — not just a Birkin or a Kelly, but any bag you already own and love.</p>
+    <p class="sp" id="storyP4El">So we decided to share that love. No two-year waitlist. No velvet ropes. Just a beautifully made charm, delivered to you, wherever you are in the world.</p>
+    <div class="ssig">— The I'm Not a Birkin Family ✦</div>
   </div>
 </div>
 
@@ -484,9 +486,11 @@ var translations = {
     colTitle: 'Find your charm',
     colSub: 'Limited edition · $29.99 USD each · Worldwide shipping',
     storyEye: 'Our Story',
-    storyTitle: 'Not a Birkin.<br>The detail that<br>makes it yours.',
-    storyP1: 'Every charm was born from the idea that the small details make all the difference. Limited, handpicked, chosen with care for women who love luxury with their own personality.',
-    storyP2: 'Your bag is already perfect. We just make it more you.',
+    storyTitle: 'Born from a family<br>of women who love<br>beautiful things.',
+    storyP1: 'We are a family of five — four women and one very outnumbered man. Our mother and eldest sister Jissela are designers. The rest of us? Obsessed with bags. Hermès bags, to be exact.',
+    storyP2: 'Over the years, we built our own Birkin collection — one coveted piece at a time, sometimes waiting up to two years on a waitlist just to walk out of a store with one bag.',
+    storyP3: 'When we discovered the mini Birkin charm, we fell in love instantly. The perfect detail to hang from any bag — not just a Birkin or a Kelly, but any bag you already own and love.',
+    storyP4: 'So we decided to share that love. No two-year waitlist. No velvet ropes. Just a beautifully made charm, delivered to you, wherever you are in the world.',
     f1t:'Limited Edition', f1d:'When it\'s gone, it\'s gone. Every piece is unique.',
     f2t:'Handpicked', f2d:'Selected by hand with the finest materials.',
     f3t:'Worldwide', f3d:'We ship everywhere. Your charm travels with you.',
@@ -514,9 +518,11 @@ var translations = {
     colTitle: 'Encuentra tu charm',
     colSub: 'Edicion limitada · $29.99 USD c/u · Envio mundial',
     storyEye: 'Nuestra Historia',
-    storyTitle: 'No soy un Birkin.<br>El detalle que<br>lo hace tuyo.',
-    storyP1: 'Cada charm nace de la idea de que los pequenos detalles hacen la diferencia. Limitados, elegidos a mano, para mujeres que aman el lujo con personalidad propia.',
-    storyP2: 'Tu bolsa ya es perfecta. Nosotros solo la hacemos mas tuya.',
+    storyTitle: 'Nacimos de una familia<br>de mujeres que aman<br>las cosas bonitas.',
+    storyP1: 'Somos una familia de cinco — cuatro mujeres y un hombre muy superado en numero. Nuestra mama y nuestra hermana mayor Jissela son disenadoras. Las demas? Obsesionadas con las bolsas. Las bolsas Hermes, para ser exactas.',
+    storyP2: 'A lo largo de los anos construimos nuestra propia coleccion de Birkins — una pieza a la vez, esperando hasta dos anos en lista de espera solo para poder salir de la tienda con una bolsa.',
+    storyP3: 'Cuando descubrimos el mini charm Birkin, nos enamoramos al instante. El detalle perfecto para colgar en cualquier bolsa — no solo una Birkin o una Kelly, sino cualquier bolsa que ya tengas y ames.',
+    storyP4: 'Decidimos compartir ese amor. Sin dos anos de espera. Sin ropes de terciopelo. Solo un charm bellamente hecho, enviado a ti, donde quiera que estes en el mundo.',
     f1t:'Edicion Limitada', f1d:'Cuando se acaba, se acaba. Cada pieza es unica.',
     f2t:'Seleccionados', f2d:'Elegidos a mano con los mejores materiales.',
     f3t:'Envio Mundial', f3d:'Enviamos a todo el mundo. Tu charm viaja contigo.',
@@ -551,6 +557,8 @@ function toggleLang() {
   document.querySelector('.stitle').innerHTML = t.storyTitle;
   document.querySelectorAll('.sp')[0].textContent = t.storyP1;
   document.querySelectorAll('.sp')[1].textContent = t.storyP2;
+  document.querySelectorAll('.sp')[2].textContent = t.storyP3;
+  document.querySelectorAll('.sp')[3].textContent = t.storyP4;
   document.querySelectorAll('.ft')[0].textContent = t.f1t;
   document.querySelectorAll('.fd')[0].textContent = t.f1d;
   document.querySelectorAll('.ft')[1].textContent = t.f2t;
