@@ -171,7 +171,78 @@ footer{background:#1C1510;padding:48px 28px 28px}
   </div>
 </nav>
 
-<div class="mob-overlay" id="mobOverlay" onclick="closeMenu()"></div>
+<!-- ORDER MODAL -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-header-eye">I'm not a Birkin · I'm a Charm</div>
+      <div class="modal-header-title">Complete your order</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-charm">
+        <div>
+          <div class="modal-charm-label">Your charm</div>
+          <div class="modal-charm-name" id="modal-charm-name">—</div>
+        </div>
+      </div>
+      <form id="orderForm" action="https://formspree.io/f/maqkpdew" method="POST">
+        <input type="hidden" name="charm" id="form-charm">
+        <input type="hidden" name="price" id="form-price">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="full_name" placeholder="Katherine Rivera" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="hello@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" name="phone" placeholder="+52 55 0000 0000" required>
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" name="address" placeholder="Street, number, apartment" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" name="city" placeholder="Mexico City" required>
+          </div>
+          <div class="form-group">
+            <label>ZIP Code</label>
+            <input type="text" name="zip" placeholder="06600" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <select name="country" required>
+            <option value="">Select...</option>
+            <option>Mexico</option>
+            <option>United States</option>
+            <option>Canada</option>
+            <option>Spain</option>
+            <option>Colombia</option>
+            <option>Argentina</option>
+            <option>Chile</option>
+            <option>Peru</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Notes (optional)</label>
+          <input type="text" name="notes" placeholder="Special delivery instructions...">
+        </div>
+        <div class="modal-divider"></div>
+        <p class="modal-note">✦ &nbsp; Your info is sent securely. After submitting you'll be directed to PayPal to complete your payment. &nbsp; ✦</p>
+        <button type="submit" class="btn-paypal" id="submit-btn">Continue to PayPal →</button>
+        <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 <div class="mob-menu" id="mobMenu">
   <button class="mob-close" onclick="closeMenu()">✕</button>
   <a href="#shop" onclick="closeMenu()">Shop</a>
@@ -217,7 +288,7 @@ footer{background:#1C1510;padding:48px 28px 28px}
         <div class="pbadge" id="b1">New</div>
         <div class="charm" style="background:#1a1a1a"><div class="charm-h" style="border-color:#333"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">No Explanations</div><div class="pdesc">Elegant, secure, needs no validation.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('No Explanations')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">No Explanations</div><div class="pdesc">Elegant, secure, needs no validation.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('No Explanations')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
@@ -225,35 +296,35 @@ footer{background:#1C1510;padding:48px 28px 28px}
         <div class="pbadge" id="b2">New</div>
         <div class="charm" style="background:#2d6644"><div class="charm-h" style="border-color:#1a3d2a"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Money Energy</div><div class="pdesc">Wealth, abundance, statement.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Money Energy')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Money Energy</div><div class="pdesc">Wealth, abundance, statement.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Money Energy')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#5c3317,#8B4513)">
         <div class="charm" style="background:#8B4513"><div class="charm-h" style="border-color:#5c3317"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Rich Taste</div><div class="pdesc">Classic, sophisticated, timeless.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Rich Taste')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Rich Taste</div><div class="pdesc">Classic, sophisticated, timeless.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Rich Taste')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#b8960a,#D4A830)">
         <div class="charm" style="background:#D4A830"><div class="charm-h" style="border-color:#b8960a"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Sun Status</div><div class="pdesc">Shine, attention, happiness.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Sun Status')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Sun Status</div><div class="pdesc">Shine, attention, happiness.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Sun Status')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#6a5a9a,#9870C0)">
         <div class="charm" style="background:#9870C0"><div class="charm-h" style="border-color:#6a5a9a"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Soft Power</div><div class="pdesc">Feminine but powerful.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Soft Power')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Soft Power</div><div class="pdesc">Feminine but powerful.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Soft Power')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#a87840,#C9A882)">
         <div class="charm" style="background:#C9A882"><div class="charm-h" style="border-color:#a87840"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Fresh Money</div><div class="pdesc">New luxury, cool, modern.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Fresh Money')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Fresh Money</div><div class="pdesc">New luxury, cool, modern.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Fresh Money')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
@@ -261,28 +332,28 @@ footer{background:#1C1510;padding:48px 28px 28px}
         <div class="pbadge" id="b3">New</div>
         <div class="charm" style="background:#E8602A"><div class="charm-h" style="border-color:#c04010"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Signature Heat</div><div class="pdesc">Not a color. A signature.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Signature Heat')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Signature Heat</div><div class="pdesc">Not a color. A signature.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Signature Heat')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#d8d0c8,#f0ede8)">
         <div class="charm" style="background:#e8e4de;border:1px solid #ccc"><div class="charm-h" style="border-color:#bbb"></div><div class="charm-c" style="background:rgba(0,0,0,0.08)"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Clean Luxury</div><div class="pdesc">Minimalist, expensive, effortless.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Clean Luxury')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Clean Luxury</div><div class="pdesc">Minimalist, expensive, effortless.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Clean Luxury')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#d87090,#F0A0B8)">
         <div class="charm" style="background:#F0A0B8"><div class="charm-h" style="border-color:#d87090"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Soft Statement</div><div class="pdesc">Delicate but with presence.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Soft Statement')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Soft Statement</div><div class="pdesc">Delicate but with presence.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Soft Statement')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#8a0a18,#C01830)">
         <div class="charm" style="background:#C01830"><div class="charm-h" style="border-color:#8a0a18"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Red Affair</div><div class="pdesc">Intense, bold, seductive.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Red Affair')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Red Affair</div><div class="pdesc">Intense, bold, seductive.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Red Affair')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
@@ -290,14 +361,14 @@ footer{background:#1C1510;padding:48px 28px 28px}
         <div class="pbadge" id="b4">New</div>
         <div class="charm" style="background:#E8508A"><div class="charm-h" style="border-color:#c0306a"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Main Character</div><div class="pdesc">Total protagonist, never goes unnoticed.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Main Character')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Main Character</div><div class="pdesc">Total protagonist, never goes unnoticed.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Main Character')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
     <div class="pcard">
       <div class="pimg" style="background:linear-gradient(160deg,#5a7a60,#88A888)">
         <div class="charm" style="background:#88A888"><div class="charm-h" style="border-color:#5a7a60"></div><div class="charm-c"></div></div>
       </div>
-      <div class="pbody"><div class="pname">Quiet Power</div><div class="pdesc">Discreet luxury, old money vibe.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="paypal('Quiet Power')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
+      <div class="pbody"><div class="pname">Quiet Power</div><div class="pdesc">Discreet luxury, old money vibe.</div><div class="pprice">$25 USD</div><button class="pbtn" onclick="openOrder('Quiet Power')"><span class="t-buy">Buy Now</span> — PayPal</button></div>
     </div>
 
   </div>
@@ -382,10 +453,55 @@ footer{background:#1C1510;padding:48px 28px 28px}
 function openMenu(){document.getElementById('mobMenu').classList.add('open');document.getElementById('mobOverlay').classList.add('open')}
 function closeMenu(){document.getElementById('mobMenu').classList.remove('open');document.getElementById('mobOverlay').classList.remove('open')}
 
-function paypal(item){
-  var url='https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=alexiarivera%40gmail.com&item_name='+encodeURIComponent("I'm Not a Birkin – "+item+" Charm")+'&amount=29.99&currency_code=USD';
-  window.open(url,'_blank');
+var currentItem='';
+function openOrder(item){
+  currentItem=item;
+  var price=lang==='es'?'$599 MXN':'$25 USD';
+  document.getElementById('modal-charm-name').textContent='Charm: '+item+' — '+price;
+  document.getElementById('form-charm').value=item;
+  document.getElementById('form-price').value=price;
+  document.getElementById('orderModal').classList.add('open');
+  document.body.style.overflow='hidden';
 }
+function closeModal(){
+  document.getElementById('orderModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  var form=document.getElementById('orderForm');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var btn=document.getElementById('submit-btn');
+      btn.textContent='Sending...';
+      btn.disabled=true;
+      fetch('https://formspree.io/f/maqkpdew',{
+        method:'POST',
+        body:new FormData(form),
+        headers:{'Accept':'application/json'}
+      }).then(function(r){
+        if(r.ok){
+          closeModal();
+          form.reset();
+          btn.textContent='Continue to PayPal →';
+          btn.disabled=false;
+          var price=lang==='es'?'599':'25';
+          var url='https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=alexiarivera%40gmail.com&item_name='+encodeURIComponent("I'm Not a Birkin – "+currentItem+" Charm")+'&amount='+price+'&currency_code='+(lang==='es'?'MXN':'USD');
+          window.open(url,'_blank');
+        } else {
+          btn.textContent='Continue to PayPal →';
+          btn.disabled=false;
+          alert('Something went wrong. Please try again.');
+        }
+      }).catch(function(){
+        btn.textContent='Continue to PayPal →';
+        btn.disabled=false;
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  }
+});
 
 var lang='en';
 var T={
