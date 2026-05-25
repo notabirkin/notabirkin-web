@@ -395,7 +395,7 @@ var T={
     hSub:'Mini bag charms · Worldwide shipping',hBtn1:'Shop the collection',hBtn2:'Our story',
     hNote:'✦   12 colors available   ✦   Limited pieces   ✦',
     s1:'Colors available',s2:'Worldwide shipping',s3:'Limited edition only',
-    pEye:'The Collection',pTitle:'Find your charm',pSub:'Limited edition · $29.99 USD each · Worldwide shipping',
+    pEye:'The Collection',pTitle:'Find your charm',pSub:'Limited edition · $25 USD each · Worldwide shipping',
     stEye:'Our Story',stTitle:'Four women.<br>One obsession.<br>Zero waitlists.',
     stP1:'We are Katherine, Alexia, Jissela, and Mom — a family of women who share more than a love for fashion: we share a fascination for the details that make any moment feel special.',
     stP2:'Over the years, we built our own collection of dream bags. And yes… we learned that getting one could take years. Too long for something that should simply make you happy.',
@@ -409,7 +409,7 @@ var T={
     rEye:'Reviews',rTitle:'Loved by you',igEye:'Instagram',
     cEye:'Get in touch',cTitle:'Ready to order?',cSub:'Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.',
     cWa:'WhatsApp +52 55 2703 1153',cIg:'Instagram @imnotabirkin',cEmail:'imnotabirkin@hotmail.com',
-    buy:'Buy Now',newBadge:'New',nl1:'Shop',nl2:'Story',nl3:'Contact'
+    buy:'Buy Now',price:'$25 USD',newBadge:'New',nl1:'Shop',nl2:'Story',nl3:'Contact'
   },
   es:{
     ann:'Envio mundial gratis en pedidos mayores a $60 USD · Edicion limitada',
@@ -417,7 +417,7 @@ var T={
     hSub:'Mini bag charms · Envio mundial',hBtn1:'Ver la coleccion',hBtn2:'Nuestra historia',
     hNote:'✦   12 colores disponibles   ✦   Piezas limitadas   ✦',
     s1:'Colores disponibles',s2:'Envio mundial',s3:'Solo edicion limitada',
-    pEye:'La Coleccion',pTitle:'Encuentra tu charm',pSub:'Edicion limitada · $29.99 USD c/u · Envio mundial',
+    pEye:'La Coleccion',pTitle:'Encuentra tu charm',pSub:'Edicion limitada · $599 MXN c/u · Envio mundial',
     stEye:'Nuestra Historia',stTitle:'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.',
     stP1:'Somos Katherine, Alexia, Jissela y mama. Una familia de mujeres que comparte algo mas que amor por la moda: compartimos una fascinacion por los detalles que hacen sentir especial cualquier momento.',
     stP2:'Con los anos, construimos nuestra propia coleccion de bolsos sonados. Y si… aprendimos que conseguir uno podia tomar anos. Demasiado tiempo para algo que simplemente deberia hacerte feliz.',
@@ -431,7 +431,7 @@ var T={
     rEye:'Testimonios',rTitle:'Loved by you',igEye:'Instagram',
     cEye:'Contacto',cTitle:'Lista para ordenar?',cSub:'Ordena por WhatsApp o Instagram.<br>Envio mundial. Respuesta en menos de 24 horas.',
     cWa:'WhatsApp +52 55 2703 1153',cIg:'Instagram @imnotabirkin',cEmail:'imnotabirkin@hotmail.com',
-    buy:'Comprar',newBadge:'Nuevo',nl1:'Tienda',nl2:'Historia',nl3:'Contacto'
+    buy:'Comprar',price:'$599 MXN',newBadge:'Nuevo',nl1:'Tienda',nl2:'Historia',nl3:'Contacto'
   }
 };
 
@@ -476,6 +476,7 @@ function toggleLang(){
   document.getElementById('nl2').textContent=t.nl2;
   document.getElementById('nl3').textContent=t.nl3;
   document.querySelectorAll('.t-buy').forEach(function(e){e.textContent=t.buy});
+  document.querySelectorAll('.pprice').forEach(function(e){e.textContent=t.price});
   ['b1','b2','b3','b4'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=t.newBadge});
 }
 </script>
