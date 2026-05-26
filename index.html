@@ -537,20 +537,40 @@ function submitOrder(){
     +'&amount='+total.toFixed(2)
     +'&currency_code=USD'
     +'&custom='+encodeURIComponent(shipping);
-  var waMsg='NUEVO PEDIDO notabirkin.com\n\n'
-    +'--- PRODUCTOS ---\n'+items+'\n'
-    +'Total: $'+total.toFixed(2)+' USD\n\n'
-    +'--- CLIENTE ---\n'
-    +'Nombre: '+name+'\n'
-    +'Email: '+email+'\n'
-    +'Telefono: '+phone+'\n\n'
-    +'--- DIRECCION DE ENVIO ---\n'
-    +'Direccion: '+addr+'\n'
-    +'Ciudad: '+city+'\n'
-    +'Estado: '+state+'\n'
-    +'Codigo Postal: '+zip+'\n'
-    +'Pais: '+country
-    +(notes?'\n\n--- NOTAS ---\n'+notes:'');
+  var waMsg;
+  if(es){
+    waMsg='NUEVO PEDIDO notabirkin.com\n'
+      +'Cliente navegando en: ESPANOL\n\n'
+      +'--- PRODUCTOS ---\n'+items+'\n'
+      +'Total: $'+total.toFixed(2)+' USD\n\n'
+      +'--- CLIENTE ---\n'
+      +'Nombre: '+name+'\n'
+      +'Email: '+email+'\n'
+      +'Telefono: '+phone+'\n\n'
+      +'--- DIRECCION DE ENVIO ---\n'
+      +'Direccion: '+addr+'\n'
+      +'Ciudad: '+city+'\n'
+      +'Estado: '+state+'\n'
+      +'Codigo Postal: '+zip+'\n'
+      +'Pais: '+country
+      +(notes?'\n\n--- NOTAS ---\n'+notes:'');
+  }else{
+    waMsg='NEW ORDER notabirkin.com\n'
+      +'Customer browsing in: ENGLISH\n\n'
+      +'--- ITEMS ---\n'+items+'\n'
+      +'Total: $'+total.toFixed(2)+' USD\n\n'
+      +'--- CUSTOMER ---\n'
+      +'Name: '+name+'\n'
+      +'Email: '+email+'\n'
+      +'Phone: '+phone+'\n\n'
+      +'--- SHIPPING ADDRESS ---\n'
+      +'Address: '+addr+'\n'
+      +'City: '+city+'\n'
+      +'State: '+state+'\n'
+      +'ZIP: '+zip+'\n'
+      +'Country: '+country
+      +(notes?'\n\n--- NOTES ---\n'+notes:'');
+  }
   window.open(paypalUrl,'_blank');
   setTimeout(function(){window.open('https://wa.me/525527031153?text='+encodeURIComponent(waMsg),'_blank')},1000);
   closeCheckout();
