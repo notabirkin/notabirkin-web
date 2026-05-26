@@ -9,33 +9,19 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:#fff;color:#111;font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
-
-/* ANNOUNCE */
 .ann{background:#111;color:#fff;text-align:center;padding:11px;font-size:13px;letter-spacing:3px;text-transform:uppercase}
 .ann span{color:#F2D0D6;margin:0 10px}
-
-/* NAV */
 nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 32px;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.nav-links a{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#888;text-decoration:none;margin-right:28px;font-family:'Jost',sans-serif;font-weight:300}
+.nav-links a{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#888;text-decoration:none;margin-right:28px;font-weight:300}
 .nav-links a:hover{color:#111}
 .nav-logo{text-align:center;flex:1}
-
-/* LOGO — igual al logo real */
-.logo-wrap{display:inline-flex;flex-direction:column;align-items:center;background:#FAF0F2;padding:8px 18px;border-radius:50%;width:72px;height:72px;justify-content:center}
-.logo-not{font-family:'Jost',sans-serif;font-size:8px;font-weight:200;letter-spacing:2px;color:#111;text-transform:lowercase;line-height:1}
-.logo-birkin{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#111;line-height:1;position:relative;display:inline-block}
-.logo-birkin::after{content:'';position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#111;transform:rotate(-5deg)}
-.logo-charm{font-family:'Jost',sans-serif;font-size:7px;font-weight:200;letter-spacing:2px;color:#111;text-transform:lowercase;line-height:1;margin-top:2px}
-
 .nav-right{display:flex;align-items:center;gap:14px}
-.nav-right a{font-size:13px;letter-spacing:2px;color:#888;text-decoration:none;font-weight:300}
+.nav-right a{font-size:13px;letter-spacing:2px;color:#888;text-decoration:none}
 .lang-btn{background:none;border:1px solid #ddd;color:#888;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;padding:5px 11px;cursor:pointer}
-.cart-btn{background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;padding:8px 14px;cursor:pointer;position:relative}
-.cart-count{position:absolute;top:-6px;right:-6px;background:#F2D0D6;color:#111;width:17px;height:17px;border-radius:50%;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.cart-btn{background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;padding:9px 16px;cursor:pointer;position:relative;display:flex;align-items:center;gap:6px}
+.cart-count{background:#F2D0D6;color:#111;width:17px;height:17px;border-radius:50%;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:600}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .hamburger span{width:24px;height:1.5px;background:#111;display:block}
-
-/* MOBILE MENU */
 .mob-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:198}
 .mob-overlay.open{display:block}
 .mob-menu{position:fixed;top:0;right:-100%;width:72%;max-width:280px;height:100vh;background:#fff;z-index:199;padding:70px 36px 40px;transition:right 0.3s ease;display:flex;flex-direction:column;gap:28px}
@@ -43,8 +29,6 @@ nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 32px;height:70px;d
 .mob-menu a{font-size:18px;letter-spacing:3px;text-transform:uppercase;color:#111;text-decoration:none;font-weight:300}
 .mob-close{position:absolute;top:20px;right:20px;font-size:20px;cursor:pointer;background:none;border:none;color:#111}
 @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
-
-/* CART DRAWER */
 .cart-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:298}
 .cart-overlay.open{display:block}
 .cart-drawer{position:fixed;top:0;right:-100%;width:90%;max-width:380px;height:100vh;background:#fff;z-index:299;padding:24px;transition:right 0.3s ease;display:flex;flex-direction:column;overflow-y:auto}
@@ -57,7 +41,7 @@ nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 32px;height:70px;d
 .cart-item-color{width:38px;height:38px;border-radius:4px;flex-shrink:0;border:1px solid #eee}
 .cart-item-info{flex:1}
 .cart-item-name{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#111;margin-bottom:3px}
-.cart-item-price{font-size:12px;color:#888;font-weight:400}
+.cart-item-price{font-size:12px;color:#888}
 .cart-item-remove{background:none;border:none;color:#ccc;font-size:18px;cursor:pointer}
 .cart-qty{display:flex;align-items:center;gap:8px;margin-top:6px}
 .cart-qty button{background:#f5f5f5;border:none;width:22px;height:22px;cursor:pointer;font-size:13px;color:#111;display:flex;align-items:center;justify-content:center}
@@ -65,12 +49,8 @@ nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 32px;height:70px;d
 .cart-empty{text-align:center;padding:40px 0;color:#ccc;font-style:italic;font-family:'Playfair Display',serif;font-size:18px}
 .cart-footer{margin-top:20px;padding-top:16px;border-top:1px solid #eee}
 .cart-total{display:flex;justify-content:space-between;margin-bottom:16px;font-size:15px;color:#111}
-.cart-total span:last-child{font-family:'Playfair Display',serif;font-size:17px;font-weight:400}
 .checkout-btn{width:100%;background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;padding:17px;cursor:pointer;margin-bottom:8px}
-.checkout-btn:hover{background:#333}
 .paypal-note{text-align:center;font-size:11px;color:#bbb;letter-spacing:1px}
-
-/* CHECKOUT FORM */
 .checkout-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:398}
 .checkout-overlay.open{display:block}
 .checkout-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:92%;max-width:420px;max-height:90vh;background:#fff;z-index:399;padding:28px 24px;overflow-y:auto;display:none}
@@ -79,8 +59,8 @@ nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 32px;height:70px;d
 .checkout-modal p{font-size:12px;color:#999;letter-spacing:1px;margin-bottom:20px}
 .form-group{margin-bottom:14px}
 .form-group label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:5px}
-.form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid #e8e8e8;padding:11px 13px;font-family:'Jost',sans-serif;font-size:14px;color:#111;background:#fff;outline:none}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#111}
+.form-group input,.form-group textarea{width:100%;border:1px solid #e8e8e8;padding:11px 13px;font-family:'Jost',sans-serif;font-size:14px;color:#111;background:#fff;outline:none}
+.form-group input:focus,.form-group textarea:focus{border-color:#111}
 .form-group textarea{resize:none;height:70px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .form-divider{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#bbb;margin:18px 0 14px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
@@ -89,52 +69,38 @@ nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 32px;height:70px;d
 .order-item{display:flex;justify-content:space-between;font-size:13px;color:#555;margin-bottom:6px}
 .order-total-row{display:flex;justify-content:space-between;font-size:15px;color:#111;font-weight:500;margin-top:10px;padding-top:10px;border-top:1px solid #e8e8e8}
 .pay-btn{width:100%;background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;padding:17px;cursor:pointer;margin-top:4px}
-.pay-btn:hover{background:#333}
 .close-modal{position:absolute;top:16px;right:20px;background:none;border:none;font-size:20px;cursor:pointer;color:#888}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:13px 26px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1}
-
-/* HERO */
 .hero{background:#fff;min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 28px 60px;position:relative;overflow:hidden;border-bottom:1px solid #eee}
 .hero-ring{position:absolute;border-radius:50%;border:1px solid #f0f0f0;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
 .r1{width:540px;height:540px}
 .r2{width:380px;height:380px}
-.hero-eye{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#bbb;margin-bottom:32px;font-family:'Jost',sans-serif}
-
-/* HERO LOGO — réplica exacta del logo */
-.hero-logo{background:#FAF0F2;border-radius:50%;width:220px;height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 32px}
-.hl-not{font-family:'Jost',sans-serif;font-size:13px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase}
-.hl-birkin{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:#111;line-height:1;position:relative;display:inline-block;margin:4px 0}
-.hl-birkin::after{content:'';position:absolute;left:-4%;top:52%;width:108%;height:2px;background:#111;transform:rotate(-4deg)}
-.hl-charm{font-family:'Jost',sans-serif;font-size:12px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase}
-
+.hero-eye{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#bbb;margin-bottom:32px}
+.hero-logo{background:#FAF0F2;border-radius:50%;width:240px;height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 32px}
+.hl-not{font-family:'Jost',sans-serif;font-size:16px;font-weight:200;letter-spacing:4px;color:#111;text-transform:lowercase}
+.hl-birkin{font-family:'Playfair Display',serif;font-size:64px;font-weight:700;color:#111;line-height:1;position:relative;display:inline-block;margin:4px 0}
+.hl-birkin::after{content:'';position:absolute;left:-4%;top:52%;width:108%;height:2px;background:#111;transform:rotate(-4deg);display:block}
+.hl-charm{font-family:'Jost',sans-serif;font-size:14px;font-weight:200;letter-spacing:4px;color:#111;text-transform:lowercase}
 .hero-sub{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#999;margin-bottom:44px}
 .btn-dark{background:#111;color:#fff;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;padding:17px 48px;border:none;cursor:pointer;display:block;margin:0 auto 12px}
 .btn-dark:hover{background:#333}
 .btn-ghost{background:transparent;color:#111;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;padding:16px 48px;border:1px solid #ddd;cursor:pointer;display:block;margin:0 auto}
 .btn-ghost:hover{background:#111;color:#fff}
 .hero-note{margin-top:44px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#bbb}
-
-/* STRIP */
 .strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #eee}
 .strip-item{padding:26px 20px;display:flex;flex-direction:column;align-items:center;gap:8px;border-right:1px solid #eee;background:#fff}
 .strip-item:last-child{border-right:none}
 .strip-num{font-family:'Playfair Display',serif;font-size:36px;font-style:italic;color:#111}
 .strip-text{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#888;text-align:center}
-
-/* MARQUEE */
 .mq{background:#FAF0F2;border-bottom:1px solid #eee;padding:12px 0;overflow:hidden;white-space:nowrap}
 .mq-in{display:inline-block;animation:mq 28s linear infinite;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#C9A882}
 .mq-in em{color:#111;font-style:normal;margin:0 18px}
 @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* SECTION HEADER */
 .sec-head{text-align:center;padding:52px 28px 32px;background:#fff}
 .sec-eye{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#bbb;margin-bottom:12px}
 .sec-title{font-family:'Playfair Display',serif;font-size:42px;font-style:italic;color:#111}
 .sec-sub{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#999;margin-top:10px}
-
-/* PRODUCTS */
 .pgrid{display:grid;grid-template-columns:1fr 1fr;margin:0 14px 56px;border:1px solid #eee;border-right:none;border-bottom:none}
 .pcard{border-right:1px solid #eee;border-bottom:1px solid #eee;background:#fff}
 .pcard:hover{background:#fafafa}
@@ -149,48 +115,35 @@ nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 32px;height:70px;d
 .pprice{font-size:16px;color:#111;font-weight:400;margin-bottom:12px;letter-spacing:1px}
 .pbtn{width:100%;background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:12px;cursor:pointer;transition:all 0.2s}
 .pbtn:hover{background:#F2D0D6;color:#111}
-
-/* TAPE */
 .tape{background:#111;padding:11px 0;overflow:hidden;white-space:nowrap}
 .tape-in{display:inline-block;animation:mq 24s linear infinite;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#fff}
 .tape-in em{color:#F2D0D6;font-style:normal;margin:0 16px}
-
-/* STORY */
 .story{background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee}
 .story-img{height:240px;background:#FAF0F2;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #eee}
-.story-logo{background:#FAF0F2;border-radius:50%;width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .story-body{padding:46px 28px}
 .story-eye{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#bbb;margin-bottom:14px}
 .story-title{font-family:'Playfair Display',serif;font-size:38px;font-style:italic;color:#111;margin-bottom:20px;line-height:1.15}
 .story-p{font-size:16px;color:#555;line-height:1.9;margin-bottom:16px;font-weight:300}
 .story-punch{font-family:'Playfair Display',serif;font-size:26px;font-style:italic;color:#111;line-height:1.3;margin:28px 0;padding:28px 0;border-top:1px solid #F2D0D6;border-bottom:1px solid #F2D0D6}
 .story-sig{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:#C9A882;margin-top:20px}
-
-/* FEATURES */
 .feats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #eee}
 .feat{padding:28px 16px;text-align:center;border-right:1px solid #eee;border-bottom:1px solid #eee;background:#fff}
 .feat:nth-child(even){border-right:none}
 .feat-sym{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:#F2D0D6;margin-bottom:10px}
 .feat-t{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#111;margin-bottom:7px;font-weight:500}
 .feat-d{font-size:13px;color:#888;line-height:1.6}
-
-/* REVIEWS */
 .reviews{padding:50px 28px;background:#fff;border-top:1px solid #eee}
 .rev-card{border-top:1px solid #f5f5f5;padding:22px 0}
 .rev-card:first-child{border-top:none;padding-top:0}
 .rev-stars{color:#F2D0D6;letter-spacing:3px;font-size:15px;margin-bottom:10px}
 .rev-q{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:#111;line-height:1.7;margin-bottom:10px}
 .rev-by{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#bbb}
-
-/* INSTAGRAM */
 .ig-sec{border-top:1px solid #eee;padding-bottom:52px;background:#fff}
 .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#eee;margin-bottom:14px}
 .ig-cell{aspect-ratio:1;overflow:hidden}
 .ig-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s}
 .ig-cell:hover img{transform:scale(1.04)}
 .ig-cta{text-align:center;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#888;padding:6px}
-
-/* CONTACT */
 .contact{background:#FAF0F2;border-top:1px solid #eee;padding:52px 28px;text-align:center}
 .contact-eye{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#bbb;margin-bottom:12px}
 .contact-title{font-family:'Playfair Display',serif;font-size:40px;font-style:italic;color:#111;margin-bottom:12px}
@@ -199,13 +152,11 @@ nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 32px;height:70px;d
 .cbtn{display:flex;align-items:center;justify-content:center;background:#111;color:#fff;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:16px 28px;text-decoration:none;width:100%;max-width:360px}
 .cbtn:hover{opacity:0.85}
 .cbtn.rose{background:#F2D0D6;color:#111}
-
-/* FOOTER */
 footer{background:#111;padding:48px 28px 28px}
 .f-logo{display:flex;flex-direction:column;align-items:center;margin-bottom:28px}
 .f-logo-not{font-family:'Jost',sans-serif;font-size:10px;font-weight:200;letter-spacing:3px;color:#FAF0F2;text-transform:lowercase}
 .f-logo-birkin{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#FAF0F2;position:relative;display:inline-block;margin:2px 0}
-.f-logo-birkin::after{content:'';position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#FAF0F2;transform:rotate(-4deg)}
+.f-logo-birkin::after{content:'';position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#FAF0F2;transform:rotate(-4deg);display:block}
 .f-logo-charm{font-family:'Jost',sans-serif;font-size:10px;font-weight:200;letter-spacing:3px;color:#F2D0D6;text-transform:lowercase}
 .f-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px}
 .f-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#555;text-decoration:none}
@@ -224,9 +175,8 @@ footer{background:#111;padding:48px 28px 28px}
     <a href="#story" id="nl2">Story</a>
     <a href="#contact" id="nl3">Contact</a>
   </div>
-  <!-- NAV LOGO - texto simple sin círculo -->
   <div class="nav-logo">
-    <div style="text-align:center">
+    <div style="text-align:center;line-height:1.3">
       <span style="font-family:'Jost',sans-serif;font-size:10px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase;display:block">i'm not a</span>
       <span style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#111;display:inline-block;position:relative">Birkin<span style="position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#111;display:block;transform:rotate(-4deg)"></span></span>
       <span style="font-family:'Jost',sans-serif;font-size:9px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase;display:block;margin-top:2px">i'm a charm</span>
@@ -237,15 +187,12 @@ footer{background:#111;padding:48px 28px 28px}
     <a href="https://wa.me/525527031153" target="_blank">WA</a>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">ES</button>
     <button class="cart-btn" onclick="openCart()">
-      <!-- Mini Birkin SVG -->
-      <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle">
+      <svg width="20" height="18" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M7 5 Q7 2 11 2 Q15 2 15 5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-        <rect x="2" y="5" width="18" height="13" rx="2" fill="white" opacity="0.15" stroke="white" stroke-width="1.5"/>
-        <rect x="2" y="5" width="18" height="4" rx="1" fill="white" opacity="0.2"/>
-        <rect x="8" y="10" width="6" height="4" rx="1" fill="none" stroke="white" stroke-width="1"/>
-        <circle cx="11" cy="10" r="0.8" fill="white"/>
-        <line x1="5" y1="9" x2="5" y2="15" stroke="white" stroke-width="1" opacity="0.5"/>
-        <line x1="17" y1="9" x2="17" y2="15" stroke="white" stroke-width="1" opacity="0.5"/>
+        <rect x="2" y="5" width="18" height="13" rx="2" fill="none" stroke="white" stroke-width="1.5"/>
+        <rect x="2" y="5" width="18" height="4" rx="1" fill="white" opacity="0.15"/>
+        <rect x="8" y="11" width="6" height="4" rx="1" fill="none" stroke="white" stroke-width="1"/>
+        <circle cx="11" cy="11" r="0.8" fill="white"/>
       </svg>
       <span class="cart-count" id="cartCount">0</span>
     </button>
@@ -256,9 +203,9 @@ footer{background:#111;padding:48px 28px 28px}
 <div class="mob-overlay" id="mobOverlay" onclick="closeMenu()"></div>
 <div class="mob-menu" id="mobMenu">
   <button class="mob-close" onclick="closeMenu()">✕</button>
-  <a href="#shop" onclick="closeMenu()">Shop</a>
-  <a href="#story" onclick="closeMenu()">Story</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="#shop" onclick="closeMenu()" id="mnl1">Shop</a>
+  <a href="#story" onclick="closeMenu()" id="mnl2">Story</a>
+  <a href="#contact" onclick="closeMenu()" id="mnl3">Contact</a>
   <a href="https://instagram.com/imnotabirkin" target="_blank">Instagram</a>
   <a href="https://wa.me/525527031153" target="_blank">WhatsApp</a>
 </div>
@@ -270,91 +217,56 @@ footer{background:#111;padding:48px 28px 28px}
     <button class="cart-close" onclick="closeCart()">✕</button>
   </div>
   <div class="cart-items" id="cartItems">
-    <div class="cart-empty" id="cartEmpty">Your cart is empty</div>
+    <div class="cart-empty">Your cart is empty</div>
   </div>
   <div class="cart-footer" id="cartFooter" style="display:none">
     <div class="cart-total"><span id="totalLabel">Total</span><span id="cartTotal">$0.00 USD</span></div>
-    <button class="checkout-btn" onclick="openCheckoutModal()" id="checkoutBtn">Checkout via PayPal</button>
+    <button class="checkout-btn" onclick="openCheckoutModal()" id="checkoutBtn">Checkout</button>
     <div class="paypal-note" id="paypalNote">Secure payment via PayPal</div>
   </div>
 </div>
 
-<div class="toast" id="toast">Added!</div>
-
-<!-- CHECKOUT MODAL -->
 <div class="checkout-overlay" id="checkoutOverlay" onclick="closeCheckout()"></div>
 <div class="checkout-modal" id="checkoutModal">
   <button class="close-modal" onclick="closeCheckout()">✕</button>
   <h2 id="cm-title">Shipping Details</h2>
-  <p id="cm-sub">Fill in your info and we'll send your order via PayPal</p>
-
+  <p id="cm-sub">Fill in your details to process your order</p>
   <div class="order-summary" id="orderSummary"></div>
-
   <div class="form-divider" id="cm-div1">Contact</div>
-  <div class="form-group">
-    <label id="cm-name">Full Name</label>
-    <input type="text" id="f-name" placeholder="Katherine Rivera">
-  </div>
-  <div class="form-group">
-    <label id="cm-email">Email</label>
-    <input type="email" id="f-email" placeholder="you@email.com">
-  </div>
-  <div class="form-group">
-    <label id="cm-phone">Phone / WhatsApp</label>
-    <input type="tel" id="f-phone" placeholder="+1 555 000 0000">
-  </div>
-
+  <div class="form-group"><label id="cm-name">Full Name</label><input type="text" id="f-name" placeholder="Katherine Rivera"></div>
+  <div class="form-group"><label id="cm-email">Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
+  <div class="form-group"><label id="cm-phone">Phone / WhatsApp</label><input type="tel" id="f-phone" placeholder="+1 555 000 0000"></div>
   <div class="form-divider" id="cm-div2">Shipping Address</div>
-  <div class="form-group">
-    <label id="cm-addr">Address</label>
-    <input type="text" id="f-addr" placeholder="Street, number, apt">
+  <div class="form-group"><label id="cm-addr">Address</label><input type="text" id="f-addr" placeholder="Street, number, apt"></div>
+  <div class="form-row">
+    <div class="form-group"><label id="cm-city">City</label><input type="text" id="f-city" placeholder="Mexico City"></div>
+    <div class="form-group"><label id="cm-zip">ZIP</label><input type="text" id="f-zip" placeholder="06600"></div>
   </div>
   <div class="form-row">
-    <div class="form-group">
-      <label id="cm-city">City</label>
-      <input type="text" id="f-city" placeholder="Mexico City">
-    </div>
-    <div class="form-group">
-      <label id="cm-zip">ZIP Code</label>
-      <input type="text" id="f-zip" placeholder="06600">
-    </div>
+    <div class="form-group"><label id="cm-state">State</label><input type="text" id="f-state" placeholder="CDMX"></div>
+    <div class="form-group"><label id="cm-country">Country</label><input type="text" id="f-country" placeholder="Mexico"></div>
   </div>
-  <div class="form-row">
-    <div class="form-group">
-      <label id="cm-state">State / Province</label>
-      <input type="text" id="f-state" placeholder="CDMX">
-    </div>
-    <div class="form-group">
-      <label id="cm-country">Country</label>
-      <input type="text" id="f-country" placeholder="Mexico">
-    </div>
-  </div>
-  <div class="form-group">
-    <label id="cm-notes">Notes (optional)</label>
-    <textarea id="f-notes" placeholder="Any special instructions..."></textarea>
-  </div>
-
+  <div class="form-group"><label id="cm-notes">Notes (optional)</label><textarea id="f-notes" placeholder="Any special instructions..."></textarea></div>
   <button class="pay-btn" onclick="submitOrder()" id="cm-paybtn">Pay with PayPal</button>
 </div>
 
-<!-- HERO -->
+<div class="toast" id="toast">Added!</div>
+
 <section class="hero">
   <div class="hero-ring r1"></div>
   <div class="hero-ring r2"></div>
   <div class="hero-eye" id="h-eye">Limited Edition · Worldwide Shipping</div>
-  <!-- HERO LOGO más grande -->
   <div class="hero-logo">
-    <span class="hl-not" id="h-top" style="font-size:16px;letter-spacing:4px">i'm not a</span>
-    <span class="hl-birkin" style="font-size:100px">Birkin</span>
-    <span class="hl-charm" id="h-bottom" style="font-size:15px;letter-spacing:4px">i'm a charm</span>
+    <span class="hl-not" id="h-top">i'm not a</span>
+    <span class="hl-birkin">Birkin</span>
+    <span class="hl-charm" id="h-bottom">i'm a charm</span>
   </div>
   <p class="hero-sub" id="h-sub">Mini bag charms · Worldwide shipping</p>
   <button class="btn-dark" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" id="h-btn1">Shop the collection</button>
   <button class="btn-ghost" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})" id="h-btn2">Our story</button>
-  <p class="hero-note" id="h-note">✦ &nbsp; 12 colors available &nbsp; ✦ &nbsp; Limited pieces &nbsp; ✦</p>
+  <p class="hero-note" id="h-note">✦ 12 colors available ✦ Limited pieces ✦</p>
 </section>
 
-<!-- STRIP -->
 <div class="strip">
   <div class="strip-item"><div class="strip-num">12</div><div class="strip-text" id="s1">Colors available</div></div>
   <div class="strip-item"><div class="strip-num">∞</div><div class="strip-text" id="s2">Worldwide shipping</div></div>
@@ -363,7 +275,6 @@ footer{background:#111;padding:48px 28px 28px}
 
 <div class="mq"><div class="mq-in">Not a Birkin <em>·</em> I'm a Charm <em>·</em> Limited Edition <em>·</em> Worldwide Shipping <em>·</em> 12 Colors <em>·</em> Not a Birkin <em>·</em> I'm a Charm <em>·</em> Limited Edition <em>·</em> Worldwide Shipping <em>·</em> 12 Colors <em>·</em></div></div>
 
-<!-- PRODUCTS -->
 <div id="shop">
   <div class="sec-head">
     <div class="sec-eye" id="p-eye">The Collection</div>
@@ -372,55 +283,42 @@ footer{background:#111;padding:48px 28px 28px}
   </div>
   <div class="pgrid">
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#111,#2a2a2a)"><div class="pbadge" id="b1">New</div><div class="charm" style="background:#1a1a1a"><div class="charm-h" style="border-color:#333"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">No Explanations</div><div class="pdesc">Elegant, secure, needs no validation.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('No Explanations','#1a1a1a')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#1a3d2a,#2d6644)"><div class="pbadge" id="b2">New</div><div class="charm" style="background:#2d6644"><div class="charm-h" style="border-color:#1a3d2a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Money Energy</div><div class="pdesc">Wealth, abundance, statement.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Money Energy','#2d6644')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#5c3317,#8B4513)"><div class="charm" style="background:#8B4513"><div class="charm-h" style="border-color:#5c3317"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Rich Taste</div><div class="pdesc">Classic, sophisticated, timeless.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Rich Taste','#8B4513')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#b8960a,#D4A830)"><div class="charm" style="background:#D4A830"><div class="charm-h" style="border-color:#b8960a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Sun Status</div><div class="pdesc">Shine, attention, happiness.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Sun Status','#D4A830')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#6a5a9a,#9870C0)"><div class="charm" style="background:#9870C0"><div class="charm-h" style="border-color:#6a5a9a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Soft Power</div><div class="pdesc">Feminine but powerful.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Soft Power','#9870C0')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#a87840,#C9A882)"><div class="charm" style="background:#C9A882"><div class="charm-h" style="border-color:#a87840"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Fresh Money</div><div class="pdesc">New luxury, cool, modern.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Fresh Money','#C9A882')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#c04010,#E8602A)"><div class="pbadge" id="b3">New</div><div class="charm" style="background:#E8602A"><div class="charm-h" style="border-color:#c04010"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Signature Heat</div><div class="pdesc">Not a color. A signature.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Signature Heat','#E8602A')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#d8d0c8,#f0ede8)"><div class="charm" style="background:#e8e4de;border:1px solid #ccc"><div class="charm-h" style="border-color:#bbb"></div><div class="charm-c" style="background:rgba(0,0,0,0.08)"></div></div></div><div class="pbody"><div class="pname">Clean Luxury</div><div class="pdesc">Minimalist, expensive, effortless.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Clean Luxury','#e8e4de')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#d87090,#F0A0B8)"><div class="charm" style="background:#F0A0B8"><div class="charm-h" style="border-color:#d87090"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Soft Statement</div><div class="pdesc">Delicate but with presence.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Soft Statement','#F0A0B8')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#8a0a18,#C01830)"><div class="charm" style="background:#C01830"><div class="charm-h" style="border-color:#8a0a18"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Red Affair</div><div class="pdesc">Intense, bold, seductive.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Red Affair','#C01830')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#c0306a,#E8508A)"><div class="pbadge" id="b4">New</div><div class="charm" style="background:#E8508A"><div class="charm-h" style="border-color:#c0306a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Main Character</div><div class="pdesc">Total protagonist, never goes unnoticed.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Main Character','#E8508A')"><span class="t-add">Add to Cart</span></button></div></div>
-
     <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#5a7a60,#88A888)"><div class="charm" style="background:#88A888"><div class="charm-h" style="border-color:#5a7a60"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Quiet Power</div><div class="pdesc">Discreet luxury, old money vibe.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Quiet Power','#88A888')"><span class="t-add">Add to Cart</span></button></div></div>
   </div>
 </div>
 
 <div class="tape"><div class="tape-in">No Explanations <em>·</em> Money Energy <em>·</em> Rich Taste <em>·</em> Sun Status <em>·</em> Soft Power <em>·</em> Fresh Money <em>·</em> Signature Heat <em>·</em> Clean Luxury <em>·</em> Soft Statement <em>·</em> Red Affair <em>·</em> Main Character <em>·</em> Quiet Power <em>·</em> No Explanations <em>·</em> Money Energy <em>·</em></div></div>
 
-<!-- STORY -->
 <div id="story" class="story">
   <div class="story-img">
-    <div class="story-logo">
-      <span class="hl-not" style="font-size:9px">I'm not a</span>
-      <span class="hl-birkin" style="font-size:32px">Birkin</span>
-      <span class="hl-charm" style="font-size:8px">I'm a charm</span>
+    <div style="background:#FAF0F2;border-radius:50%;width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <span style="font-family:'Jost',sans-serif;font-size:9px;font-weight:200;letter-spacing:2px;color:#111;text-transform:lowercase">i'm not a</span>
+      <span style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#111;position:relative;display:inline-block">Birkin<span style="position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#111;display:block;transform:rotate(-4deg)"></span></span>
+      <span style="font-family:'Jost',sans-serif;font-size:8px;font-weight:200;letter-spacing:2px;color:#111;text-transform:lowercase;margin-top:3px">i'm a charm</span>
     </div>
   </div>
   <div class="story-body">
     <div class="story-eye" id="st-eye">Our Story</div>
     <div class="story-title" id="st-title">Four women.<br>One obsession.<br>Zero waitlists.</div>
     <p class="story-p" id="st-p1">We are Katherine, Alexia, Jissela, and Mom — a family of women who share more than a love for fashion: we share a fascination for the details that make any moment feel special.</p>
-    <p class="story-p" id="st-p2">Over the years, we built our own collection of dream bags. And yes… we learned that getting one could take years. Too long for something that should simply make you happy.</p>
-    <p class="story-p" id="st-p3">Then we discovered mini bag charms. And we fell in love instantly. Because it's not about having a Birkin. It's about that feeling. Elevating any bag you already love. Turning the everyday into something special.</p>
-    <p class="story-p" id="st-p4">We created I'm not a Birkin, I'm a Charm for every woman who loves luxury, details, and that little thrill that transforms a whole look. No waitlists. No complications. Just that special touch that makes you feel incredible.</p>
-    <div class="story-punch" id="st-punch">"You don't need a Birkin to feel that thrill."</div>
-    <div class="story-sig">— Katherine, Alexia, Jissela & Mom ✨</div>
+    <p class="story-p" id="st-p2">Over the years, we built our own collection of dream bags. And yes, we learned that getting one could take years. Too long for something that should simply make you happy.</p>
+    <p class="story-p" id="st-p3">Then we discovered mini bag charms. And we fell in love instantly. Because it is not about having a Birkin. It is about that feeling. Elevating any bag you already love.</p>
+    <p class="story-p" id="st-p4">We created I'm not a Birkin for every woman who loves luxury and that little thrill that transforms a whole look. No waitlists. No complications.</p>
+    <div class="story-punch" id="st-punch">You don't need a Birkin to feel that thrill.</div>
+    <div class="story-sig">— Katherine, Alexia, Jissela &amp; Mom ✨</div>
   </div>
 </div>
 
-<!-- FEATURES -->
 <div class="feats">
   <div class="feat"><div class="feat-sym">i</div><div class="feat-t" id="f1t">Limited Edition</div><div class="feat-d" id="f1d">When it's gone, it's gone.</div></div>
   <div class="feat"><div class="feat-sym">ii</div><div class="feat-t" id="f2t">Quality</div><div class="feat-d" id="f2d">Made with the finest materials.</div></div>
@@ -428,7 +326,6 @@ footer{background:#111;padding:48px 28px 28px}
   <div class="feat"><div class="feat-sym">iv</div><div class="feat-t" id="f4t">Gift Ready</div><div class="feat-d" id="f4d">Luxury packaging included.</div></div>
 </div>
 
-<!-- REVIEWS -->
 <div class="sec-head"><div class="sec-eye" id="r-eye">Reviews</div><div class="sec-title" id="r-title">Loved by you</div></div>
 <div class="reviews">
   <div class="rev-card"><div class="rev-stars">★ ★ ★ ★ ★</div><div class="rev-q">"I put it on my orange Birkin and it looks perfect. Everyone asks me where I got it."</div><div class="rev-by">Sofia R. · Mexico City</div></div>
@@ -436,7 +333,6 @@ footer{background:#111;padding:48px 28px 28px}
   <div class="rev-card"><div class="rev-stars">★ ★ ★ ★ ★</div><div class="rev-q">"It arrived in beautiful packaging. My Kelly has never looked so good."</div><div class="rev-by">Isabella C. · Miami</div></div>
 </div>
 
-<!-- INSTAGRAM -->
 <div class="ig-sec">
   <div class="sec-head"><div class="sec-eye" id="ig-eye">Instagram</div><div class="sec-title">@imnotabirkin</div></div>
   <div class="ig-grid">
@@ -450,11 +346,10 @@ footer{background:#111;padding:48px 28px 28px}
   <div class="ig-cta"><a href="https://instagram.com/imnotabirkin" target="_blank" style="color:#888;text-decoration:none;font-size:12px;letter-spacing:4px;text-transform:uppercase" id="ig-cta">Follow us · @imnotabirkin</a></div>
 </div>
 
-<!-- CONTACT -->
 <div id="contact" class="contact">
   <div class="contact-eye" id="c-eye">Get in touch</div>
   <div class="contact-title" id="c-title">Ready to order?</div>
-  <p class="contact-sub" id="c-sub">Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.</p>
+  <p class="contact-sub" id="c-sub">Order directly via WhatsApp or Instagram. We ship worldwide.</p>
   <div class="contact-links">
     <a href="https://wa.me/525527031153?text=Hi! I want to place an order" target="_blank" class="cbtn rose">WhatsApp +52 55 2703 1153</a>
     <a href="https://instagram.com/imnotabirkin" target="_blank" class="cbtn">Instagram @imnotabirkin</a>
@@ -462,12 +357,11 @@ footer{background:#111;padding:48px 28px 28px}
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="f-logo">
-    <span class="f-logo-not">I'm not a</span>
+    <span class="f-logo-not">i'm not a</span>
     <span class="f-logo-birkin">Birkin</span>
-    <span class="f-logo-charm">I'm a charm</span>
+    <span class="f-logo-charm">i'm a charm</span>
   </div>
   <div class="f-links">
     <a href="#shop">Shop</a>
@@ -481,332 +375,126 @@ footer{background:#111;padding:48px 28px 28px}
 </footer>
 
 <script>
+var lang = 'en';
+var cart = [];
+
 function openMenu(){document.getElementById('mobMenu').classList.add('open');document.getElementById('mobOverlay').classList.add('open')}
 function closeMenu(){document.getElementById('mobMenu').classList.remove('open');document.getElementById('mobOverlay').classList.remove('open')}
-
-var cart=[];
 function openCart(){document.getElementById('cartDrawer').classList.add('open');document.getElementById('cartOverlay').classList.add('open');renderCart()}
 function closeCart(){document.getElementById('cartDrawer').classList.remove('open');document.getElementById('cartOverlay').classList.remove('open')}
-
-function addToCart(name,color){
-  var ex=cart.find(function(i){return i.name===name});
-  if(ex){ex.qty++}else{cart.push({name:name,color:color,qty:1,price:29.99})}
-  updateCartCount();showToast(name);
-}
+function addToCart(name,color){var ex=cart.find(function(i){return i.name===name});if(ex){ex.qty++}else{cart.push({name:name,color:color,qty:1,price:29.99})}updateCartCount();showToast(name)}
 function updateCartCount(){document.getElementById('cartCount').textContent=cart.reduce(function(s,i){return s+i.qty},0)}
 function showToast(name){var t=document.getElementById('toast');t.textContent=(lang==='es'?'Agregado: ':'Added: ')+name;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2500)}
 function renderCart(){
   var el=document.getElementById('cartItems');
   var footer=document.getElementById('cartFooter');
-  if(cart.length===0){el.innerHTML='<div class="cart-empty">'+(lang==='es'?'Tu carrito está vacío':'Your cart is empty')+'</div>';footer.style.display='none';return}
+  if(cart.length===0){el.innerHTML='<div class="cart-empty">'+(lang==='es'?'Tu carrito esta vacio':'Your cart is empty')+'</div>';footer.style.display='none';return}
   footer.style.display='block';
-  el.innerHTML=cart.map(function(item,i){return'<div class="cart-item"><div class="cart-item-color" style="background:'+item.color+'"></div><div class="cart-item-info"><div class="cart-item-name">'+item.name+'</div><div class="cart-item-price">$'+item.price.toFixed(2)+' USD</div><div class="cart-qty"><button onclick="changeQty('+i+',-1)">−</button><span>'+item.qty+'</span><button onclick="changeQty('+i+',1)">+</button></div></div><button class="cart-item-remove" onclick="removeItem('+i+')">×</button></div>'}).join('');
+  var html='';
+  for(var i=0;i<cart.length;i++){var item=cart[i];html+='<div class="cart-item"><div class="cart-item-color" style="background:'+item.color+'"></div><div class="cart-item-info"><div class="cart-item-name">'+item.name+'</div><div class="cart-item-price">$'+item.price.toFixed(2)+' USD</div><div class="cart-qty"><button onclick="changeQty('+i+',-1)">-</button><span>'+item.qty+'</span><button onclick="changeQty('+i+',1)">+</button></div></div><button class="cart-item-remove" onclick="removeItem('+i+')">x</button></div>'}
+  el.innerHTML=html;
   document.getElementById('cartTotal').textContent='$'+cart.reduce(function(s,i){return s+i.qty*i.price},0).toFixed(2)+' USD';
 }
 function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);updateCartCount();renderCart()}
 function removeItem(i){cart.splice(i,1);updateCartCount();renderCart()}
 function openCheckoutModal(){
   if(!cart.length)return;
-  var t=T[lang];
-  var summary='<div class="order-summary-title">'+(lang==='es'?'Tu orden':'Your order')+'</div>';
-  cart.forEach(function(i){summary+='<div class="order-item"><span>'+i.name+' × '+i.qty+'</span><span>
-
-var lang='en';
-var T={
-  en:{ann:'Free worldwide shipping on orders over $60 USD · Limited edition',hEye:'Collection 2025 · Limited Edition',hTop:"I'm not a",hBottom:"I'm a charm",hSub:'Mini bag charms · Worldwide shipping',hBtn1:'Shop the collection',hBtn2:'Our story',hNote:'✦   12 colors available   ✦   Limited pieces   ✦',s1:'Colors available',s2:'Worldwide shipping',s3:'Limited edition',pEye:'The Collection',pTitle:'Find your charm',pSub:'Limited edition · $29.99 USD each · Worldwide shipping',stEye:'Our Story',stTitle:'Four women.<br>One obsession.<br>Zero waitlists.',stP1:'We are Katherine, Alexia, Jissela, and Mom — a family of women who share more than a love for fashion: we share a fascination for the details that make any moment feel special.',stP2:'Over the years, we built our own collection of dream bags. And yes… we learned that getting one could take years. Too long for something that should simply make you happy.',stP3:"Then we discovered mini bag charms. And we fell in love instantly. Because it's not about having a Birkin. It's about that feeling. Elevating any bag you already love. Turning the everyday into something special.",stP4:"We created I'm not a Birkin, I'm a Charm for every woman who loves luxury, details, and that little thrill that transforms a whole look. No waitlists. No complications. Just that special touch that makes you feel incredible.",stPunch:"\"You don't need a Birkin to feel that thrill.\"",f1t:'Limited Edition',f1d:"When it's gone, it's gone.",f2t:'Quality',f2d:'Made with the finest materials.',f3t:'Worldwide',f3d:'We ship everywhere.',f4t:'Gift Ready',f4d:'Luxury packaging included.',rEye:'Reviews',rTitle:'Loved by you',igEye:'Instagram',cEye:'Get in touch',cTitle:'Ready to order?',cSub:'Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.',add:'Add to Cart',newB:'New',nl1:'Shop',nl2:'Story',nl3:'Contact',cartTitle:'Your Cart',checkoutBtn:'Checkout via PayPal',paypalNote:'Secure payment via PayPal'},
-  es:{ann:'Envio mundial gratis en pedidos mayores a $60 USD · Edicion limitada',    hEye:'Edicion Limitada · Envio Mundial',hTop:"I'm not a",hBottom:"I'm a charm",hSub:'Mini bag charms · Envio mundial',hBtn1:'Ver la coleccion',hBtn2:'Nuestra historia',hNote:'✦   12 colores disponibles   ✦   Piezas limitadas   ✦',s1:'Colores disponibles',s2:'Envio mundial',s3:'Edicion limitada',pEye:'La Coleccion',pTitle:'Encuentra tu charm',pSub:'Edicion limitada · $29.99 USD c/u · Envio mundial',stEye:'Nuestra Historia',stTitle:'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.',stP1:'Somos Katherine, Alexia, Jissela y mama. Una familia de mujeres que comparte algo mas que amor por la moda: compartimos una fascinacion por los detalles que hacen sentir especial cualquier momento.',stP2:'Con los anos, construimos nuestra propia coleccion de bolsos sonados. Y si… aprendimos que conseguir uno podia tomar anos. Demasiado tiempo para algo que simplemente deberia hacerte feliz.',stP3:'Entonces descubrimos los mini bag charms. Y nos enamoramos al instante. Porque no se trata de tener una Birkin. Se trata de esa sensacion. De elevar cualquier bolsa que ya amas. De convertir lo cotidiano en algo especial.',stP4:"Creamos I'm not a Birkin, I'm a Charm para todas las mujeres que aman el lujo, los detalles y esa pequena emocion que transforma un look completo. Sin listas de espera. Sin complicaciones. Solo ese toque especial que te hace sentir increible.",stPunch:'"No necesitas una Birkin para sentir esa emocion."',f1t:'Edicion Limitada',f1d:'Cuando se acaba, se acaba.',f2t:'Calidad',f2d:'Fabricados con los mejores materiales.',f3t:'Envio Mundial',f3d:'Enviamos a todo el mundo.',f4t:'Gift Ready',f4d:'Empaque de lujo incluido.',rEye:'Testimonios',rTitle:'Loved by you',igEye:'Instagram',cEye:'Contacto',cTitle:'Lista para ordenar?',cSub:'Ordena por WhatsApp o Instagram.<br>Envio mundial. Respuesta en menos de 24 horas.',add:'Agregar al carrito',newB:'Nuevo',nl1:'Tienda',nl2:'Historia',nl3:'Contacto',cartTitle:'Tu Carrito',checkoutBtn:'Pagar con PayPal',paypalNote:'Pago seguro via PayPal'}
-};
-
-function toggleLang(){
-  lang=lang==='en'?'es':'en';
-  var t=T[lang];
-  document.getElementById('langBtn').textContent=lang==='en'?'ES':'EN';
-  document.querySelector('.ann').textContent=t.ann;
-  document.getElementById('h-eye').textContent=t.hEye;
-  document.getElementById('h-top').textContent=t.hTop;
-  document.getElementById('h-bottom').textContent=t.hBottom;
-  document.getElementById('h-sub').textContent=t.hSub;
-  document.getElementById('h-btn1').textContent=t.hBtn1;
-  document.getElementById('h-btn2').textContent=t.hBtn2;
-  document.getElementById('h-note').textContent=t.hNote;
-  document.getElementById('s1').textContent=t.s1;
-  document.getElementById('s2').textContent=t.s2;
-  document.getElementById('s3').textContent=t.s3;
-  document.getElementById('p-eye').textContent=t.pEye;
-  document.getElementById('p-title').textContent=t.pTitle;
-  document.getElementById('p-sub').textContent=t.pSub;
-  document.getElementById('st-eye').textContent=t.stEye;
-  document.getElementById('st-title').innerHTML=t.stTitle;
-  document.getElementById('st-p1').textContent=t.stP1;
-  document.getElementById('st-p2').textContent=t.stP2;
-  document.getElementById('st-p3').textContent=t.stP3;
-  document.getElementById('st-p4').textContent=t.stP4;
-  document.getElementById('st-punch').textContent=t.stPunch;
-  document.getElementById('f1t').textContent=t.f1t;document.getElementById('f1d').textContent=t.f1d;
-  document.getElementById('f2t').textContent=t.f2t;document.getElementById('f2d').textContent=t.f2d;
-  document.getElementById('f3t').textContent=t.f3t;document.getElementById('f3d').textContent=t.f3d;
-  document.getElementById('f4t').textContent=t.f4t;document.getElementById('f4d').textContent=t.f4d;
-  document.getElementById('r-eye').textContent=t.rEye;
-  document.getElementById('r-title').textContent=t.rTitle;
-  document.getElementById('ig-eye').textContent=t.igEye;
-  document.getElementById('c-eye').textContent=t.cEye;
-  document.getElementById('c-title').textContent=t.cTitle;
-  document.getElementById('c-sub').innerHTML=t.cSub;
-  document.getElementById('nl1').textContent=t.nl1;
-  document.getElementById('nl2').textContent=t.nl2;
-  document.getElementById('nl3').textContent=t.nl3;
-  document.getElementById('cartTitleEl').textContent=t.cartTitle;
-  document.getElementById('checkoutBtn').textContent=t.checkoutBtn;
-  document.getElementById('paypalNote').textContent=t.paypalNote;
-  document.querySelectorAll('.t-add').forEach(function(e){e.textContent=t.add});
-  ['b1','b2','b3','b4'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=t.newB});
-}
-</script>
-</body>
-</html>
-+(i.qty*i.price).toFixed(2)+'</span></div>'});
+  var es=lang==='es';
+  var summary='<div class="order-summary-title">'+(es?'Tu orden':'Your order')+'</div>';
+  for(var i=0;i<cart.length;i++){summary+='<div class="order-item"><span>'+cart[i].name+' x'+cart[i].qty+'</span><span>$'+(cart[i].qty*cart[i].price).toFixed(2)+'</span></div>'}
   var total=cart.reduce(function(s,i){return s+i.qty*i.price},0);
-  summary+='<div class="order-total-row"><span>Total</span><span>
-
-var lang='en';
-var T={
-  en:{ann:'Free worldwide shipping on orders over $60 USD · Limited edition',hEye:'Collection 2025 · Limited Edition',hTop:"I'm not a",hBottom:"I'm a charm",hSub:'Mini bag charms · Worldwide shipping',hBtn1:'Shop the collection',hBtn2:'Our story',hNote:'✦   12 colors available   ✦   Limited pieces   ✦',s1:'Colors available',s2:'Worldwide shipping',s3:'Limited edition',pEye:'The Collection',pTitle:'Find your charm',pSub:'Limited edition · $29.99 USD each · Worldwide shipping',stEye:'Our Story',stTitle:'Four women.<br>One obsession.<br>Zero waitlists.',stP1:'We are Katherine, Alexia, Jissela, and Mom — a family of women who share more than a love for fashion: we share a fascination for the details that make any moment feel special.',stP2:'Over the years, we built our own collection of dream bags. And yes… we learned that getting one could take years. Too long for something that should simply make you happy.',stP3:"Then we discovered mini bag charms. And we fell in love instantly. Because it's not about having a Birkin. It's about that feeling. Elevating any bag you already love. Turning the everyday into something special.",stP4:"We created I'm not a Birkin, I'm a Charm for every woman who loves luxury, details, and that little thrill that transforms a whole look. No waitlists. No complications. Just that special touch that makes you feel incredible.",stPunch:"\"You don't need a Birkin to feel that thrill.\"",f1t:'Limited Edition',f1d:"When it's gone, it's gone.",f2t:'Quality',f2d:'Made with the finest materials.',f3t:'Worldwide',f3d:'We ship everywhere.',f4t:'Gift Ready',f4d:'Luxury packaging included.',rEye:'Reviews',rTitle:'Loved by you',igEye:'Instagram',cEye:'Get in touch',cTitle:'Ready to order?',cSub:'Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.',add:'Add to Cart',newB:'New',nl1:'Shop',nl2:'Story',nl3:'Contact',cartTitle:'Your Cart',checkoutBtn:'Checkout via PayPal',paypalNote:'Secure payment via PayPal'},
-  es:{ann:'Envio mundial gratis en pedidos mayores a $60 USD · Edicion limitada',hEye:'Coleccion 2025 · Edicion Limitada',hTop:"I'm not a",hBottom:"I'm a charm",hSub:'Mini bag charms · Envio mundial',hBtn1:'Ver la coleccion',hBtn2:'Nuestra historia',hNote:'✦   12 colores disponibles   ✦   Piezas limitadas   ✦',s1:'Colores disponibles',s2:'Envio mundial',s3:'Edicion limitada',pEye:'La Coleccion',pTitle:'Encuentra tu charm',pSub:'Edicion limitada · $29.99 USD c/u · Envio mundial',stEye:'Nuestra Historia',stTitle:'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.',stP1:'Somos Katherine, Alexia, Jissela y mama. Una familia de mujeres que comparte algo mas que amor por la moda: compartimos una fascinacion por los detalles que hacen sentir especial cualquier momento.',stP2:'Con los anos, construimos nuestra propia coleccion de bolsos sonados. Y si… aprendimos que conseguir uno podia tomar anos. Demasiado tiempo para algo que simplemente deberia hacerte feliz.',stP3:'Entonces descubrimos los mini bag charms. Y nos enamoramos al instante. Porque no se trata de tener una Birkin. Se trata de esa sensacion. De elevar cualquier bolsa que ya amas. De convertir lo cotidiano en algo especial.',stP4:"Creamos I'm not a Birkin, I'm a Charm para todas las mujeres que aman el lujo, los detalles y esa pequena emocion que transforma un look completo. Sin listas de espera. Sin complicaciones. Solo ese toque especial que te hace sentir increible.",stPunch:'"No necesitas una Birkin para sentir esa emocion."',f1t:'Edicion Limitada',f1d:'Cuando se acaba, se acaba.',f2t:'Calidad',f2d:'Fabricados con los mejores materiales.',f3t:'Envio Mundial',f3d:'Enviamos a todo el mundo.',f4t:'Gift Ready',f4d:'Empaque de lujo incluido.',rEye:'Testimonios',rTitle:'Loved by you',igEye:'Instagram',cEye:'Contacto',cTitle:'Lista para ordenar?',cSub:'Ordena por WhatsApp o Instagram.<br>Envio mundial. Respuesta en menos de 24 horas.',add:'Agregar al carrito',newB:'Nuevo',nl1:'Tienda',nl2:'Historia',nl3:'Contacto',cartTitle:'Tu Carrito',checkoutBtn:'Pagar con PayPal',paypalNote:'Pago seguro via PayPal'}
-};
-
-function toggleLang(){
-  lang=lang==='en'?'es':'en';
-  var t=T[lang];
-  document.getElementById('langBtn').textContent=lang==='en'?'ES':'EN';
-  document.querySelector('.ann').textContent=t.ann;
-  document.getElementById('h-eye').textContent=t.hEye;
-  document.getElementById('h-top').textContent=t.hTop;
-  document.getElementById('h-bottom').textContent=t.hBottom;
-  document.getElementById('h-sub').textContent=t.hSub;
-  document.getElementById('h-btn1').textContent=t.hBtn1;
-  document.getElementById('h-btn2').textContent=t.hBtn2;
-  document.getElementById('h-note').textContent=t.hNote;
-  document.getElementById('s1').textContent=t.s1;
-  document.getElementById('s2').textContent=t.s2;
-  document.getElementById('s3').textContent=t.s3;
-  document.getElementById('p-eye').textContent=t.pEye;
-  document.getElementById('p-title').textContent=t.pTitle;
-  document.getElementById('p-sub').textContent=t.pSub;
-  document.getElementById('st-eye').textContent=t.stEye;
-  document.getElementById('st-title').innerHTML=t.stTitle;
-  document.getElementById('st-p1').textContent=t.stP1;
-  document.getElementById('st-p2').textContent=t.stP2;
-  document.getElementById('st-p3').textContent=t.stP3;
-  document.getElementById('st-p4').textContent=t.stP4;
-  document.getElementById('st-punch').textContent=t.stPunch;
-  document.getElementById('f1t').textContent=t.f1t;document.getElementById('f1d').textContent=t.f1d;
-  document.getElementById('f2t').textContent=t.f2t;document.getElementById('f2d').textContent=t.f2d;
-  document.getElementById('f3t').textContent=t.f3t;document.getElementById('f3d').textContent=t.f3d;
-  document.getElementById('f4t').textContent=t.f4t;document.getElementById('f4d').textContent=t.f4d;
-  document.getElementById('r-eye').textContent=t.rEye;
-  document.getElementById('r-title').textContent=t.rTitle;
-  document.getElementById('ig-eye').textContent=t.igEye;
-  document.getElementById('c-eye').textContent=t.cEye;
-  document.getElementById('c-title').textContent=t.cTitle;
-  document.getElementById('c-sub').innerHTML=t.cSub;
-  document.getElementById('nl1').textContent=t.nl1;
-  document.getElementById('nl2').textContent=t.nl2;
-  document.getElementById('nl3').textContent=t.nl3;
-  document.getElementById('cartTitleEl').textContent=t.cartTitle;
-  document.getElementById('checkoutBtn').textContent=t.checkoutBtn;
-  document.getElementById('paypalNote').textContent=t.paypalNote;
-  document.querySelectorAll('.t-add').forEach(function(e){e.textContent=t.add});
-  ['b1','b2','b3','b4'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=t.newB});
-}
-</script>
-</body>
-</html>
-+total.toFixed(2)+' USD</span></div>';
+  summary+='<div class="order-total-row"><span>Total</span><span>$'+total.toFixed(2)+' USD</span></div>';
   document.getElementById('orderSummary').innerHTML=summary;
-  if(lang==='es'){
-    document.getElementById('cm-title').textContent='Datos de envío';
-    document.getElementById('cm-sub').textContent='Llena tus datos y te mandamos el link de pago';
-    document.getElementById('cm-div1').textContent='Contacto';
-    document.getElementById('cm-div2').textContent='Dirección de envío';
-    document.getElementById('cm-name').textContent='Nombre completo';
-    document.getElementById('cm-email').textContent='Email';
-    document.getElementById('cm-phone').textContent='Teléfono / WhatsApp';
-    document.getElementById('cm-addr').textContent='Dirección';
-    document.getElementById('cm-city').textContent='Ciudad';
-    document.getElementById('cm-zip').textContent='Código postal';
-    document.getElementById('cm-state').textContent='Estado';
-    document.getElementById('cm-country').textContent='País';
-    document.getElementById('cm-notes').textContent='Notas (opcional)';
-    document.getElementById('cm-paybtn').textContent='Pagar con PayPal';
-  } else {
-    document.getElementById('cm-title').textContent='Shipping Details';
-    document.getElementById('cm-sub').textContent="Fill in your info and we'll send your order via PayPal";
-    document.getElementById('cm-div1').textContent='Contact';
-    document.getElementById('cm-div2').textContent='Shipping Address';
-    document.getElementById('cm-name').textContent='Full Name';
-    document.getElementById('cm-email').textContent='Email';
-    document.getElementById('cm-phone').textContent='Phone / WhatsApp';
-    document.getElementById('cm-addr').textContent='Address';
-    document.getElementById('cm-city').textContent='City';
-    document.getElementById('cm-zip').textContent='ZIP Code';
-    document.getElementById('cm-state').textContent='State / Province';
-    document.getElementById('cm-country').textContent='Country';
-    document.getElementById('cm-notes').textContent='Notes (optional)';
-    document.getElementById('cm-paybtn').textContent='Pay with PayPal';
-  }
+  document.getElementById('cm-title').textContent=es?'Datos de envio':'Shipping Details';
+  document.getElementById('cm-sub').textContent=es?'Llena tus datos para procesar tu orden':'Fill in your details to process your order';
+  document.getElementById('cm-div1').textContent=es?'Contacto':'Contact';
+  document.getElementById('cm-div2').textContent=es?'Direccion de envio':'Shipping Address';
+  document.getElementById('cm-name').textContent=es?'Nombre completo':'Full Name';
+  document.getElementById('cm-email').textContent='Email';
+  document.getElementById('cm-phone').textContent=es?'Telefono / WhatsApp':'Phone / WhatsApp';
+  document.getElementById('cm-addr').textContent=es?'Direccion':'Address';
+  document.getElementById('cm-city').textContent=es?'Ciudad':'City';
+  document.getElementById('cm-zip').textContent='ZIP';
+  document.getElementById('cm-state').textContent=es?'Estado':'State';
+  document.getElementById('cm-country').textContent=es?'Pais':'Country';
+  document.getElementById('cm-notes').textContent=es?'Notas (opcional)':'Notes (optional)';
+  document.getElementById('cm-paybtn').textContent=es?'Pagar con PayPal':'Pay with PayPal';
   document.getElementById('checkoutModal').classList.add('open');
   document.getElementById('checkoutOverlay').classList.add('open');
   closeCart();
 }
-
-function closeCheckout(){
-  document.getElementById('checkoutModal').classList.remove('open');
-  document.getElementById('checkoutOverlay').classList.remove('open');
-}
-
+function closeCheckout(){document.getElementById('checkoutModal').classList.remove('open');document.getElementById('checkoutOverlay').classList.remove('open')}
 function submitOrder(){
-  var name=document.getElementById('f-name').value;
-  var email=document.getElementById('f-email').value;
-  var phone=document.getElementById('f-phone').value;
-  var addr=document.getElementById('f-addr').value;
-  var city=document.getElementById('f-city').value;
-  var zip=document.getElementById('f-zip').value;
-  var state=document.getElementById('f-state').value;
-  var country=document.getElementById('f-country').value;
-  var notes=document.getElementById('f-notes').value;
-
-  if(!name||!email||!addr||!city||!country){
-    alert(lang==='es'?'Por favor llena los campos requeridos':'Please fill in all required fields');
-    return;
-  }
-
+  var name=document.getElementById('f-name').value.trim();
+  var email=document.getElementById('f-email').value.trim();
+  var phone=document.getElementById('f-phone').value.trim();
+  var addr=document.getElementById('f-addr').value.trim();
+  var city=document.getElementById('f-city').value.trim();
+  var zip=document.getElementById('f-zip').value.trim();
+  var state=document.getElementById('f-state').value.trim();
+  var country=document.getElementById('f-country').value.trim();
+  var notes=document.getElementById('f-notes').value.trim();
+  if(!name||!email||!addr||!city||!country){alert(lang==='es'?'Por favor llena todos los campos requeridos':'Please fill in all required fields');return}
   var items=cart.map(function(i){return i.name+' x'+i.qty}).join(', ');
   var total=cart.reduce(function(s,i){return s+i.qty*i.price},0);
   var shipping=name+' | '+addr+', '+city+', '+state+' '+zip+', '+country+' | '+phone;
-
-  // Send to PayPal
-  var url='https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=alexiarivera%40gmail.com'
-    +'&item_name='+encodeURIComponent("I'm Not a Birkin – "+items)
-    +'&amount='+total.toFixed(2)
-    +'&currency_code=USD'
-    +'&custom='+encodeURIComponent(shipping)
-    +'&on1=Ship+to&os1='+encodeURIComponent(shipping)
-    +'&on2=Notes&os2='+encodeURIComponent(notes||'none');
-
-  // Also send via WhatsApp
-  var wa='https://wa.me/525527031153?text='+encodeURIComponent(
-    '🛍 NEW ORDER\n\nItems: '+items+'\nTotal: 
-
-var lang='en';
-var T={
-  en:{ann:'Free worldwide shipping on orders over $60 USD · Limited edition',hEye:'Collection 2025 · Limited Edition',hTop:"I'm not a",hBottom:"I'm a charm",hSub:'Mini bag charms · Worldwide shipping',hBtn1:'Shop the collection',hBtn2:'Our story',hNote:'✦   12 colors available   ✦   Limited pieces   ✦',s1:'Colors available',s2:'Worldwide shipping',s3:'Limited edition',pEye:'The Collection',pTitle:'Find your charm',pSub:'Limited edition · $29.99 USD each · Worldwide shipping',stEye:'Our Story',stTitle:'Four women.<br>One obsession.<br>Zero waitlists.',stP1:'We are Katherine, Alexia, Jissela, and Mom — a family of women who share more than a love for fashion: we share a fascination for the details that make any moment feel special.',stP2:'Over the years, we built our own collection of dream bags. And yes… we learned that getting one could take years. Too long for something that should simply make you happy.',stP3:"Then we discovered mini bag charms. And we fell in love instantly. Because it's not about having a Birkin. It's about that feeling. Elevating any bag you already love. Turning the everyday into something special.",stP4:"We created I'm not a Birkin, I'm a Charm for every woman who loves luxury, details, and that little thrill that transforms a whole look. No waitlists. No complications. Just that special touch that makes you feel incredible.",stPunch:"\"You don't need a Birkin to feel that thrill.\"",f1t:'Limited Edition',f1d:"When it's gone, it's gone.",f2t:'Quality',f2d:'Made with the finest materials.',f3t:'Worldwide',f3d:'We ship everywhere.',f4t:'Gift Ready',f4d:'Luxury packaging included.',rEye:'Reviews',rTitle:'Loved by you',igEye:'Instagram',cEye:'Get in touch',cTitle:'Ready to order?',cSub:'Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.',add:'Add to Cart',newB:'New',nl1:'Shop',nl2:'Story',nl3:'Contact',cartTitle:'Your Cart',checkoutBtn:'Checkout via PayPal',paypalNote:'Secure payment via PayPal'},
-  es:{ann:'Envio mundial gratis en pedidos mayores a $60 USD · Edicion limitada',hEye:'Coleccion 2025 · Edicion Limitada',hTop:"I'm not a",hBottom:"I'm a charm",hSub:'Mini bag charms · Envio mundial',hBtn1:'Ver la coleccion',hBtn2:'Nuestra historia',hNote:'✦   12 colores disponibles   ✦   Piezas limitadas   ✦',s1:'Colores disponibles',s2:'Envio mundial',s3:'Edicion limitada',pEye:'La Coleccion',pTitle:'Encuentra tu charm',pSub:'Edicion limitada · $29.99 USD c/u · Envio mundial',stEye:'Nuestra Historia',stTitle:'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.',stP1:'Somos Katherine, Alexia, Jissela y mama. Una familia de mujeres que comparte algo mas que amor por la moda: compartimos una fascinacion por los detalles que hacen sentir especial cualquier momento.',stP2:'Con los anos, construimos nuestra propia coleccion de bolsos sonados. Y si… aprendimos que conseguir uno podia tomar anos. Demasiado tiempo para algo que simplemente deberia hacerte feliz.',stP3:'Entonces descubrimos los mini bag charms. Y nos enamoramos al instante. Porque no se trata de tener una Birkin. Se trata de esa sensacion. De elevar cualquier bolsa que ya amas. De convertir lo cotidiano en algo especial.',stP4:"Creamos I'm not a Birkin, I'm a Charm para todas las mujeres que aman el lujo, los detalles y esa pequena emocion que transforma un look completo. Sin listas de espera. Sin complicaciones. Solo ese toque especial que te hace sentir increible.",stPunch:'"No necesitas una Birkin para sentir esa emocion."',f1t:'Edicion Limitada',f1d:'Cuando se acaba, se acaba.',f2t:'Calidad',f2d:'Fabricados con los mejores materiales.',f3t:'Envio Mundial',f3d:'Enviamos a todo el mundo.',f4t:'Gift Ready',f4d:'Empaque de lujo incluido.',rEye:'Testimonios',rTitle:'Loved by you',igEye:'Instagram',cEye:'Contacto',cTitle:'Lista para ordenar?',cSub:'Ordena por WhatsApp o Instagram.<br>Envio mundial. Respuesta en menos de 24 horas.',add:'Agregar al carrito',newB:'Nuevo',nl1:'Tienda',nl2:'Historia',nl3:'Contacto',cartTitle:'Tu Carrito',checkoutBtn:'Pagar con PayPal',paypalNote:'Pago seguro via PayPal'}
-};
-
-function toggleLang(){
-  lang=lang==='en'?'es':'en';
-  var t=T[lang];
-  document.getElementById('langBtn').textContent=lang==='en'?'ES':'EN';
-  document.querySelector('.ann').textContent=t.ann;
-  document.getElementById('h-eye').textContent=t.hEye;
-  document.getElementById('h-top').textContent=t.hTop;
-  document.getElementById('h-bottom').textContent=t.hBottom;
-  document.getElementById('h-sub').textContent=t.hSub;
-  document.getElementById('h-btn1').textContent=t.hBtn1;
-  document.getElementById('h-btn2').textContent=t.hBtn2;
-  document.getElementById('h-note').textContent=t.hNote;
-  document.getElementById('s1').textContent=t.s1;
-  document.getElementById('s2').textContent=t.s2;
-  document.getElementById('s3').textContent=t.s3;
-  document.getElementById('p-eye').textContent=t.pEye;
-  document.getElementById('p-title').textContent=t.pTitle;
-  document.getElementById('p-sub').textContent=t.pSub;
-  document.getElementById('st-eye').textContent=t.stEye;
-  document.getElementById('st-title').innerHTML=t.stTitle;
-  document.getElementById('st-p1').textContent=t.stP1;
-  document.getElementById('st-p2').textContent=t.stP2;
-  document.getElementById('st-p3').textContent=t.stP3;
-  document.getElementById('st-p4').textContent=t.stP4;
-  document.getElementById('st-punch').textContent=t.stPunch;
-  document.getElementById('f1t').textContent=t.f1t;document.getElementById('f1d').textContent=t.f1d;
-  document.getElementById('f2t').textContent=t.f2t;document.getElementById('f2d').textContent=t.f2d;
-  document.getElementById('f3t').textContent=t.f3t;document.getElementById('f3d').textContent=t.f3d;
-  document.getElementById('f4t').textContent=t.f4t;document.getElementById('f4d').textContent=t.f4d;
-  document.getElementById('r-eye').textContent=t.rEye;
-  document.getElementById('r-title').textContent=t.rTitle;
-  document.getElementById('ig-eye').textContent=t.igEye;
-  document.getElementById('c-eye').textContent=t.cEye;
-  document.getElementById('c-title').textContent=t.cTitle;
-  document.getElementById('c-sub').innerHTML=t.cSub;
-  document.getElementById('nl1').textContent=t.nl1;
-  document.getElementById('nl2').textContent=t.nl2;
-  document.getElementById('nl3').textContent=t.nl3;
-  document.getElementById('cartTitleEl').textContent=t.cartTitle;
-  document.getElementById('checkoutBtn').textContent=t.checkoutBtn;
-  document.getElementById('paypalNote').textContent=t.paypalNote;
-  document.querySelectorAll('.t-add').forEach(function(e){e.textContent=t.add});
-  ['b1','b2','b3','b4'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=t.newB});
-}
-</script>
-</body>
-</html>
-+total.toFixed(2)+' USD\n\nName: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nAddress: '+addr+', '+city+', '+state+' '+zip+', '+country+(notes?'\nNotes: '+notes:'')
-  );
-  window.open(url,'_blank');
-  setTimeout(function(){window.open(wa,'_blank')},1000);
+  var paypalUrl='https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=alexiarivera%40gmail.com&item_name='+encodeURIComponent("I'm Not a Birkin - "+items)+'&amount='+total.toFixed(2)+'&currency_code=USD&custom='+encodeURIComponent(shipping);
+  var waMsg='NEW ORDER\n\nItems: '+items+'\nTotal: $'+total.toFixed(2)+' USD\n\nName: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nAddress: '+addr+', '+city+', '+state+' '+zip+', '+country+(notes?'\nNotes: '+notes:'');
+  window.open(paypalUrl,'_blank');
+  setTimeout(function(){window.open('https://wa.me/525527031153?text='+encodeURIComponent(waMsg),'_blank')},1000);
   closeCheckout();
-  cart=[];updateCartCount();
+  cart=[];
+  updateCartCount();
 }
-
-var lang='en';
-var T={
-  en:{ann:'Free worldwide shipping on orders over $60 USD · Limited edition',hEye:'Collection 2025 · Limited Edition',hTop:"I'm not a",hBottom:"I'm a charm",hSub:'Mini bag charms · Worldwide shipping',hBtn1:'Shop the collection',hBtn2:'Our story',hNote:'✦   12 colors available   ✦   Limited pieces   ✦',s1:'Colors available',s2:'Worldwide shipping',s3:'Limited edition',pEye:'The Collection',pTitle:'Find your charm',pSub:'Limited edition · $29.99 USD each · Worldwide shipping',stEye:'Our Story',stTitle:'Four women.<br>One obsession.<br>Zero waitlists.',stP1:'We are Katherine, Alexia, Jissela, and Mom — a family of women who share more than a love for fashion: we share a fascination for the details that make any moment feel special.',stP2:'Over the years, we built our own collection of dream bags. And yes… we learned that getting one could take years. Too long for something that should simply make you happy.',stP3:"Then we discovered mini bag charms. And we fell in love instantly. Because it's not about having a Birkin. It's about that feeling. Elevating any bag you already love. Turning the everyday into something special.",stP4:"We created I'm not a Birkin, I'm a Charm for every woman who loves luxury, details, and that little thrill that transforms a whole look. No waitlists. No complications. Just that special touch that makes you feel incredible.",stPunch:"\"You don't need a Birkin to feel that thrill.\"",f1t:'Limited Edition',f1d:"When it's gone, it's gone.",f2t:'Quality',f2d:'Made with the finest materials.',f3t:'Worldwide',f3d:'We ship everywhere.',f4t:'Gift Ready',f4d:'Luxury packaging included.',rEye:'Reviews',rTitle:'Loved by you',igEye:'Instagram',cEye:'Get in touch',cTitle:'Ready to order?',cSub:'Order directly via WhatsApp or Instagram.<br>We ship worldwide. Response within 24 hours.',add:'Add to Cart',newB:'New',nl1:'Shop',nl2:'Story',nl3:'Contact',cartTitle:'Your Cart',checkoutBtn:'Checkout via PayPal',paypalNote:'Secure payment via PayPal'},
-  es:{ann:'Envio mundial gratis en pedidos mayores a $60 USD · Edicion limitada',hEye:'Coleccion 2025 · Edicion Limitada',hTop:"I'm not a",hBottom:"I'm a charm",hSub:'Mini bag charms · Envio mundial',hBtn1:'Ver la coleccion',hBtn2:'Nuestra historia',hNote:'✦   12 colores disponibles   ✦   Piezas limitadas   ✦',s1:'Colores disponibles',s2:'Envio mundial',s3:'Edicion limitada',pEye:'La Coleccion',pTitle:'Encuentra tu charm',pSub:'Edicion limitada · $29.99 USD c/u · Envio mundial',stEye:'Nuestra Historia',stTitle:'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.',stP1:'Somos Katherine, Alexia, Jissela y mama. Una familia de mujeres que comparte algo mas que amor por la moda: compartimos una fascinacion por los detalles que hacen sentir especial cualquier momento.',stP2:'Con los anos, construimos nuestra propia coleccion de bolsos sonados. Y si… aprendimos que conseguir uno podia tomar anos. Demasiado tiempo para algo que simplemente deberia hacerte feliz.',stP3:'Entonces descubrimos los mini bag charms. Y nos enamoramos al instante. Porque no se trata de tener una Birkin. Se trata de esa sensacion. De elevar cualquier bolsa que ya amas. De convertir lo cotidiano en algo especial.',stP4:"Creamos I'm not a Birkin, I'm a Charm para todas las mujeres que aman el lujo, los detalles y esa pequena emocion que transforma un look completo. Sin listas de espera. Sin complicaciones. Solo ese toque especial que te hace sentir increible.",stPunch:'"No necesitas una Birkin para sentir esa emocion."',f1t:'Edicion Limitada',f1d:'Cuando se acaba, se acaba.',f2t:'Calidad',f2d:'Fabricados con los mejores materiales.',f3t:'Envio Mundial',f3d:'Enviamos a todo el mundo.',f4t:'Gift Ready',f4d:'Empaque de lujo incluido.',rEye:'Testimonios',rTitle:'Loved by you',igEye:'Instagram',cEye:'Contacto',cTitle:'Lista para ordenar?',cSub:'Ordena por WhatsApp o Instagram.<br>Envio mundial. Respuesta en menos de 24 horas.',add:'Agregar al carrito',newB:'Nuevo',nl1:'Tienda',nl2:'Historia',nl3:'Contacto',cartTitle:'Tu Carrito',checkoutBtn:'Pagar con PayPal',paypalNote:'Pago seguro via PayPal'}
-};
-
 function toggleLang(){
   lang=lang==='en'?'es':'en';
-  var t=T[lang];
-  document.getElementById('langBtn').textContent=lang==='en'?'ES':'EN';
-  document.querySelector('.ann').textContent=t.ann;
-  document.getElementById('h-eye').textContent=t.hEye;
-  document.getElementById('h-top').textContent=t.hTop;
-  document.getElementById('h-bottom').textContent=t.hBottom;
-  document.getElementById('h-sub').textContent=t.hSub;
-  document.getElementById('h-btn1').textContent=t.hBtn1;
-  document.getElementById('h-btn2').textContent=t.hBtn2;
-  document.getElementById('h-note').textContent=t.hNote;
-  document.getElementById('s1').textContent=t.s1;
-  document.getElementById('s2').textContent=t.s2;
-  document.getElementById('s3').textContent=t.s3;
-  document.getElementById('p-eye').textContent=t.pEye;
-  document.getElementById('p-title').textContent=t.pTitle;
-  document.getElementById('p-sub').textContent=t.pSub;
-  document.getElementById('st-eye').textContent=t.stEye;
-  document.getElementById('st-title').innerHTML=t.stTitle;
-  document.getElementById('st-p1').textContent=t.stP1;
-  document.getElementById('st-p2').textContent=t.stP2;
-  document.getElementById('st-p3').textContent=t.stP3;
-  document.getElementById('st-p4').textContent=t.stP4;
-  document.getElementById('st-punch').textContent=t.stPunch;
-  document.getElementById('f1t').textContent=t.f1t;document.getElementById('f1d').textContent=t.f1d;
-  document.getElementById('f2t').textContent=t.f2t;document.getElementById('f2d').textContent=t.f2d;
-  document.getElementById('f3t').textContent=t.f3t;document.getElementById('f3d').textContent=t.f3d;
-  document.getElementById('f4t').textContent=t.f4t;document.getElementById('f4d').textContent=t.f4d;
-  document.getElementById('r-eye').textContent=t.rEye;
-  document.getElementById('r-title').textContent=t.rTitle;
-  document.getElementById('ig-eye').textContent=t.igEye;
-  document.getElementById('c-eye').textContent=t.cEye;
-  document.getElementById('c-title').textContent=t.cTitle;
-  document.getElementById('c-sub').innerHTML=t.cSub;
-  document.getElementById('nl1').textContent=t.nl1;
-  document.getElementById('nl2').textContent=t.nl2;
-  document.getElementById('nl3').textContent=t.nl3;
-  document.getElementById('cartTitleEl').textContent=t.cartTitle;
-  document.getElementById('checkoutBtn').textContent=t.checkoutBtn;
-  document.getElementById('paypalNote').textContent=t.paypalNote;
-  document.querySelectorAll('.t-add').forEach(function(e){e.textContent=t.add});
-  ['b1','b2','b3','b4'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=t.newB});
+  var es=lang==='es';
+  document.getElementById('langBtn').textContent=es?'EN':'ES';
+  document.querySelector('.ann').textContent=es?'Envio mundial gratis en pedidos mayores a $60 USD · Edicion limitada':'Free worldwide shipping on orders over $60 USD · Limited edition';
+  document.getElementById('h-eye').textContent=es?'Edicion Limitada · Envio Mundial':'Limited Edition · Worldwide Shipping';
+  document.getElementById('h-top').textContent="i'm not a";
+  document.getElementById('h-bottom').textContent="i'm a charm";
+  document.getElementById('h-sub').textContent=es?'Mini bag charms · Envio mundial':'Mini bag charms · Worldwide shipping';
+  document.getElementById('h-btn1').textContent=es?'Ver la coleccion':'Shop the collection';
+  document.getElementById('h-btn2').textContent=es?'Nuestra historia':'Our story';
+  document.getElementById('h-note').textContent=es?'✦ 12 colores disponibles ✦ Piezas limitadas ✦':'✦ 12 colors available ✦ Limited pieces ✦';
+  document.getElementById('s1').textContent=es?'Colores disponibles':'Colors available';
+  document.getElementById('s2').textContent=es?'Envio mundial':'Worldwide shipping';
+  document.getElementById('s3').textContent=es?'Edicion limitada':'Limited edition';
+  document.getElementById('p-eye').textContent=es?'La Coleccion':'The Collection';
+  document.getElementById('p-title').textContent=es?'Encuentra tu charm':'Find your charm';
+  document.getElementById('p-sub').textContent=es?'Edicion limitada · $29.99 USD c/u · Envio mundial':'Limited edition · $29.99 USD each · Worldwide shipping';
+  document.getElementById('st-eye').textContent=es?'Nuestra Historia':'Our Story';
+  document.getElementById('st-title').innerHTML=es?'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.':'Four women.<br>One obsession.<br>Zero waitlists.';
+  document.getElementById('st-p1').textContent=es?'Somos Katherine, Alexia, Jissela y mama. Una familia de mujeres que comparte algo mas que amor por la moda: una fascinacion por los detalles que hacen sentir especial cualquier momento.':'We are Katherine, Alexia, Jissela, and Mom — a family of women who share more than a love for fashion: we share a fascination for the details that make any moment feel special.';
+  document.getElementById('st-p2').textContent=es?'Con los anos, construimos nuestra propia coleccion de bolsos sonados. Y aprendimos que conseguir uno podia tomar anos. Demasiado tiempo para algo que simplemente deberia hacerte feliz.':'Over the years, we built our own collection of dream bags. And yes, we learned that getting one could take years. Too long for something that should simply make you happy.';
+  document.getElementById('st-p3').textContent=es?'Entonces descubrimos los mini bag charms. Y nos enamoramos al instante. Porque no se trata de tener una Birkin. Se trata de esa sensacion. De elevar cualquier bolsa que ya amas.':'Then we discovered mini bag charms. And we fell in love instantly. Because it is not about having a Birkin. It is about that feeling. Elevating any bag you already love.';
+  document.getElementById('st-p4').textContent=es?'Creamos I\'m not a Birkin para todas las mujeres que aman el lujo y esa pequena emocion que transforma un look. Sin listas de espera. Sin complicaciones.':'We created I\'m not a Birkin for every woman who loves luxury and that little thrill that transforms a whole look. No waitlists. No complications.';
+  document.getElementById('st-punch').textContent=es?'No necesitas una Birkin para sentir esa emocion.':'You don\'t need a Birkin to feel that thrill.';
+  document.getElementById('f1t').textContent=es?'Edicion Limitada':'Limited Edition';
+  document.getElementById('f1d').textContent=es?'Cuando se acaba, se acaba.':'When it\'s gone, it\'s gone.';
+  document.getElementById('f2t').textContent=es?'Calidad':'Quality';
+  document.getElementById('f2d').textContent=es?'Fabricados con los mejores materiales.':'Made with the finest materials.';
+  document.getElementById('f3t').textContent=es?'Envio Mundial':'Worldwide';
+  document.getElementById('f3d').textContent=es?'Enviamos a todo el mundo.':'We ship everywhere.';
+  document.getElementById('f4t').textContent='Gift Ready';
+  document.getElementById('f4d').textContent=es?'Empaque de lujo incluido.':'Luxury packaging included.';
+  document.getElementById('r-eye').textContent=es?'Testimonios':'Reviews';
+  document.getElementById('r-title').textContent='Loved by you';
+  document.getElementById('ig-eye').textContent='Instagram';
+  document.getElementById('c-eye').textContent=es?'Contacto':'Get in touch';
+  document.getElementById('c-title').textContent=es?'Lista para ordenar?':'Ready to order?';
+  document.getElementById('c-sub').textContent=es?'Ordena por WhatsApp o Instagram. Envio mundial.':'Order directly via WhatsApp or Instagram. We ship worldwide.';
+  document.getElementById('nl1').textContent=es?'Tienda':'Shop';
+  document.getElementById('nl2').textContent=es?'Historia':'Story';
+  document.getElementById('nl3').textContent=es?'Contacto':'Contact';
+  document.getElementById('cartTitleEl').textContent=es?'Tu Carrito':'Your Cart';
+  document.getElementById('checkoutBtn').textContent=es?'Pagar':'Checkout';
+  document.getElementById('paypalNote').textContent=es?'Pago seguro via PayPal':'Secure payment via PayPal';
+  var adds=document.querySelectorAll('.t-add');
+  for(var i=0;i<adds.length;i++)adds[i].textContent=es?'Agregar al carrito':'Add to Cart';
+  var badges=['b1','b2','b3','b4'];
+  for(var j=0;j<badges.length;j++){var el=document.getElementById(badges[j]);if(el)el.textContent=es?'Nuevo':'New'}
 }
 </script>
 </body>
