@@ -9,165 +9,165 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:#fff;color:#111;font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
-.ann{background:#111;color:#fff;text-align:center;padding:11px;font-size:13px;letter-spacing:3px;text-transform:uppercase}
-.ann span{color:#F2D0D6;margin:0 10px}
-nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 32px;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.nav-links a{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#888;text-decoration:none;margin-right:28px;font-weight:300}
+.ann{background:#111;color:#fff;text-align:center;padding:11px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.ann span{color:#F2D0D6;margin:0 8px}
+nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 28px;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-links a{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#888;text-decoration:none;margin-right:24px;font-weight:300}
 .nav-links a:hover{color:#111}
 .nav-logo{text-align:center;flex:1}
-.nav-right{display:flex;align-items:center;gap:14px}
-.nav-right a{font-size:13px;letter-spacing:2px;color:#888;text-decoration:none}
-.lang-btn{background:none;border:1px solid #ddd;color:#888;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;padding:5px 11px;cursor:pointer}
-.cart-btn{background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;padding:9px 16px;cursor:pointer;position:relative;display:flex;align-items:center;gap:6px}
-.cart-count{background:#F2D0D6;color:#111;width:17px;height:17px;border-radius:50%;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-right a{font-size:12px;letter-spacing:2px;color:#888;text-decoration:none}
+.lang-btn{background:none;border:1px solid #ddd;color:#888;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2px;padding:5px 10px;cursor:pointer}
+.cart-btn{background:#111;color:#fff;border:none;padding:8px 14px;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:1px}
+.cart-count{background:#F2D0D6;color:#111;width:16px;height:16px;border-radius:50%;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:600}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{width:24px;height:1.5px;background:#111;display:block}
+.hamburger span{width:22px;height:1.5px;background:#111;display:block}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
 .mob-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:198}
 .mob-overlay.open{display:block}
-.mob-menu{position:fixed;top:0;right:-100%;width:72%;max-width:280px;height:100vh;background:#fff;z-index:199;padding:70px 36px 40px;transition:right 0.3s ease;display:flex;flex-direction:column;gap:28px}
+.mob-menu{position:fixed;top:0;right:-100%;width:70%;max-width:260px;height:100vh;background:#fff;z-index:199;padding:64px 32px 40px;transition:right 0.3s;display:flex;flex-direction:column;gap:26px}
 .mob-menu.open{right:0}
-.mob-menu a{font-size:18px;letter-spacing:3px;text-transform:uppercase;color:#111;text-decoration:none;font-weight:300}
-.mob-close{position:absolute;top:20px;right:20px;font-size:20px;cursor:pointer;background:none;border:none;color:#111}
-@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+.mob-menu a{font-size:17px;letter-spacing:3px;text-transform:uppercase;color:#111;text-decoration:none}
+.mob-close{position:absolute;top:18px;right:18px;font-size:20px;cursor:pointer;background:none;border:none;color:#111}
 .cart-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:298}
 .cart-overlay.open{display:block}
-.cart-drawer{position:fixed;top:0;right:-100%;width:90%;max-width:380px;height:100vh;background:#fff;z-index:299;padding:24px;transition:right 0.3s ease;display:flex;flex-direction:column;overflow-y:auto}
+.cart-drawer{position:fixed;top:0;right:-100%;width:90%;max-width:370px;height:100vh;background:#fff;z-index:299;padding:22px;transition:right 0.3s;display:flex;flex-direction:column;overflow-y:auto}
 .cart-drawer.open{right:0}
-.cart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #eee}
-.cart-title{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#111}
-.cart-close{background:none;border:none;font-size:20px;cursor:pointer;color:#111}
-.cart-items{flex:1;display:flex;flex-direction:column;gap:16px}
-.cart-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f5f5f5;align-items:center}
-.cart-item-color{width:38px;height:38px;border-radius:4px;flex-shrink:0;border:1px solid #eee}
+.cart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid #eee}
+.cart-title{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:#111}
+.cart-close{background:none;border:none;font-size:19px;cursor:pointer;color:#111}
+.cart-items{flex:1;display:flex;flex-direction:column;gap:14px}
+.cart-item{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid #f5f5f5;align-items:center}
+.cart-item-color{width:36px;height:36px;border-radius:3px;flex-shrink:0;border:1px solid #eee}
 .cart-item-info{flex:1}
-.cart-item-name{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#111;margin-bottom:3px}
+.cart-item-name{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#111;margin-bottom:2px}
 .cart-item-price{font-size:12px;color:#888}
-.cart-item-remove{background:none;border:none;color:#ccc;font-size:18px;cursor:pointer}
-.cart-qty{display:flex;align-items:center;gap:8px;margin-top:6px}
-.cart-qty button{background:#f5f5f5;border:none;width:22px;height:22px;cursor:pointer;font-size:13px;color:#111;display:flex;align-items:center;justify-content:center}
-.cart-qty span{font-size:13px;color:#111;min-width:18px;text-align:center}
-.cart-empty{text-align:center;padding:40px 0;color:#ccc;font-style:italic;font-family:'Playfair Display',serif;font-size:18px}
-.cart-footer{margin-top:20px;padding-top:16px;border-top:1px solid #eee}
-.cart-total{display:flex;justify-content:space-between;margin-bottom:16px;font-size:15px;color:#111}
-.checkout-btn{width:100%;background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;padding:17px;cursor:pointer;margin-bottom:8px}
-.paypal-note{text-align:center;font-size:11px;color:#bbb;letter-spacing:1px}
-.checkout-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:398}
-.checkout-overlay.open{display:block}
-.checkout-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:92%;max-width:420px;max-height:90vh;background:#fff;z-index:399;padding:28px 24px;overflow-y:auto;display:none}
-.checkout-modal.open{display:block}
-.checkout-modal h2{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#111;margin-bottom:6px}
-.checkout-modal p{font-size:12px;color:#999;letter-spacing:1px;margin-bottom:20px}
-.form-group{margin-bottom:14px}
-.form-group label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:5px}
-.form-group input,.form-group textarea{width:100%;border:1px solid #e8e8e8;padding:11px 13px;font-family:'Jost',sans-serif;font-size:14px;color:#111;background:#fff;outline:none}
-.form-group input:focus,.form-group textarea:focus{border-color:#111}
-.form-group textarea{resize:none;height:70px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-divider{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#bbb;margin:18px 0 14px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
-.order-summary{background:#fafafa;padding:14px;margin-bottom:18px}
-.order-summary-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:10px}
-.order-item{display:flex;justify-content:space-between;font-size:13px;color:#555;margin-bottom:6px}
-.order-total-row{display:flex;justify-content:space-between;font-size:15px;color:#111;font-weight:500;margin-top:10px;padding-top:10px;border-top:1px solid #e8e8e8}
-.pay-btn{width:100%;background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;padding:17px;cursor:pointer;margin-top:4px}
-.close-modal{position:absolute;top:16px;right:20px;background:none;border:none;font-size:20px;cursor:pointer;color:#888}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:13px 26px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap}
+.cart-item-remove{background:none;border:none;color:#ccc;font-size:17px;cursor:pointer}
+.cart-qty{display:flex;align-items:center;gap:7px;margin-top:5px}
+.cart-qty button{background:#f5f5f5;border:none;width:21px;height:21px;cursor:pointer;font-size:13px;color:#111;display:flex;align-items:center;justify-content:center}
+.cart-qty span{font-size:13px;color:#111;min-width:16px;text-align:center}
+.cart-empty{text-align:center;padding:36px 0;color:#ccc;font-style:italic;font-family:'Playfair Display',serif;font-size:17px}
+.cart-footer{margin-top:18px;padding-top:14px;border-top:1px solid #eee}
+.cart-total{display:flex;justify-content:space-between;margin-bottom:14px;font-size:14px;color:#111}
+.checkout-btn{width:100%;background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:16px;cursor:pointer;margin-bottom:7px}
+.paypal-note{text-align:center;font-size:10px;color:#bbb;letter-spacing:1px}
+.co-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:398}
+.co-overlay.open{display:block}
+.co-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:92%;max-width:410px;max-height:90vh;background:#fff;z-index:399;padding:26px 22px;overflow-y:auto;display:none}
+.co-modal.open{display:block}
+.co-modal h2{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:#111;margin-bottom:5px}
+.co-modal p{font-size:11px;color:#999;letter-spacing:1px;margin-bottom:18px}
+.fg{margin-bottom:13px}
+.fg label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:4px}
+.fg input,.fg textarea{width:100%;border:1px solid #e8e8e8;padding:10px 12px;font-family:'Jost',sans-serif;font-size:13px;color:#111;background:#fff;outline:none}
+.fg input:focus,.fg textarea:focus{border-color:#111}
+.fg textarea{resize:none;height:65px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.fdiv{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#bbb;margin:16px 0 12px;padding-bottom:7px;border-bottom:1px solid #f0f0f0}
+.osummary{background:#fafafa;padding:13px;margin-bottom:16px}
+.osummary-title{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:9px}
+.oitem{display:flex;justify-content:space-between;font-size:12px;color:#555;margin-bottom:5px}
+.ototal{display:flex;justify-content:space-between;font-size:14px;color:#111;font-weight:500;margin-top:9px;padding-top:9px;border-top:1px solid #e8e8e8}
+.pay-btn{width:100%;background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:16px;cursor:pointer;margin-top:3px}
+.close-co{position:absolute;top:14px;right:18px;background:none;border:none;font-size:19px;cursor:pointer;color:#888}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:12px 24px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2px;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1}
-.hero{background:#fff;min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 28px 60px;position:relative;overflow:hidden;border-bottom:1px solid #eee}
+.hero{background:#fff;min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:76px 26px 56px;position:relative;overflow:hidden;border-bottom:1px solid #eee}
 .hero-ring{position:absolute;border-radius:50%;border:1px solid #f0f0f0;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
-.r1{width:540px;height:540px}
-.r2{width:380px;height:380px}
-.hero-eye{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#bbb;margin-bottom:32px}
-.hero-logo{background:#FAF0F2;border-radius:50%;width:240px;height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 32px}
-.hl-not{font-family:'Jost',sans-serif;font-size:16px;font-weight:200;letter-spacing:4px;color:#111;text-transform:lowercase}
-.hl-birkin{font-family:'Playfair Display',serif;font-size:64px;font-weight:700;color:#111;line-height:1;position:relative;display:inline-block;margin:4px 0}
+.r1{width:520px;height:520px}
+.r2{width:360px;height:360px}
+.hero-eye{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#bbb;margin-bottom:28px}
+.hero-logo{background:#FAF0F2;border-radius:50%;width:230px;height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 28px}
+.hl-not{font-family:'Jost',sans-serif;font-size:15px;font-weight:200;letter-spacing:4px;color:#111;text-transform:lowercase}
+.hl-birkin{font-family:'Playfair Display',serif;font-size:60px;font-weight:700;color:#111;line-height:1;position:relative;display:inline-block;margin:3px 0}
 .hl-birkin::after{content:'';position:absolute;left:-4%;top:52%;width:108%;height:2px;background:#111;transform:rotate(-4deg);display:block}
-.hl-charm{font-family:'Jost',sans-serif;font-size:14px;font-weight:200;letter-spacing:4px;color:#111;text-transform:lowercase}
-.hero-sub{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#999;margin-bottom:44px}
-.btn-dark{background:#111;color:#fff;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;padding:17px 48px;border:none;cursor:pointer;display:block;margin:0 auto 12px}
+.hl-charm{font-family:'Jost',sans-serif;font-size:13px;font-weight:200;letter-spacing:4px;color:#111;text-transform:lowercase}
+.hero-sub{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#999;margin-bottom:40px}
+.btn-dark{background:#111;color:#fff;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;padding:16px 44px;border:none;cursor:pointer;display:block;margin:0 auto 11px}
 .btn-dark:hover{background:#333}
-.btn-ghost{background:transparent;color:#111;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;padding:16px 48px;border:1px solid #ddd;cursor:pointer;display:block;margin:0 auto}
+.btn-ghost{background:transparent;color:#111;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;padding:15px 44px;border:1px solid #ddd;cursor:pointer;display:block;margin:0 auto}
 .btn-ghost:hover{background:#111;color:#fff}
-.hero-note{margin-top:44px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#bbb}
+.hero-note{margin-top:40px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#bbb}
 .strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #eee}
-.strip-item{padding:26px 20px;display:flex;flex-direction:column;align-items:center;gap:8px;border-right:1px solid #eee;background:#fff}
+.strip-item{padding:24px 18px;display:flex;flex-direction:column;align-items:center;gap:7px;border-right:1px solid #eee;background:#fff}
 .strip-item:last-child{border-right:none}
-.strip-num{font-family:'Playfair Display',serif;font-size:36px;font-style:italic;color:#111}
-.strip-text{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#888;text-align:center}
-.mq{background:#FAF0F2;border-bottom:1px solid #eee;padding:12px 0;overflow:hidden;white-space:nowrap}
-.mq-in{display:inline-block;animation:mq 28s linear infinite;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#C9A882}
-.mq-in em{color:#111;font-style:normal;margin:0 18px}
+.strip-num{font-family:'Playfair Display',serif;font-size:34px;font-style:italic;color:#111}
+.strip-text{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#888;text-align:center}
+.mq{background:#FAF0F2;border-bottom:1px solid #eee;padding:11px 0;overflow:hidden;white-space:nowrap}
+.mq-in{display:inline-block;animation:mq 28s linear infinite;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#C9A882}
+.mq-in em{color:#111;font-style:normal;margin:0 16px}
 @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.sec-head{text-align:center;padding:52px 28px 32px;background:#fff}
-.sec-eye{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#bbb;margin-bottom:12px}
-.sec-title{font-family:'Playfair Display',serif;font-size:42px;font-style:italic;color:#111}
-.sec-sub{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#999;margin-top:10px}
-.pgrid{display:grid;grid-template-columns:1fr 1fr;margin:0 14px 56px;border:1px solid #eee;border-right:none;border-bottom:none}
+.sec-head{text-align:center;padding:48px 26px 28px;background:#fff}
+.sec-eye{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#bbb;margin-bottom:11px}
+.sec-title{font-family:'Playfair Display',serif;font-size:40px;font-style:italic;color:#111}
+.sec-sub{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#999;margin-top:9px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;margin:0 12px 52px;border:1px solid #eee;border-right:none;border-bottom:none}
 .pcard{border-right:1px solid #eee;border-bottom:1px solid #eee;background:#fff}
 .pcard:hover{background:#fafafa}
-.pimg{height:185px;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #eee;overflow:hidden}
-.pbadge{position:absolute;top:0;left:0;background:#111;color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:4px 9px}
-.charm{width:78px;height:70px;border-radius:6px 6px 12px 12px;position:relative;display:flex;align-items:center;justify-content:center}
-.charm-h{width:34px;height:20px;border-width:5px;border-style:solid;border-bottom:none;border-radius:12px 12px 0 0;position:absolute;top:-17px;left:50%;transform:translateX(-50%)}
-.charm-c{width:13px;height:9px;background:rgba(255,255,255,0.35);border-radius:2px}
-.pbody{padding:14px 16px 18px}
-.pname{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:#111;margin-bottom:4px}
-.pdesc{font-size:13px;color:#888;margin-bottom:8px;font-style:italic;line-height:1.4}
-.pprice{font-size:16px;color:#111;font-weight:400;margin-bottom:12px;letter-spacing:1px}
-.pbtn{width:100%;background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:12px;cursor:pointer;transition:all 0.2s}
+.pimg{height:180px;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #eee;overflow:hidden}
+.pbadge{position:absolute;top:0;left:0;background:#111;color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:4px 8px}
+.charm{width:74px;height:66px;border-radius:5px 5px 11px 11px;position:relative;display:flex;align-items:center;justify-content:center}
+.charm-h{width:32px;height:19px;border-width:4px;border-style:solid;border-bottom:none;border-radius:11px 11px 0 0;position:absolute;top:-16px;left:50%;transform:translateX(-50%)}
+.charm-c{width:12px;height:8px;background:rgba(255,255,255,0.35);border-radius:2px}
+.pbody{padding:13px 15px 17px}
+.pname{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:#111;margin-bottom:3px}
+.pdesc{font-size:12px;color:#888;margin-bottom:7px;font-style:italic;line-height:1.4}
+.pprice{font-size:15px;color:#111;font-weight:400;margin-bottom:11px;letter-spacing:1px}
+.pbtn{width:100%;background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:11px;cursor:pointer;transition:all 0.2s}
 .pbtn:hover{background:#F2D0D6;color:#111}
-.tape{background:#111;padding:11px 0;overflow:hidden;white-space:nowrap}
-.tape-in{display:inline-block;animation:mq 24s linear infinite;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#fff}
-.tape-in em{color:#F2D0D6;font-style:normal;margin:0 16px}
+.tape{background:#111;padding:10px 0;overflow:hidden;white-space:nowrap}
+.tape-in{display:inline-block;animation:mq 24s linear infinite;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#fff}
+.tape-in em{color:#F2D0D6;font-style:normal;margin:0 14px}
 .story{background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee}
-.story-img{height:240px;background:#FAF0F2;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #eee}
-.story-body{padding:46px 28px}
-.story-eye{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#bbb;margin-bottom:14px}
-.story-title{font-family:'Playfair Display',serif;font-size:38px;font-style:italic;color:#111;margin-bottom:20px;line-height:1.15}
-.story-p{font-size:16px;color:#555;line-height:1.9;margin-bottom:16px;font-weight:300}
-.story-punch{font-family:'Playfair Display',serif;font-size:26px;font-style:italic;color:#111;line-height:1.3;margin:28px 0;padding:28px 0;border-top:1px solid #F2D0D6;border-bottom:1px solid #F2D0D6}
-.story-sig{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:#C9A882;margin-top:20px}
+.story-img{height:230px;background:#FAF0F2;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #eee}
+.story-body{padding:44px 26px}
+.story-eye{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#bbb;margin-bottom:13px}
+.story-title{font-family:'Playfair Display',serif;font-size:36px;font-style:italic;color:#111;margin-bottom:18px;line-height:1.15}
+.story-p{font-size:15px;color:#555;line-height:1.9;margin-bottom:14px;font-weight:300}
+.story-punch{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:#111;line-height:1.3;margin:26px 0;padding:26px 0;border-top:1px solid #F2D0D6;border-bottom:1px solid #F2D0D6}
+.story-sig{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:#C9A882;margin-top:18px}
 .feats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #eee}
-.feat{padding:28px 16px;text-align:center;border-right:1px solid #eee;border-bottom:1px solid #eee;background:#fff}
+.feat{padding:26px 15px;text-align:center;border-right:1px solid #eee;border-bottom:1px solid #eee;background:#fff}
 .feat:nth-child(even){border-right:none}
-.feat-sym{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:#F2D0D6;margin-bottom:10px}
-.feat-t{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#111;margin-bottom:7px;font-weight:500}
-.feat-d{font-size:13px;color:#888;line-height:1.6}
-.reviews{padding:50px 28px;background:#fff;border-top:1px solid #eee}
-.rev-card{border-top:1px solid #f5f5f5;padding:22px 0}
+.feat-sym{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#F2D0D6;margin-bottom:9px}
+.feat-t{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#111;margin-bottom:6px;font-weight:500}
+.feat-d{font-size:12px;color:#888;line-height:1.6}
+.reviews{padding:48px 26px;background:#fff;border-top:1px solid #eee}
+.rev-card{border-top:1px solid #f5f5f5;padding:20px 0}
 .rev-card:first-child{border-top:none;padding-top:0}
-.rev-stars{color:#F2D0D6;letter-spacing:3px;font-size:15px;margin-bottom:10px}
-.rev-q{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:#111;line-height:1.7;margin-bottom:10px}
-.rev-by{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#bbb}
-.ig-sec{border-top:1px solid #eee;padding-bottom:52px;background:#fff}
-.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#eee;margin-bottom:14px}
+.rev-stars{color:#F2D0D6;letter-spacing:3px;font-size:14px;margin-bottom:9px}
+.rev-q{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#111;line-height:1.7;margin-bottom:9px}
+.rev-by{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#bbb}
+.ig-sec{border-top:1px solid #eee;padding-bottom:48px;background:#fff}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#eee;margin-bottom:13px}
 .ig-cell{aspect-ratio:1;overflow:hidden}
 .ig-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s}
 .ig-cell:hover img{transform:scale(1.04)}
-.ig-cta{text-align:center;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#888;padding:6px}
-.contact{background:#FAF0F2;border-top:1px solid #eee;padding:52px 28px;text-align:center}
-.contact-eye{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#bbb;margin-bottom:12px}
-.contact-title{font-family:'Playfair Display',serif;font-size:40px;font-style:italic;color:#111;margin-bottom:12px}
-.contact-sub{font-size:15px;color:#555;margin-bottom:28px;line-height:1.9}
-.contact-links{display:flex;flex-direction:column;align-items:center;gap:10px}
-.cbtn{display:flex;align-items:center;justify-content:center;background:#111;color:#fff;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:16px 28px;text-decoration:none;width:100%;max-width:360px}
+.ig-cta{text-align:center;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#888;padding:5px}
+.contact{background:#FAF0F2;border-top:1px solid #eee;padding:48px 26px;text-align:center}
+.contact-eye{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#bbb;margin-bottom:11px}
+.contact-title{font-family:'Playfair Display',serif;font-size:38px;font-style:italic;color:#111;margin-bottom:11px}
+.contact-sub{font-size:14px;color:#555;margin-bottom:26px;line-height:1.9}
+.contact-links{display:flex;flex-direction:column;align-items:center;gap:9px}
+.cbtn{display:flex;align-items:center;justify-content:center;background:#111;color:#fff;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:15px 26px;text-decoration:none;width:100%;max-width:340px}
 .cbtn:hover{opacity:0.85}
 .cbtn.rose{background:#F2D0D6;color:#111}
-footer{background:#111;padding:48px 28px 28px}
-.f-logo{display:flex;flex-direction:column;align-items:center;margin-bottom:28px}
+footer{background:#111;padding:44px 26px 24px}
+.f-logo{display:flex;flex-direction:column;align-items:center;margin-bottom:26px}
 .f-logo-not{font-family:'Jost',sans-serif;font-size:10px;font-weight:200;letter-spacing:3px;color:#FAF0F2;text-transform:lowercase}
-.f-logo-birkin{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#FAF0F2;position:relative;display:inline-block;margin:2px 0}
+.f-logo-birkin{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#FAF0F2;position:relative;display:inline-block;margin:2px 0}
 .f-logo-birkin::after{content:'';position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#FAF0F2;transform:rotate(-4deg);display:block}
 .f-logo-charm{font-family:'Jost',sans-serif;font-size:10px;font-weight:200;letter-spacing:3px;color:#F2D0D6;text-transform:lowercase}
-.f-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px}
-.f-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#555;text-decoration:none}
+.f-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+.f-links a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#555;text-decoration:none}
 .f-links a:hover{color:#F2D0D6}
-.f-line{height:1px;background:#222;margin-bottom:16px}
-.f-copy{text-align:center;font-size:11px;letter-spacing:1px;color:#444}
+.f-line{height:1px;background:#222;margin-bottom:14px}
+.f-copy{text-align:center;font-size:10px;letter-spacing:1px;color:#444}
 </style>
 </head>
 <body>
 
-<div class="ann">Free worldwide shipping · Mexico: free shipping on 3+ charms <span>·</span> Limited edition</div>
+<div class="ann" id="annEl">Free worldwide shipping · Mexico: free shipping on 3+ charms <span>·</span> Limited edition</div>
 
 <nav>
   <div class="nav-links">
@@ -178,8 +178,8 @@ footer{background:#111;padding:48px 28px 28px}
   <div class="nav-logo">
     <div style="text-align:center;line-height:1.3">
       <span style="font-family:'Jost',sans-serif;font-size:10px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase;display:block">i'm not a</span>
-      <span style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#111;display:inline-block;position:relative">Birkin<span style="position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#111;display:block;transform:rotate(-4deg)"></span></span>
-      <span style="font-family:'Jost',sans-serif;font-size:9px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase;display:block;margin-top:2px">i'm a charm</span>
+      <span style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#111;display:inline-block;position:relative">Birkin<span style="position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#111;display:block;transform:rotate(-4deg)"></span></span>
+      <span style="font-family:'Jost',sans-serif;font-size:8px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase;display:block;margin-top:2px">i'm a charm</span>
     </div>
   </div>
   <div class="nav-right">
@@ -187,7 +187,7 @@ footer{background:#111;padding:48px 28px 28px}
     <a href="https://wa.me/525527031153" target="_blank">WA</a>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">ES</button>
     <button class="cart-btn" onclick="openCart()">
-      <svg width="20" height="18" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="18" height="16" viewBox="0 0 22 20" fill="none">
         <path d="M7 5 Q7 2 11 2 Q15 2 15 5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
         <rect x="2" y="5" width="18" height="13" rx="2" fill="none" stroke="white" stroke-width="1.5"/>
         <rect x="2" y="5" width="18" height="4" rx="1" fill="white" opacity="0.15"/>
@@ -202,7 +202,7 @@ footer{background:#111;padding:48px 28px 28px}
 
 <div class="mob-overlay" id="mobOverlay" onclick="closeMenu()"></div>
 <div class="mob-menu" id="mobMenu">
-  <button class="mob-close" onclick="closeMenu()">✕</button>
+  <button class="mob-close" onclick="closeMenu()">x</button>
   <a href="#shop" onclick="closeMenu()" id="mnl1">Shop</a>
   <a href="#story" onclick="closeMenu()" id="mnl2">Story</a>
   <a href="#contact" onclick="closeMenu()" id="mnl3">Contact</a>
@@ -214,40 +214,38 @@ footer{background:#111;padding:48px 28px 28px}
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-header">
     <div class="cart-title" id="cartTitleEl">Your Cart</div>
-    <button class="cart-close" onclick="closeCart()">✕</button>
+    <button class="cart-close" onclick="closeCart()">x</button>
   </div>
-  <div class="cart-items" id="cartItems">
-    <div class="cart-empty">Your cart is empty</div>
-  </div>
+  <div class="cart-items" id="cartItems"><div class="cart-empty">Your cart is empty</div></div>
   <div class="cart-footer" id="cartFooter" style="display:none">
-    <div class="cart-total"><span id="totalLabel">Total</span><span id="cartTotal">$0.00 USD</span></div>
-    <button class="checkout-btn" onclick="openCheckoutModal()" id="checkoutBtn">Checkout</button>
+    <div class="cart-total"><span id="totalLabel">Total</span><span id="cartTotal">$0</span></div>
+    <button class="checkout-btn" onclick="openCheckout()" id="checkoutBtn">Checkout</button>
     <div class="paypal-note" id="paypalNote">Secure payment via PayPal</div>
   </div>
 </div>
 
-<div class="checkout-overlay" id="checkoutOverlay" onclick="closeCheckout()"></div>
-<div class="checkout-modal" id="checkoutModal">
-  <button class="close-modal" onclick="closeCheckout()">✕</button>
-  <h2 id="cm-title">Shipping Details</h2>
-  <p id="cm-sub">Fill in your details to process your order</p>
-  <div class="order-summary" id="orderSummary"></div>
-  <div class="form-divider" id="cm-div1">Contact</div>
-  <div class="form-group"><label id="cm-name">Full Name</label><input type="text" id="f-name" placeholder="Katherine Rivera"></div>
-  <div class="form-group"><label id="cm-email">Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
-  <div class="form-group"><label id="cm-phone">Phone / WhatsApp</label><input type="tel" id="f-phone" placeholder="+1 555 000 0000"></div>
-  <div class="form-divider" id="cm-div2">Shipping Address</div>
-  <div class="form-group"><label id="cm-addr">Address</label><input type="text" id="f-addr" placeholder="Street, number, apt"></div>
-  <div class="form-row">
-    <div class="form-group"><label id="cm-city">City</label><input type="text" id="f-city" placeholder="Mexico City"></div>
-    <div class="form-group"><label id="cm-zip">ZIP</label><input type="text" id="f-zip" placeholder="06600"></div>
+<div class="co-overlay" id="coOverlay" onclick="closeCheckout()"></div>
+<div class="co-modal" id="coModal">
+  <button class="close-co" onclick="closeCheckout()">x</button>
+  <h2 id="co-title">Shipping Details</h2>
+  <p id="co-sub">Fill in your details to process your order</p>
+  <div class="osummary" id="oSummary"></div>
+  <div class="fdiv" id="co-div1">Contact</div>
+  <div class="fg"><label id="co-name">Full Name</label><input type="text" id="f-name" placeholder="Katherine Rivera"></div>
+  <div class="fg"><label id="co-email">Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
+  <div class="fg"><label id="co-phone">Phone / WhatsApp</label><input type="tel" id="f-phone" placeholder="+1 555 000 0000"></div>
+  <div class="fdiv" id="co-div2">Shipping Address</div>
+  <div class="fg"><label id="co-addr">Address</label><input type="text" id="f-addr" placeholder="Street, number, apt"></div>
+  <div class="frow">
+    <div class="fg"><label id="co-city">City</label><input type="text" id="f-city" placeholder="Mexico City"></div>
+    <div class="fg"><label id="co-zip">ZIP</label><input type="text" id="f-zip" placeholder="06600"></div>
   </div>
-  <div class="form-row">
-    <div class="form-group"><label id="cm-state">State</label><input type="text" id="f-state" placeholder="CDMX"></div>
-    <div class="form-group"><label id="cm-country">Country</label><input type="text" id="f-country" placeholder="Mexico"></div>
+  <div class="frow">
+    <div class="fg"><label id="co-state">State</label><input type="text" id="f-state" placeholder="CDMX"></div>
+    <div class="fg"><label id="co-country">Country</label><input type="text" id="f-country" placeholder="Mexico"></div>
   </div>
-  <div class="form-group"><label id="cm-notes">Notes (optional)</label><textarea id="f-notes" placeholder="Any special instructions..."></textarea></div>
-  <button class="pay-btn" onclick="submitOrder()" id="cm-paybtn">Pay with PayPal</button>
+  <div class="fg"><label id="co-notes">Notes (optional)</label><textarea id="f-notes" placeholder="Any special instructions..."></textarea></div>
+  <button class="pay-btn" onclick="submitOrder()" id="co-paybtn">Pay with PayPal</button>
 </div>
 
 <div class="toast" id="toast">Added!</div>
@@ -264,7 +262,7 @@ footer{background:#111;padding:48px 28px 28px}
   <p class="hero-sub" id="h-sub">Mini bag charms · Worldwide shipping</p>
   <button class="btn-dark" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" id="h-btn1">Shop the collection</button>
   <button class="btn-ghost" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})" id="h-btn2">Our story</button>
-  <p class="hero-note" id="h-note">✦ 12 colors available ✦ Limited pieces ✦</p>
+  <p class="hero-note" id="h-note">12 colors available · Limited pieces</p>
 </section>
 
 <div class="strip">
@@ -282,18 +280,18 @@ footer{background:#111;padding:48px 28px 28px}
     <div class="sec-sub" id="p-sub">Limited edition · $29.99 USD each · Worldwide shipping</div>
   </div>
   <div class="pgrid">
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#111,#2a2a2a)"><div class="pbadge" id="b1">New</div><div class="charm" style="background:#1a1a1a"><div class="charm-h" style="border-color:#333"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">No Explanations</div><div class="pdesc">Elegant, secure, needs no validation.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('No Explanations','#1a1a1a')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#1a3d2a,#2d6644)"><div class="pbadge" id="b2">New</div><div class="charm" style="background:#2d6644"><div class="charm-h" style="border-color:#1a3d2a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Money Energy</div><div class="pdesc">Wealth, abundance, statement.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Money Energy','#2d6644')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#5c3317,#8B4513)"><div class="charm" style="background:#8B4513"><div class="charm-h" style="border-color:#5c3317"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Rich Taste</div><div class="pdesc">Classic, sophisticated, timeless.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Rich Taste','#8B4513')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#b8960a,#D4A830)"><div class="charm" style="background:#D4A830"><div class="charm-h" style="border-color:#b8960a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Sun Status</div><div class="pdesc">Shine, attention, happiness.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Sun Status','#D4A830')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#6a5a9a,#9870C0)"><div class="charm" style="background:#9870C0"><div class="charm-h" style="border-color:#6a5a9a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Soft Power</div><div class="pdesc">Feminine but powerful.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Soft Power','#9870C0')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#a87840,#C9A882)"><div class="charm" style="background:#C9A882"><div class="charm-h" style="border-color:#a87840"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Fresh Money</div><div class="pdesc">New luxury, cool, modern.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Fresh Money','#C9A882')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#c04010,#E8602A)"><div class="pbadge" id="b3">New</div><div class="charm" style="background:#E8602A"><div class="charm-h" style="border-color:#c04010"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Signature Heat</div><div class="pdesc">Not a color. A signature.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Signature Heat','#E8602A')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#d8d0c8,#f0ede8)"><div class="charm" style="background:#e8e4de;border:1px solid #ccc"><div class="charm-h" style="border-color:#bbb"></div><div class="charm-c" style="background:rgba(0,0,0,0.08)"></div></div></div><div class="pbody"><div class="pname">Clean Luxury</div><div class="pdesc">Minimalist, expensive, effortless.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Clean Luxury','#e8e4de')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#d87090,#F0A0B8)"><div class="charm" style="background:#F0A0B8"><div class="charm-h" style="border-color:#d87090"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Soft Statement</div><div class="pdesc">Delicate but with presence.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Soft Statement','#F0A0B8')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#8a0a18,#C01830)"><div class="charm" style="background:#C01830"><div class="charm-h" style="border-color:#8a0a18"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Red Affair</div><div class="pdesc">Intense, bold, seductive.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Red Affair','#C01830')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#c0306a,#E8508A)"><div class="pbadge" id="b4">New</div><div class="charm" style="background:#E8508A"><div class="charm-h" style="border-color:#c0306a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Main Character</div><div class="pdesc">Total protagonist, never goes unnoticed.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Main Character','#E8508A')"><span class="t-add">Add to Cart</span></button></div></div>
-    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#5a7a60,#88A888)"><div class="charm" style="background:#88A888"><div class="charm-h" style="border-color:#5a7a60"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Quiet Power</div><div class="pdesc">Discreet luxury, old money vibe.</div><div class="pprice">$29.99 USD</div><button class="pbtn" onclick="addToCart('Quiet Power','#88A888')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#111,#2a2a2a)"><div class="pbadge" id="b1">New</div><div class="charm" style="background:#1a1a1a"><div class="charm-h" style="border-color:#333"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">No Explanations</div><div class="pdesc">Elegant, secure, needs no validation.</div><div class="pprice" id="pr1">$29.99 USD</div><button class="pbtn" onclick="addToCart('No Explanations','#1a1a1a')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#1a3d2a,#2d6644)"><div class="pbadge" id="b2">New</div><div class="charm" style="background:#2d6644"><div class="charm-h" style="border-color:#1a3d2a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Money Energy</div><div class="pdesc">Wealth, abundance, statement.</div><div class="pprice" id="pr2">$29.99 USD</div><button class="pbtn" onclick="addToCart('Money Energy','#2d6644')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#5c3317,#8B4513)"><div class="charm" style="background:#8B4513"><div class="charm-h" style="border-color:#5c3317"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Rich Taste</div><div class="pdesc">Classic, sophisticated, timeless.</div><div class="pprice" id="pr3">$29.99 USD</div><button class="pbtn" onclick="addToCart('Rich Taste','#8B4513')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#b8960a,#D4A830)"><div class="charm" style="background:#D4A830"><div class="charm-h" style="border-color:#b8960a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Sun Status</div><div class="pdesc">Shine, attention, happiness.</div><div class="pprice" id="pr4">$29.99 USD</div><button class="pbtn" onclick="addToCart('Sun Status','#D4A830')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#6a5a9a,#9870C0)"><div class="charm" style="background:#9870C0"><div class="charm-h" style="border-color:#6a5a9a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Soft Power</div><div class="pdesc">Feminine but powerful.</div><div class="pprice" id="pr5">$29.99 USD</div><button class="pbtn" onclick="addToCart('Soft Power','#9870C0')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#a87840,#C9A882)"><div class="charm" style="background:#C9A882"><div class="charm-h" style="border-color:#a87840"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Fresh Money</div><div class="pdesc">New luxury, cool, modern.</div><div class="pprice" id="pr6">$29.99 USD</div><button class="pbtn" onclick="addToCart('Fresh Money','#C9A882')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#c04010,#E8602A)"><div class="pbadge" id="b3">New</div><div class="charm" style="background:#E8602A"><div class="charm-h" style="border-color:#c04010"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Signature Heat</div><div class="pdesc">Not a color. A signature.</div><div class="pprice" id="pr7">$29.99 USD</div><button class="pbtn" onclick="addToCart('Signature Heat','#E8602A')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#d8d0c8,#f0ede8)"><div class="charm" style="background:#e8e4de;border:1px solid #ccc"><div class="charm-h" style="border-color:#bbb"></div><div class="charm-c" style="background:rgba(0,0,0,0.08)"></div></div></div><div class="pbody"><div class="pname">Clean Luxury</div><div class="pdesc">Minimalist, expensive, effortless.</div><div class="pprice" id="pr8">$29.99 USD</div><button class="pbtn" onclick="addToCart('Clean Luxury','#e8e4de')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#d87090,#F0A0B8)"><div class="charm" style="background:#F0A0B8"><div class="charm-h" style="border-color:#d87090"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Soft Statement</div><div class="pdesc">Delicate but with presence.</div><div class="pprice" id="pr9">$29.99 USD</div><button class="pbtn" onclick="addToCart('Soft Statement','#F0A0B8')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#8a0a18,#C01830)"><div class="charm" style="background:#C01830"><div class="charm-h" style="border-color:#8a0a18"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Red Affair</div><div class="pdesc">Intense, bold, seductive.</div><div class="pprice" id="pr10">$29.99 USD</div><button class="pbtn" onclick="addToCart('Red Affair','#C01830')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#c0306a,#E8508A)"><div class="pbadge" id="b4">New</div><div class="charm" style="background:#E8508A"><div class="charm-h" style="border-color:#c0306a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Main Character</div><div class="pdesc">Total protagonist, never goes unnoticed.</div><div class="pprice" id="pr11">$29.99 USD</div><button class="pbtn" onclick="addToCart('Main Character','#E8508A')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:linear-gradient(160deg,#5a7a60,#88A888)"><div class="charm" style="background:#88A888"><div class="charm-h" style="border-color:#5a7a60"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Quiet Power</div><div class="pdesc">Discreet luxury, old money vibe.</div><div class="pprice" id="pr12">$29.99 USD</div><button class="pbtn" onclick="addToCart('Quiet Power','#88A888')"><span class="t-add">Add to Cart</span></button></div></div>
   </div>
 </div>
 
@@ -301,10 +299,10 @@ footer{background:#111;padding:48px 28px 28px}
 
 <div id="story" class="story">
   <div class="story-img">
-    <div style="background:#FAF0F2;border-radius:50%;width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center">
-      <span style="font-family:'Jost',sans-serif;font-size:9px;font-weight:200;letter-spacing:2px;color:#111;text-transform:lowercase">i'm not a</span>
-      <span style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#111;position:relative;display:inline-block">Birkin<span style="position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#111;display:block;transform:rotate(-4deg)"></span></span>
-      <span style="font-family:'Jost',sans-serif;font-size:8px;font-weight:200;letter-spacing:2px;color:#111;text-transform:lowercase;margin-top:3px">i'm a charm</span>
+    <div style="background:#fff;border-radius:50%;width:110px;height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <span style="font-family:'Jost',sans-serif;font-size:8px;font-weight:200;letter-spacing:2px;color:#111;text-transform:lowercase">i'm not a</span>
+      <span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#111;position:relative;display:inline-block">Birkin<span style="position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#111;display:block;transform:rotate(-4deg)"></span></span>
+      <span style="font-family:'Jost',sans-serif;font-size:7px;font-weight:200;letter-spacing:2px;color:#111;text-transform:lowercase;margin-top:2px">i'm a charm</span>
     </div>
   </div>
   <div class="story-body">
@@ -343,7 +341,7 @@ footer{background:#111;padding:48px 28px 28px}
     <div class="ig-cell"><img src="9a097957-837f-4d92-a484-e8ef2f9ba02b.JPG" alt="charm"></div>
     <div class="ig-cell"><img src="b1a50b75-652b-48ba-9bd8-bd915ec984ff.JPG" alt="charm"></div>
   </div>
-  <div class="ig-cta"><a href="https://instagram.com/imnotabirkin" target="_blank" style="color:#888;text-decoration:none;font-size:12px;letter-spacing:4px;text-transform:uppercase" id="ig-cta">Follow us · @imnotabirkin</a></div>
+  <div class="ig-cta"><a href="https://instagram.com/imnotabirkin" target="_blank" style="color:#888;text-decoration:none;font-size:11px;letter-spacing:4px;text-transform:uppercase">Follow us · @imnotabirkin</a></div>
 </div>
 
 <div id="contact" class="contact">
@@ -382,48 +380,84 @@ function openMenu(){document.getElementById('mobMenu').classList.add('open');doc
 function closeMenu(){document.getElementById('mobMenu').classList.remove('open');document.getElementById('mobOverlay').classList.remove('open')}
 function openCart(){document.getElementById('cartDrawer').classList.add('open');document.getElementById('cartOverlay').classList.add('open');renderCart()}
 function closeCart(){document.getElementById('cartDrawer').classList.remove('open');document.getElementById('cartOverlay').classList.remove('open')}
-function addToCart(name,color){var ex=cart.find(function(i){return i.name===name});if(ex){ex.qty++}else{cart.push({name:name,color:color,qty:1,price:29.99})}updateCartCount();showToast(name)}
+
+function addToCart(name,color){
+  var ex=cart.find(function(i){return i.name===name});
+  if(ex){ex.qty++}else{cart.push({name:name,color:color,qty:1,usd:29.99,mxn:599})}
+  updateCartCount();
+  showToast(name);
+}
 function updateCartCount(){document.getElementById('cartCount').textContent=cart.reduce(function(s,i){return s+i.qty},0)}
 function showToast(name){var t=document.getElementById('toast');t.textContent=(lang==='es'?'Agregado: ':'Added: ')+name;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2500)}
+
 function renderCart(){
   var el=document.getElementById('cartItems');
   var footer=document.getElementById('cartFooter');
-  if(cart.length===0){el.innerHTML='<div class="cart-empty">'+(lang==='es'?'Tu carrito esta vacio':'Your cart is empty')+'</div>';footer.style.display='none';return}
+  var es=lang==='es';
+  if(cart.length===0){
+    el.innerHTML='<div class="cart-empty">'+(es?'Tu carrito esta vacio':'Your cart is empty')+'</div>';
+    footer.style.display='none';
+    return;
+  }
   footer.style.display='block';
   var html='';
-  for(var i=0;i<cart.length;i++){var item=cart[i];html+='<div class="cart-item"><div class="cart-item-color" style="background:'+item.color+'"></div><div class="cart-item-info"><div class="cart-item-name">'+item.name+'</div><div class="cart-item-price">$'+item.price.toFixed(2)+' USD</div><div class="cart-qty"><button onclick="changeQty('+i+',-1)">-</button><span>'+item.qty+'</span><button onclick="changeQty('+i+',1)">+</button></div></div><button class="cart-item-remove" onclick="removeItem('+i+')">x</button></div>'}
+  for(var i=0;i<cart.length;i++){
+    var item=cart[i];
+    var p=es?item.mxn:item.usd;
+    var cur=es?' MXN':' USD';
+    html+='<div class="cart-item">'
+      +'<div class="cart-item-color" style="background:'+item.color+'"></div>'
+      +'<div class="cart-item-info">'
+      +'<div class="cart-item-name">'+item.name+'</div>'
+      +'<div class="cart-item-price">$'+p+cur+'</div>'
+      +'<div class="cart-qty">'
+      +'<button onclick="changeQty('+i+',-1)">-</button>'
+      +'<span>'+item.qty+'</span>'
+      +'<button onclick="changeQty('+i+',1)">+</button>'
+      +'</div></div>'
+      +'<button class="cart-item-remove" onclick="removeItem('+i+')">x</button>'
+      +'</div>';
+  }
   el.innerHTML=html;
-  document.getElementById('cartTotal').textContent='$'+cart.reduce(function(s,i){return s+i.qty*i.price},0).toFixed(2)+' USD';
+  var total=cart.reduce(function(s,i){return s+(lang==='es'?i.mxn:i.usd)*i.qty},0);
+  document.getElementById('cartTotal').textContent='$'+(lang==='es'?total.toFixed(0):total.toFixed(2))+(lang==='es'?' MXN':' USD');
 }
+
 function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);updateCartCount();renderCart()}
 function removeItem(i){cart.splice(i,1);updateCartCount();renderCart()}
-function openCheckoutModal(){
+
+function openCheckout(){
   if(!cart.length)return;
   var es=lang==='es';
-  var summary='<div class="order-summary-title">'+(es?'Tu orden':'Your order')+'</div>';
-  for(var i=0;i<cart.length;i++){summary+='<div class="order-item"><span>'+cart[i].name+' x'+cart[i].qty+'</span><span>$'+(cart[i].qty*cart[i].price).toFixed(2)+'</span></div>'}
-  var total=cart.reduce(function(s,i){return s+i.qty*i.price},0);
-  summary+='<div class="order-total-row"><span>Total</span><span>$'+total.toFixed(2)+' USD</span></div>';
-  document.getElementById('orderSummary').innerHTML=summary;
-  document.getElementById('cm-title').textContent=es?'Datos de envio':'Shipping Details';
-  document.getElementById('cm-sub').textContent=es?'Llena tus datos para procesar tu orden':'Fill in your details to process your order';
-  document.getElementById('cm-div1').textContent=es?'Contacto':'Contact';
-  document.getElementById('cm-div2').textContent=es?'Direccion de envio':'Shipping Address';
-  document.getElementById('cm-name').textContent=es?'Nombre completo':'Full Name';
-  document.getElementById('cm-email').textContent='Email';
-  document.getElementById('cm-phone').textContent=es?'Telefono / WhatsApp':'Phone / WhatsApp';
-  document.getElementById('cm-addr').textContent=es?'Direccion':'Address';
-  document.getElementById('cm-city').textContent=es?'Ciudad':'City';
-  document.getElementById('cm-zip').textContent='ZIP';
-  document.getElementById('cm-state').textContent=es?'Estado':'State';
-  document.getElementById('cm-country').textContent=es?'Pais':'Country';
-  document.getElementById('cm-notes').textContent=es?'Notas (opcional)':'Notes (optional)';
-  document.getElementById('cm-paybtn').textContent=es?'Pagar con PayPal':'Pay with PayPal';
-  document.getElementById('checkoutModal').classList.add('open');
-  document.getElementById('checkoutOverlay').classList.add('open');
+  var html='<div class="osummary-title">'+(es?'Tu orden':'Your order')+'</div>';
+  for(var i=0;i<cart.length;i++){
+    var p=es?cart[i].mxn:cart[i].usd;
+    var cur=es?' MXN':' USD';
+    html+='<div class="oitem"><span>'+cart[i].name+' x'+cart[i].qty+'</span><span>$'+(p*cart[i].qty)+cur+'</span></div>';
+  }
+  var total=cart.reduce(function(s,i){return s+(es?i.mxn:i.usd)*i.qty},0);
+  html+='<div class="ototal"><span>Total</span><span>$'+(es?total.toFixed(0):total.toFixed(2))+(es?' MXN':' USD')+'</span></div>';
+  document.getElementById('oSummary').innerHTML=html;
+  document.getElementById('co-title').textContent=es?'Datos de envio':'Shipping Details';
+  document.getElementById('co-sub').textContent=es?'Llena tus datos para procesar tu orden':'Fill in your details to process your order';
+  document.getElementById('co-div1').textContent=es?'Contacto':'Contact';
+  document.getElementById('co-div2').textContent=es?'Direccion de envio':'Shipping Address';
+  document.getElementById('co-name').textContent=es?'Nombre completo':'Full Name';
+  document.getElementById('co-email').textContent='Email';
+  document.getElementById('co-phone').textContent=es?'Telefono / WhatsApp':'Phone / WhatsApp';
+  document.getElementById('co-addr').textContent=es?'Direccion':'Address';
+  document.getElementById('co-city').textContent=es?'Ciudad':'City';
+  document.getElementById('co-zip').textContent='ZIP';
+  document.getElementById('co-state').textContent=es?'Estado':'State';
+  document.getElementById('co-country').textContent=es?'Pais':'Country';
+  document.getElementById('co-notes').textContent=es?'Notas (opcional)':'Notes (optional)';
+  document.getElementById('co-paybtn').textContent=es?'Pagar con PayPal':'Pay with PayPal';
+  document.getElementById('coModal').classList.add('open');
+  document.getElementById('coOverlay').classList.add('open');
   closeCart();
 }
-function closeCheckout(){document.getElementById('checkoutModal').classList.remove('open');document.getElementById('checkoutOverlay').classList.remove('open')}
+function closeCheckout(){document.getElementById('coModal').classList.remove('open');document.getElementById('coOverlay').classList.remove('open')}
+
 function submitOrder(){
   var name=document.getElementById('f-name').value.trim();
   var email=document.getElementById('f-email').value.trim();
@@ -434,11 +468,19 @@ function submitOrder(){
   var state=document.getElementById('f-state').value.trim();
   var country=document.getElementById('f-country').value.trim();
   var notes=document.getElementById('f-notes').value.trim();
-  if(!name||!email||!addr||!city||!country){alert(lang==='es'?'Por favor llena todos los campos requeridos':'Please fill in all required fields');return}
+  if(!name||!email||!addr||!city||!country){
+    alert(lang==='es'?'Por favor llena todos los campos requeridos':'Please fill in all required fields');
+    return;
+  }
   var items=cart.map(function(i){return i.name+' x'+i.qty}).join(', ');
-  var total=cart.reduce(function(s,i){return s+i.qty*i.price},0);
+  var total=cart.reduce(function(s,i){return s+i.usd*i.qty},0);
   var shipping=name+' | '+addr+', '+city+', '+state+' '+zip+', '+country+' | '+phone;
-  var paypalUrl='https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=alexiarivera%40gmail.com&item_name='+encodeURIComponent("I'm Not a Birkin - "+items)+'&amount='+total.toFixed(2)+'&currency_code=USD&custom='+encodeURIComponent(shipping);
+  var paypalUrl='https://www.paypal.com/cgi-bin/webscr?cmd=_xclick'
+    +'&business=alexiarivera%40gmail.com'
+    +'&item_name='+encodeURIComponent("I'm Not a Birkin - "+items)
+    +'&amount='+total.toFixed(2)
+    +'&currency_code=USD'
+    +'&custom='+encodeURIComponent(shipping);
   var waMsg='NEW ORDER\n\nItems: '+items+'\nTotal: $'+total.toFixed(2)+' USD\n\nName: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nAddress: '+addr+', '+city+', '+state+' '+zip+', '+country+(notes?'\nNotes: '+notes:'');
   window.open(paypalUrl,'_blank');
   setTimeout(function(){window.open('https://wa.me/525527031153?text='+encodeURIComponent(waMsg),'_blank')},1000);
@@ -446,27 +488,27 @@ function submitOrder(){
   cart=[];
   updateCartCount();
 }
+
 function toggleLang(){
   lang=lang==='en'?'es':'en';
   var es=lang==='es';
   document.getElementById('langBtn').textContent=es?'EN':'ES';
-  document.querySelector('.ann').textContent=es?'Envio gratis en Mexico al pedir 3 o mas · Envio mundial disponible':'Free worldwide shipping · Mexico: free shipping on 3+ charms · Limited edition';
+  document.getElementById('annEl').innerHTML=es?'Envio gratis en Mexico al pedir 3 o mas <span style="color:#F2D0D6;margin:0 8px">·</span> Envio mundial disponible':'Free worldwide shipping · Mexico: free shipping on 3+ charms <span style="color:#F2D0D6;margin:0 8px">·</span> Limited edition';
   document.getElementById('h-eye').textContent=es?'Edicion Limitada · Envio Mundial':'Limited Edition · Worldwide Shipping';
   document.getElementById('h-top').textContent="i'm not a";
   document.getElementById('h-bottom').textContent="i'm a charm";
   document.getElementById('h-sub').textContent=es?'Mini bag charms · Envio mundial':'Mini bag charms · Worldwide shipping';
   document.getElementById('h-btn1').textContent=es?'Ver la coleccion':'Shop the collection';
   document.getElementById('h-btn2').textContent=es?'Nuestra historia':'Our story';
-  document.getElementById('h-note').textContent=es?'✦ 12 colores disponibles ✦ Piezas limitadas ✦':'✦ 12 colors available ✦ Limited pieces ✦';
+  document.getElementById('h-note').textContent=es?'12 colores disponibles · Piezas limitadas':'12 colors available · Limited pieces';
   document.getElementById('s1').textContent=es?'Colores disponibles':'Colors available';
   document.getElementById('s2').textContent=es?'Envio mundial':'Worldwide shipping';
   document.getElementById('s3').textContent=es?'Edicion limitada':'Limited edition';
   document.getElementById('p-eye').textContent=es?'La Coleccion':'The Collection';
   document.getElementById('p-title').textContent=es?'Encuentra tu charm':'Find your charm';
-  document.getElementById('p-sub').textContent=es?'Edicion limitada · $599 MXN c/u · Envio disponible a todo el mundo':'Limited edition · $29.99 USD each · Worldwide shipping';
-  // Update all prices
-  var prices=document.querySelectorAll('.pprice');
-  for(var i=0;i<prices.length;i++)prices[i].textContent=es?'$599 MXN':'$29.99 USD';
+  document.getElementById('p-sub').textContent=es?'Edicion limitada · $599 MXN c/u · Envio disponible':'Limited edition · $29.99 USD each · Worldwide shipping';
+  var priceText=es?'$599 MXN':'$29.99 USD';
+  for(var i=1;i<=12;i++){var el=document.getElementById('pr'+i);if(el)el.textContent=priceText;}
   document.getElementById('st-eye').textContent=es?'Nuestra Historia':'Our Story';
   document.getElementById('st-title').innerHTML=es?'Cuatro mujeres.<br>Una obsesion.<br>Cero listas de espera.':'Four women.<br>One obsession.<br>Zero waitlists.';
   document.getElementById('st-p1').textContent=es?'Somos Katherine, Alexia, Jissela y mama. Una familia de mujeres que comparte algo mas que amor por la moda: una fascinacion por los detalles que hacen sentir especial cualquier momento.':'We are Katherine, Alexia, Jissela, and Mom — a family of women who share more than a love for fashion: we share a fascination for the details that make any moment feel special.';
@@ -495,9 +537,10 @@ function toggleLang(){
   document.getElementById('checkoutBtn').textContent=es?'Pagar':'Checkout';
   document.getElementById('paypalNote').textContent=es?'Pago seguro via PayPal':'Secure payment via PayPal';
   var adds=document.querySelectorAll('.t-add');
-  for(var i=0;i<adds.length;i++)adds[i].textContent=es?'Agregar al carrito':'Add to Cart';
+  for(var j=0;j<adds.length;j++)adds[j].textContent=es?'Agregar al carrito':'Add to Cart';
   var badges=['b1','b2','b3','b4'];
-  for(var j=0;j<badges.length;j++){var el=document.getElementById(badges[j]);if(el)el.textContent=es?'Nuevo':'New'}
+  for(var k=0;k<badges.length;k++){var b=document.getElementById(badges[k]);if(b)b.textContent=es?'Nuevo':'New'}
+  if(cart.length>0)renderCart();
 }
 </script>
 </body>
