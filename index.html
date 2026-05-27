@@ -166,6 +166,12 @@ footer{background:#111;padding:44px 26px 24px}
 .f-links a:hover{color:#F2D0D6}
 .f-line{height:1px;background:#222;margin-bottom:14px}
 .f-copy{text-align:center;font-size:10px;letter-spacing:1px;color:#444}
+.logo-img{width:100%;height:100%;object-fit:contain;display:block}
+.slider-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:2}
+.slider-dots span{width:6px;height:6px;border-radius:50%;background:#111;cursor:pointer;opacity:0.3;transition:opacity 0.2s}
+.slider-dots span.active{opacity:1}
+.slide-img{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;transition:opacity 0.4s;opacity:0}
+.slide-img.active{opacity:1}
 </style>
 </head>
 <body>
@@ -179,10 +185,8 @@ footer{background:#111;padding:44px 26px 24px}
     <a href="#contact" id="nl3">Contact</a>
   </div>
   <div class="nav-logo">
-    <div style="text-align:center;line-height:1.3">
-      <span style="font-family:'Jost',sans-serif;font-size:10px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase;display:block">i'm not a</span>
-      <span style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#111;display:inline-block;position:relative">Birkin<span style="position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#111;display:block;transform:rotate(-4deg)"></span></span>
-      <span style="font-family:'Jost',sans-serif;font-size:8px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase;display:block;margin-top:2px">i'm a charm</span>
+    <div style="display:flex;align-items:center;justify-content:center;height:60px">
+      <img src="logo.png" alt="I'm not a Birkin" style="height:54px;width:auto;display:block">
     </div>
   </div>
   <div class="nav-right">
@@ -258,9 +262,7 @@ footer{background:#111;padding:44px 26px 24px}
   <div class="hero-ring r2"></div>
   <div class="hero-eye" id="h-eye">Limited Edition · Worldwide Shipping</div>
   <div class="hero-logo">
-    <span class="hl-not" id="h-top">i'm not a</span>
-    <span class="hl-birkin">Birkin</span>
-    <span class="hl-charm" id="h-bottom">i'm a charm</span>
+    <img src="logo.png" alt="I'm not a Birkin" style="width:78%;height:auto;display:block">
   </div>
   <p class="hero-sub" id="h-sub">Mini bag charms · Worldwide shipping</p>
   <button class="btn-dark" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" id="h-btn1">Shop the collection</button>
@@ -283,27 +285,27 @@ footer{background:#111;padding:44px 26px 24px}
     <div class="sec-sub" id="p-sub">Limited edition · $29.99 USD each · Worldwide shipping</div>
   </div>
   <div class="pgrid">
-    <div class="pcard"><div class="pimg" style="background:#111"><div class="pbadge" id="b1">New</div><img src="charm-negro.jpg" alt="No Explanations" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0"></div><div class="pbody"><div class="pname">No Explanations</div><div class="pdesc">Elegant, secure, needs no validation.</div><div class="pprice" id="pr1">$29.99 USD</div><button class="pbtn" onclick="addToCart('No Explanations','#1a1a1a')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:#111"><div class="pbadge" id="b1">New</div><img src="charm-negro.jpg" alt="No Explanations" class="slide-img slide-negro active" id="slide-negro-0"><img src="charm-negro-2.jpg" alt="No Explanations" class="slide-img slide-negro" id="slide-negro-1"><div class="slider-dots"><span class="active" onclick="showSlide('negro',0,this)"></span><span onclick="showSlide('negro',1,this)"></span></div></div><div class="pbody"><div class="pname">No Explanations</div><div class="pdesc">Elegant, secure, needs no validation.</div><div class="pprice" id="pr1">$29.99 USD</div><button class="pbtn" onclick="addToCart('No Explanations','#1a1a1a')"><span class="t-add">Add to Cart</span></button></div></div>
 
     <div class="pcard"><div class="pimg" style="background:#2d6644"><div class="pbadge" id="b2">New</div><img src="charm-verde.jpg" alt="Money Energy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0"></div><div class="pbody"><div class="pname">Money Energy</div><div class="pdesc">Wealth, abundance, statement.</div><div class="pprice" id="pr2">$29.99 USD</div><button class="pbtn" onclick="addToCart('Money Energy','#2d6644')"><span class="t-add">Add to Cart</span></button></div></div>
 
     <div class="pcard"><div class="pimg" style="background:#8B4513"><img src="charm-cafe.jpg" alt="Rich Taste" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0"></div><div class="pbody"><div class="pname">Rich Taste</div><div class="pdesc">Classic, sophisticated, timeless.</div><div class="pprice" id="pr3">$29.99 USD</div><button class="pbtn" onclick="addToCart('Rich Taste','#8B4513')"><span class="t-add">Add to Cart</span></button></div></div>
 
-    <div class="pcard"><div class="pimg" style="background:#D4A830"><img src="charm-amarillo.jpg" alt="Sun Status" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0"></div><div class="pbody"><div class="pname">Sun Status</div><div class="pdesc">Shine, attention, happiness.</div><div class="pprice" id="pr4">$29.99 USD</div><button class="pbtn" onclick="addToCart('Sun Status','#D4A830')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:#D4A830"><img src="charm-amarillo.jpg" alt="Sun Status" class="slide-img slide-amarillo active" id="slide-amarillo-0"><img src="charm-amarillo-2.jpg" alt="Sun Status" class="slide-img slide-amarillo" id="slide-amarillo-1"><div class="slider-dots"><span class="active" onclick="showSlide('amarillo',0,this)"></span><span onclick="showSlide('amarillo',1,this)"></span></div></div><div class="pbody"><div class="pname">Sun Status</div><div class="pdesc">Shine, attention, happiness.</div><div class="pprice" id="pr4">$29.99 USD</div><button class="pbtn" onclick="addToCart('Sun Status','#D4A830')"><span class="t-add">Add to Cart</span></button></div></div>
 
     <div class="pcard"><div class="pimg" style="background:#9870C0"><img src="charm-lila.jpg" alt="Soft Power" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0"></div><div class="pbody"><div class="pname">Soft Power</div><div class="pdesc">Feminine but powerful.</div><div class="pprice" id="pr5">$29.99 USD</div><button class="pbtn" onclick="addToCart('Soft Power','#9870C0')"><span class="t-add">Add to Cart</span></button></div></div>
 
     <div class="pcard"><div class="pimg" style="background:#C9A882"><img src="charm-taupe.jpg" alt="Fresh Money" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0"></div><div class="pbody"><div class="pname">Fresh Money</div><div class="pdesc">New luxury, cool, modern.</div><div class="pprice" id="pr6">$29.99 USD</div><button class="pbtn" onclick="addToCart('Fresh Money','#C9A882')"><span class="t-add">Add to Cart</span></button></div></div>
 
-    <div class="pcard"><div class="pimg" style="background:#E8602A"><div class="pbadge" id="b3">New</div><div class="img-slider" id="slider-naranja"><img src="charm-naranja.jpg" alt="Signature Heat" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;transition:opacity 0.4s;opacity:1" id="naranja-1"><img src="charm-naranja-2.jpg" alt="Signature Heat 2" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;transition:opacity 0.4s;opacity:0" id="naranja-2"></div><div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:2"><span onclick="showImg('naranja-1','naranja-2',this)" style="width:6px;height:6px;border-radius:50%;background:#111;cursor:pointer;opacity:1" class="dot-active"></span><span onclick="showImg('naranja-2','naranja-1',this)" style="width:6px;height:6px;border-radius:50%;background:#111;cursor:pointer;opacity:0.3"></span></div></div><div class="pbody"><div class="pname">Signature Heat</div><div class="pdesc">Not a color. A signature.</div><div class="pprice" id="pr7">$29.99 USD</div><button class="pbtn" onclick="addToCart('Signature Heat','#E8602A')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:#E8602A"><div class="pbadge" id="b3">New</div><img src="charm-naranja.jpg" alt="Signature Heat" class="slide-img slide-naranja active" id="slide-naranja-0"><img src="charm-naranja-2.jpg" alt="Signature Heat" class="slide-img slide-naranja" id="slide-naranja-1"><div class="slider-dots"><span class="active" onclick="showSlide('naranja',0,this)"></span><span onclick="showSlide('naranja',1,this)"></span></div></div><div class="pbody"><div class="pname">Signature Heat</div><div class="pdesc">Not a color. A signature.</div><div class="pprice" id="pr7">$29.99 USD</div><button class="pbtn" onclick="addToCart('Signature Heat','#E8602A')"><span class="t-add">Add to Cart</span></button></div></div>
 
     <div class="pcard"><div class="pimg" style="background:#f0ede8"><img src="charm-blanco.jpg" alt="Clean Luxury" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0"></div><div class="pbody"><div class="pname">Clean Luxury</div><div class="pdesc">Minimalist, expensive, effortless.</div><div class="pprice" id="pr8">$29.99 USD</div><button class="pbtn" onclick="addToCart('Clean Luxury','#e8e4de')"><span class="t-add">Add to Cart</span></button></div></div>
 
-    <div class="pcard"><div class="pimg" style="background:#F0A0B8"><img src="charm-rosa.jpg" alt="Soft Statement" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0"></div><div class="pbody"><div class="pname">Soft Statement</div><div class="pdesc">Delicate but with presence.</div><div class="pprice" id="pr9">$29.99 USD</div><button class="pbtn" onclick="addToCart('Soft Statement','#F0A0B8')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:#F0A0B8"><img src="charm-rosa.jpg" alt="Soft Statement" class="slide-img slide-rosa active" id="slide-rosa-0"><img src="charm-rosa-2.jpg" alt="Soft Statement" class="slide-img slide-rosa" id="slide-rosa-1"><div class="slider-dots"><span class="active" onclick="showSlide('rosa',0,this)"></span><span onclick="showSlide('rosa',1,this)"></span></div></div><div class="pbody"><div class="pname">Soft Statement</div><div class="pdesc">Delicate but with presence.</div><div class="pprice" id="pr9">$29.99 USD</div><button class="pbtn" onclick="addToCart('Soft Statement','#F0A0B8')"><span class="t-add">Add to Cart</span></button></div></div>
 
-    <div class="pcard"><div class="pimg" style="background:#C01830"><img src="charm-rojo.jpg" alt="Red Affair" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0"></div><div class="pbody"><div class="pname">Red Affair</div><div class="pdesc">Intense, bold, seductive.</div><div class="pprice" id="pr10">$29.99 USD</div><button class="pbtn" onclick="addToCart('Red Affair','#C01830')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:#C01830"><img src="charm-rojo.jpg" alt="Red Affair" class="slide-img slide-rojo active" id="slide-rojo-0"><img src="charm-rojo-2.jpg" alt="Red Affair" class="slide-img slide-rojo" id="slide-rojo-1"><div class="slider-dots"><span class="active" onclick="showSlide('rojo',0,this)"></span><span onclick="showSlide('rojo',1,this)"></span></div></div><div class="pbody"><div class="pname">Red Affair</div><div class="pdesc">Intense, bold, seductive.</div><div class="pprice" id="pr10">$29.99 USD</div><button class="pbtn" onclick="addToCart('Red Affair','#C01830')"><span class="t-add">Add to Cart</span></button></div></div>
 
-    <div class="pcard"><div class="pimg" style="background:#E8508A"><div class="pbadge" id="b4">New</div><div class="charm" style="background:#E8508A"><div class="charm-h" style="border-color:#c0306a"></div><div class="charm-c"></div></div></div><div class="pbody"><div class="pname">Main Character</div><div class="pdesc">Total protagonist, never goes unnoticed.</div><div class="pprice" id="pr11">$29.99 USD</div><button class="pbtn" onclick="addToCart('Main Character','#E8508A')"><span class="t-add">Add to Cart</span></button></div></div>
+    <div class="pcard"><div class="pimg" style="background:#E8508A"><div class="pbadge" id="b4">New</div><img src="charm-fucsia.jpg" alt="Main Character" class="slide-img slide-fucsia active" id="slide-fucsia-0"><img src="charm-fucsia-2.jpg" alt="Main Character" class="slide-img slide-fucsia" id="slide-fucsia-1"><div class="slider-dots"><span class="active" onclick="showSlide('fucsia',0,this)"></span><span onclick="showSlide('fucsia',1,this)"></span></div></div><div class="pbody"><div class="pname">Main Character</div><div class="pdesc">Total protagonist, never goes unnoticed.</div><div class="pprice" id="pr11">$29.99 USD</div><button class="pbtn" onclick="addToCart('Main Character','#E8508A')"><span class="t-add">Add to Cart</span></button></div></div>
 
     <div class="pcard"><div class="pimg" style="background:#5a7060"><img src="charm-turquesa.jpg" alt="Quiet Power" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0"></div><div class="pbody"><div class="pname">Quiet Power</div><div class="pdesc">Discreet luxury, old money vibe.</div><div class="pprice" id="pr12">$29.99 USD</div><button class="pbtn" onclick="addToCart('Quiet Power','#88A888')"><span class="t-add">Add to Cart</span></button></div></div>
   </div>
@@ -313,10 +315,8 @@ footer{background:#111;padding:44px 26px 24px}
 
 <div id="story" class="story">
   <div class="story-img">
-    <div style="background:#fff;border-radius:50%;width:110px;height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center">
-      <span style="font-family:'Jost',sans-serif;font-size:8px;font-weight:200;letter-spacing:2px;color:#111;text-transform:lowercase">i'm not a</span>
-      <span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#111;position:relative;display:inline-block">Birkin<span style="position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#111;display:block;transform:rotate(-4deg)"></span></span>
-      <span style="font-family:'Jost',sans-serif;font-size:7px;font-weight:200;letter-spacing:2px;color:#111;text-transform:lowercase;margin-top:2px">i'm a charm</span>
+    <div style="background:#fff;border-radius:50%;width:140px;height:140px;display:flex;align-items:center;justify-content:center;padding:14px">
+      <img src="logo.png" alt="I'm not a Birkin" style="width:100%;height:auto;display:block">
     </div>
   </div>
   <div class="story-body">
@@ -390,6 +390,15 @@ footer{background:#111;padding:44px 26px 24px}
 var lang = 'en';
 var cart = [];
 
+function showSlide(group, idx, dot){
+  var imgs=document.querySelectorAll('.slide-'+group);
+  for(var i=0;i<imgs.length;i++){imgs[i].classList.remove('active')}
+  var target=document.getElementById('slide-'+group+'-'+idx);
+  if(target)target.classList.add('active');
+  var dots=dot.parentElement.querySelectorAll('span');
+  for(var j=0;j<dots.length;j++){dots[j].classList.remove('active')}
+  dot.classList.add('active');
+}
 function showImg(showId, hideId, dot){
   document.getElementById(showId).style.opacity='1';
   document.getElementById(hideId).style.opacity='0';
