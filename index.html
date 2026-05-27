@@ -38,7 +38,7 @@ nav{background:#fff;border-bottom:1px solid #e8e8e8;padding:0 28px;height:70px;d
 .cart-close{background:none;border:none;font-size:19px;cursor:pointer;color:#111}
 .cart-items{flex:1;display:flex;flex-direction:column;gap:14px}
 .cart-item{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid #f5f5f5;align-items:center}
-.cart-item-color{width:36px;height:36px;border-radius:3px;flex-shrink:0;border:1px solid #eee}
+.cart-item-color{width:48px;height:48px;border-radius:4px;flex-shrink:0;border:1px solid #eee;object-fit:cover;background:#f5f5f5}
 .cart-item-info{flex:1}
 .cart-item-name{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#111;margin-bottom:2px}
 .cart-item-price{font-size:12px;color:#888}
@@ -245,7 +245,7 @@ footer{background:#111;padding:44px 26px 24px}
   <div class="fg"><label id="co-addr">Address<span class="req">*</span></label><input type="text" id="f-addr" placeholder="Street, number, apt" required></div>
   <div class="frow">
     <div class="fg"><label id="co-city">City<span class="req">*</span></label><input type="text" id="f-city" placeholder="Mexico City" required></div>
-    <div class="fg"><label id="co-zip">ZIP<span class="req">*</span></label><input type="text" id="f-zip" placeholder="06600" required></div>
+    <div class="fg"><label id="co-zip">Postal Code<span class="req">*</span></label><input type="text" id="f-zip" placeholder="06600" required></div>
   </div>
   <div class="frow">
     <div class="fg"><label id="co-state">State<span class="req">*</span></label><input type="text" id="f-state" placeholder="CDMX" required></div>
@@ -389,6 +389,20 @@ footer{background:#111;padding:44px 26px 24px}
 <script>
 var lang = 'en';
 var cart = [];
+var charmImages={
+  'No Explanations':'charm-negro.jpg',
+  'Money Energy':'charm-verde.jpg',
+  'Rich Taste':'charm-cafe.jpg',
+  'Sun Status':'charm-amarillo.jpg',
+  'Soft Power':'charm-lila.jpg',
+  'Fresh Money':'charm-taupe.jpg',
+  'Signature Heat':'charm-naranja.jpg',
+  'Clean Luxury':'charm-blanco.jpg',
+  'Soft Statement':'charm-rosa.jpg',
+  'Red Affair':'charm-rojo.jpg',
+  'Main Character':'charm-fucsia.jpg',
+  'Quiet Power':'charm-turquesa.jpg'
+};
 
 function showSlide(group, idx, dot){
   var imgs=document.querySelectorAll('.slide-'+group);
@@ -436,8 +450,9 @@ function renderCart(){
     var item=cart[i];
     var p=es?item.mxn:item.usd;
     var cur=es?' MXN':' USD';
+    var imgSrc=charmImages[item.name]||'';
     html+='<div class="cart-item">'
-      +'<div class="cart-item-color" style="background:'+item.color+'"></div>'
+      +(imgSrc?'<img class="cart-item-color" src="'+imgSrc+'" alt="'+item.name+'">':'<div class="cart-item-color" style="background:'+item.color+'"></div>')
       +'<div class="cart-item-info">'
       +'<div class="cart-item-name">'+item.name+'</div>'
       +'<div class="cart-item-price">$'+p+cur+'</div>'
@@ -478,7 +493,7 @@ function openCheckout(){
   document.getElementById('co-phone').innerHTML=(es?'Telefono / WhatsApp':'Phone / WhatsApp')+'<span class="req">*</span>';
   document.getElementById('co-addr').innerHTML=(es?'Direccion':'Address')+'<span class="req">*</span>';
   document.getElementById('co-city').innerHTML=(es?'Ciudad':'City')+'<span class="req">*</span>';
-  document.getElementById('co-zip').innerHTML='ZIP<span class="req">*</span>';
+  document.getElementById('co-zip').innerHTML=(es?'Codigo Postal':'Postal Code')+'<span class="req">*</span>';
   document.getElementById('co-state').innerHTML=(es?'Estado':'State')+'<span class="req">*</span>';
   document.getElementById('co-country').innerHTML=(es?'Pais':'Country')+'<span class="req">*</span>';
   document.getElementById('co-notes').textContent=es?'Notas (opcional)':'Notes (optional)';
@@ -497,7 +512,7 @@ function submitOrder(){
     {id:'f-phone',label:es?'Telefono':'Phone'},
     {id:'f-addr',label:es?'Direccion':'Address'},
     {id:'f-city',label:es?'Ciudad':'City'},
-    {id:'f-zip',label:'ZIP'},
+    {id:'f-zip',label:es?'Codigo Postal':'Postal Code'},
     {id:'f-state',label:es?'Estado':'State'},
     {id:'f-country',label:es?'Pais':'Country'}
   ];
@@ -538,20 +553,20 @@ function submitOrder(){
   var country=document.getElementById('f-country').value.trim();
   var notes=document.getElementById('f-notes').value.trim();
   var items=cart.map(function(i){return i.name+' x'+i.qty}).join(', ');
-  var total=cart.reduce(function(s,i){return s+i.usd*i.qty},0);
+  var totalUSD=cart.reduce(function(s,i){return s+i.usd*i.qty},0);
+  var totalMXN=cart.reduce(function(s,i){return s+i.mxn*i.qty},0);
   var shipping=name+' | '+addr+', '+city+', '+state+' '+zip+', '+country+' | '+phone;
-  var paypalUrl='https://www.paypal.com/cgi-bin/webscr?cmd=_xclick'
-    +'&business=alexiarivera%40gmail.com'
-    +'&item_name='+encodeURIComponent("I'm Not a Birkin - "+items)
-    +'&amount='+total.toFixed(2)
-    +'&currency_code=USD'
-    +'&custom='+encodeURIComponent(shipping);
+  // CAMBIA "AlexiaRivers" por tu nombre real de paypal.me si fuera diferente
+  var paypalUser='AlexiaRivers';
+  var paypalUrl=es
+    ?'https://paypal.me/'+paypalUser+'/'+totalMXN.toFixed(0)+'MXN'
+    :'https://paypal.me/'+paypalUser+'/'+totalUSD.toFixed(2)+'USD';
   var waMsg;
   if(es){
     waMsg='NUEVO PEDIDO notabirkin.com\n'
       +'Cliente navegando en: ESPANOL\n\n'
       +'--- PRODUCTOS ---\n'+items+'\n'
-      +'Total: $'+total.toFixed(2)+' USD\n\n'
+      +'Total: $'+totalMXN.toFixed(0)+' MXN\n\n'
       +'--- CLIENTE ---\n'
       +'Nombre: '+name+'\n'
       +'Email: '+email+'\n'
@@ -567,7 +582,7 @@ function submitOrder(){
     waMsg='NEW ORDER notabirkin.com\n'
       +'Customer browsing in: ENGLISH\n\n'
       +'--- ITEMS ---\n'+items+'\n'
-      +'Total: $'+total.toFixed(2)+' USD\n\n'
+      +'Total: $'+totalUSD.toFixed(2)+' USD\n\n'
       +'--- CUSTOMER ---\n'
       +'Name: '+name+'\n'
       +'Email: '+email+'\n'
@@ -576,7 +591,7 @@ function submitOrder(){
       +'Address: '+addr+'\n'
       +'City: '+city+'\n'
       +'State: '+state+'\n'
-      +'ZIP: '+zip+'\n'
+      +'Postal Code: '+zip+'\n'
       +'Country: '+country
       +(notes?'\n\n--- NOTES ---\n'+notes:'');
   }
