@@ -166,6 +166,23 @@ footer{background:#111;padding:44px 26px 24px}
 .f-links a:hover{color:#F2D0D6}
 .f-line{height:1px;background:#222;margin-bottom:14px}
 .f-copy{text-align:center;font-size:10px;letter-spacing:1px;color:#444}
+.confirm-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:498}
+.confirm-overlay.open{display:block}
+.confirm-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:92%;max-width:420px;background:#fff;z-index:499;padding:36px 28px;text-align:center;display:none}
+.confirm-modal.open{display:block}
+.confirm-icon{width:60px;height:60px;background:#FAF0F2;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:30px;font-style:italic;color:#C9A882}
+.confirm-title{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:#111;margin-bottom:10px;line-height:1.3}
+.confirm-sub{font-size:13px;color:#666;margin-bottom:24px;line-height:1.6}
+.confirm-step{display:flex;gap:11px;text-align:left;padding:13px 0;border-top:1px solid #eee}
+.confirm-step:first-of-type{border-top:none}
+.confirm-step-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#111;color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:500}
+.confirm-step-num.done{background:#F2D0D6;color:#111}
+.confirm-step-body{flex:1}
+.confirm-step-title{font-size:13px;color:#111;margin-bottom:3px;letter-spacing:0.5px}
+.confirm-step-desc{font-size:11px;color:#999;line-height:1.5}
+.confirm-btn{width:100%;background:#111;color:#fff;border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:16px;cursor:pointer;margin-top:22px}
+.confirm-cancel{background:none;border:none;color:#999;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:12px;margin-top:5px;font-family:'Jost',sans-serif}
+.confirm-cancel:hover{color:#111}
 .logo-img{width:100%;height:100%;object-fit:contain;display:block}
 .slider-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:2}
 .slider-dots span{width:6px;height:6px;border-radius:50%;background:#111;cursor:pointer;opacity:0.3;transition:opacity 0.2s}
@@ -253,6 +270,29 @@ footer{background:#111;padding:44px 26px 24px}
   </div>
   <div class="fg"><label id="co-notes">Notes (optional)</label><textarea id="f-notes" placeholder="Any special instructions..."></textarea></div>
   <button class="pay-btn" onclick="submitOrder()" id="co-paybtn">Pay with PayPal</button>
+</div>
+
+<div class="confirm-overlay" id="confirmOverlay"></div>
+<div class="confirm-modal" id="confirmModal">
+  <div class="confirm-icon">✓</div>
+  <div class="confirm-title" id="conf-title">Almost there!</div>
+  <div class="confirm-sub" id="conf-sub">Your order details have been sent to us via WhatsApp. To complete your purchase, please make the payment now.</div>
+  <div class="confirm-step">
+    <div class="confirm-step-num done">1</div>
+    <div class="confirm-step-body">
+      <div class="confirm-step-title" id="conf-s1-title">WhatsApp sent</div>
+      <div class="confirm-step-desc" id="conf-s1-desc">We received your shipping details</div>
+    </div>
+  </div>
+  <div class="confirm-step">
+    <div class="confirm-step-num">2</div>
+    <div class="confirm-step-body">
+      <div class="confirm-step-title" id="conf-s2-title">Complete payment</div>
+      <div class="confirm-step-desc" id="conf-s2-desc">Click below to pay securely with PayPal</div>
+    </div>
+  </div>
+  <button class="confirm-btn" onclick="goToPayPal()" id="conf-btn">Pay with PayPal</button>
+  <button class="confirm-cancel" onclick="closeConfirm()" id="conf-cancel">Cancel</button>
 </div>
 
 <div class="toast" id="toast">Added!</div>
@@ -595,11 +635,42 @@ function submitOrder(){
       +'Country: '+country
       +(notes?'\n\n--- NOTES ---\n'+notes:'');
   }
-  window.open(paypalUrl,'_blank');
-  setTimeout(function(){window.open('https://wa.me/525527031153?text='+encodeURIComponent(waMsg),'_blank')},1000);
+  // Guardamos la URL para usarla cuando el cliente le da al botón del modal
+  window._pendingPaypalUrl=paypalUrl;
+  // Paso 1: abrimos WhatsApp primero para garantizar que recibimos los datos
+  window.open('https://wa.me/525527031153?text='+encodeURIComponent(waMsg),'_blank');
+  // Paso 2: cerramos checkout y mostramos modal de confirmación
   closeCheckout();
+  showConfirmModal();
   cart=[];
   updateCartCount();
+}
+
+function showConfirmModal(){
+  var es=lang==='es';
+  document.getElementById('conf-title').textContent=es?'Ya casi terminas!':'Almost there!';
+  document.getElementById('conf-sub').textContent=es?'Tus datos de envio se enviaron por WhatsApp. Para completar tu compra, realiza el pago ahora.':'Your order details have been sent to us via WhatsApp. To complete your purchase, please make the payment now.';
+  document.getElementById('conf-s1-title').textContent=es?'WhatsApp enviado':'WhatsApp sent';
+  document.getElementById('conf-s1-desc').textContent=es?'Recibimos tus datos de envio':'We received your shipping details';
+  document.getElementById('conf-s2-title').textContent=es?'Completa el pago':'Complete payment';
+  document.getElementById('conf-s2-desc').textContent=es?'Da click abajo para pagar de forma segura con PayPal':'Click below to pay securely with PayPal';
+  document.getElementById('conf-btn').textContent=es?'Pagar con PayPal':'Pay with PayPal';
+  document.getElementById('conf-cancel').textContent=es?'Cancelar':'Cancel';
+  document.getElementById('confirmModal').classList.add('open');
+  document.getElementById('confirmOverlay').classList.add('open');
+}
+
+function goToPayPal(){
+  if(window._pendingPaypalUrl){
+    window.open(window._pendingPaypalUrl,'_blank');
+    window._pendingPaypalUrl=null;
+  }
+  closeConfirm();
+}
+
+function closeConfirm(){
+  document.getElementById('confirmModal').classList.remove('open');
+  document.getElementById('confirmOverlay').classList.remove('open');
 }
 
 function toggleLang(){
