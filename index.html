@@ -202,8 +202,10 @@ footer{background:#111;padding:44px 26px 24px}
     <a href="#contact" id="nl3">Contact</a>
   </div>
   <div class="nav-logo">
-    <div style="display:flex;align-items:center;justify-content:center;height:60px">
-      <img src="logo.png" alt="I'm not a Birkin" style="height:54px;width:auto;display:block">
+    <div style="display:flex;flex-direction:column;align-items:center;line-height:1.1">
+      <span style="font-family:'Jost',sans-serif;font-size:9px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase">i'm not a</span>
+      <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#111;position:relative;display:inline-block;margin:1px 0">Birkin<span style="position:absolute;left:-4%;top:52%;width:108%;height:1.5px;background:#111;display:block;transform:rotate(-4deg)"></span></span>
+      <span style="font-family:'Jost',sans-serif;font-size:9px;font-weight:200;letter-spacing:3px;color:#111;text-transform:lowercase">i'm a charm</span>
     </div>
   </div>
   <div class="nav-right">
@@ -291,7 +293,7 @@ footer{background:#111;padding:44px 26px 24px}
       <div class="confirm-step-desc" id="conf-s2-desc">Click below to pay securely with PayPal</div>
     </div>
   </div>
-  <button class="confirm-btn" onclick="goToPayPal()" id="conf-btn">Pay with PayPal</button>
+  <a class="confirm-btn" id="conf-btn" href="#" target="_blank" rel="noopener" style="display:block;text-decoration:none;text-align:center;box-sizing:border-box">Pay with PayPal</a>
   <button class="confirm-cancel" onclick="closeConfirm()" id="conf-cancel">Cancel</button>
 </div>
 
@@ -635,11 +637,13 @@ function submitOrder(){
       +'Country: '+country
       +(notes?'\n\n--- NOTES ---\n'+notes:'');
   }
-  // Guardamos la URL para usarla cuando el cliente le da al botón del modal
-  window._pendingPaypalUrl=paypalUrl;
-  // Paso 1: abrimos WhatsApp primero para garantizar que recibimos los datos
+  // Ponemos URL de PayPal en el botón link (Safari trata links como navegación normal, no pop-up)
+  var paypalBtn=document.getElementById('conf-btn');
+  paypalBtn.href=paypalUrl;
+  paypalBtn.onclick=function(){setTimeout(closeConfirm,300)};
+  // Abrimos WhatsApp en una pestaña (esto sí lo permite Safari porque viene del click original)
   window.open('https://wa.me/525527031153?text='+encodeURIComponent(waMsg),'_blank');
-  // Paso 2: cerramos checkout y mostramos modal de confirmación
+  // Mostramos modal con el botón de PayPal listo
   closeCheckout();
   showConfirmModal();
   cart=[];
@@ -649,7 +653,7 @@ function submitOrder(){
 function showConfirmModal(){
   var es=lang==='es';
   document.getElementById('conf-title').textContent=es?'Ya casi terminas!':'Almost there!';
-  document.getElementById('conf-sub').textContent=es?'Tus datos de envio se enviaron por WhatsApp. Para completar tu compra, realiza el pago ahora.':'Your order details have been sent to us via WhatsApp. To complete your purchase, please make the payment now.';
+  document.getElementById('conf-sub').textContent=es?'Tus datos de envio se enviaron por WhatsApp. Para completar tu compra, da click en el boton verde y paga con PayPal.':'Your order details have been sent to us via WhatsApp. To complete your purchase, click the button below to pay with PayPal.';
   document.getElementById('conf-s1-title').textContent=es?'WhatsApp enviado':'WhatsApp sent';
   document.getElementById('conf-s1-desc').textContent=es?'Recibimos tus datos de envio':'We received your shipping details';
   document.getElementById('conf-s2-title').textContent=es?'Completa el pago':'Complete payment';
@@ -658,14 +662,6 @@ function showConfirmModal(){
   document.getElementById('conf-cancel').textContent=es?'Cancelar':'Cancel';
   document.getElementById('confirmModal').classList.add('open');
   document.getElementById('confirmOverlay').classList.add('open');
-}
-
-function goToPayPal(){
-  if(window._pendingPaypalUrl){
-    window.open(window._pendingPaypalUrl,'_blank');
-    window._pendingPaypalUrl=null;
-  }
-  closeConfirm();
 }
 
 function closeConfirm(){
